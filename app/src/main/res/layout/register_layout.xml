@@ -1,0 +1,98 @@
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools
+
+"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+    <TableRow >
+        <TextView
+            android:layout_height="wrap_content"
+            android:text="用户名:"
+            android:textSize="20dp"
+            />
+        <EditText
+            android:id="@+id/username"
+            android:layout_height="wrap_content"
+            android:hint="输入您的用户名"
+            android:layout_width="389dp"
+
+            />
+    </TableRow>
+    <TableRow >
+        <TextView
+            android:layout_height="wrap_content"
+            android:text="姓名："
+            android:textSize="20dp"
+            />
+        <EditText
+            android:id="@+id/name"
+            android:layout_height="wrap_content"
+            android:hint="输入您的姓名"
+            />
+    </TableRow>
+    <TableRow >
+        <TextView
+            android:layout_height="wrap_content"
+            android:text="手机号："
+            android:textSize="20dp"
+            />
+        <EditText
+            android:id="@+id/phone"
+            android:layout_height="wrap_content"
+            android:hint="输入您的手机号码"
+            android:layout_width="match_parent" />
+    </TableRow>
+    <TableRow >
+        <TextView
+            android:layout_height="wrap_content"
+            android:text="密码:"
+            android:textSize="20dp"
+            />
+        <EditText
+            android:id="@+id/password"
+            android:layout_height="wrap_content"
+            android:inputType="textPassword"
+            android:hint="请输入您的密码"
+            />
+    </TableRow>
+
+    <TableRow >
+        <TextView
+            android:layout_height="wrap_content"
+            android:text="重复密码:"
+            android:textSize="20dp"
+            />
+        <EditText
+            android:id="@+id/repassword"
+            android:layout_height="wrap_content"
+            android:inputType="textPassword"
+            android:hint="请再次输入您的密码"
+            />
+    </TableRow>
+
+
+
+
+    <Button
+        android:id="@+id/register"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_span="2"
+        android:text="注册"
+        android:textSize="20dp"
+        android:background="@color/colorPrimary"
+        />
+
+
+    <Button
+        android:id="@+id/cancel"
+        android:layout_height="wrap_content"
+        android:layout_span="2"
+        android:text="取消"
+        android:textSize="20dp"/>
+    >
+
+
+</TableLayout>

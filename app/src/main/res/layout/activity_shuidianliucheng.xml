@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:orientation="horizontal"
+        >
+
+        <ImageView
+            android:id="@+id/more_back_imageview"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:paddingLeft="5dp"
+            android:paddingTop="5dp"
+            android:paddingRight="5dp"
+            android:paddingBottom="5dp"
+            android:src="@drawable/ic_return"
+            />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="5"
+            android:text="水电改造基本流程"
+            android:textSize="23sp"
+            android:maxLines="1"
+            android:gravity="center"
+
+            />
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:maxLines="1"
+            android:gravity="center"
+            />
+
+    </LinearLayout>
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="18dp"
+        android:text="      1.材料进场与检验，并核对水电阶段的材料品牌规格，因为就水电改造而言，劣质的水电材料会直接影响日常使用甚至可能威胁到人身和财产的安全。"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="18dp"
+        android:text="      2.弹线定位标记水管的位置，走向要求横平竖直，然后就是开槽工作。线路开槽有三个原则：不破坏原有强电原则、不破坏防水原则、线路最短原则。通过用线的多少来确定PVC管的用料，同时也便于确定管槽的宽度。"
+        android:id="@+id/textView3" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="18dp"
+        android:text="      3.水电布线，即“布管布线，包括水管排布。电管布线与穿线"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="18dp"
+        android:text="      4.水电验收，如若发现问题可做及时的修复处理，等到其他项目施工完毕，再发现问题再修改实属不易。"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="18dp"
+        android:text="      5.封槽，水管安装后一定要经过注水水压测试。一般使用水泥泥浆进行封槽。封槽的高度不能高于所在平面，封槽一定要严实，否则日后会有空鼓现象。"/>
+
+</LinearLayout>

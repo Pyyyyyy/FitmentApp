@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:orientation="horizontal"
+        >
+
+        <ImageView
+            android:id="@+id/more_back_imageview"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:paddingLeft="5dp"
+            android:paddingTop="5dp"
+            android:paddingRight="5dp"
+            android:paddingBottom="5dp"
+            android:src="@drawable/ic_return"
+            />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="5"
+            android:text="水电改造注意事项"
+            android:textSize="23sp"
+            android:maxLines="1"
+            android:gravity="center"
+
+            />
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:maxLines="1"
+            android:gravity="center"
+            />
+
+    </LinearLayout>
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="18dp"
+        android:text="      1.施工前一定要有电气(强电、弱电)、给排水设计施工图。"
+         />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="18dp"
+        android:text="      2.防水工程应该在隐蔽工程施工完成并验收后再进行。"
+         />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="18dp"
+        android:text="      3.禁止在穿线管内连接导线，即若导线长度不够需接长时，导线的接头处不能在穿线管内。"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="18dp"
+        android:text="      4.电线的选择多是市场中常见的电线：有2.5-6平米的铜芯线。布线时电线要区分好弱电和强电，分别用不同的颜色来辨别，强弱电的开关或插座也要分开布线，两种电线之间的距离不要靠得太近，防止使用中相互干扰，影响正常运用。还有一点水电改造注意事项就是，开关插座的安装一定要水平垂直，这样面板才不会有不平整的情况出现。"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="18dp"
+        android:text="      5.排水管横向管道应有一定的坡度，承插口连接严密，确保无渗漏。固定管道的支架、吊卡间距合理、牢固。"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="18dp"
+        android:text="      6.冷、热水龙头中的热水龙头应安装在左侧，也是水电改造注意事项之一。电热水器应有接地保护装置，初用时应排除胆内空气，注满水后方可通电启动。"
+         />
+
+
+</LinearLayout>
