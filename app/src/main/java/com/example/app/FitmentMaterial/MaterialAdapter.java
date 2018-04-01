@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.app.R;
@@ -29,16 +30,19 @@ public class MaterialAdapter extends ArrayAdapter<Material> {
         if(convertView==null){
             view = LayoutInflater.from(getContext()).inflate(resourceId,parent,false);
             viewHolder = new ViewHolder();
+            //viewHolder.materialImage = (ImageView)view.findViewById(R.id.picture);
             viewHolder.materialName = (TextView)view.findViewById(R.id.material_name);
             view.setTag(viewHolder);
         }else{
             view = convertView;
             viewHolder = (ViewHolder)view.getTag();
         }
+        //viewHolder.materialImage.setImageResource(material.getImageId());
         viewHolder.materialName.setText(material.getName());
         return view;
     }
     class ViewHolder{
+        ImageView materialImage;
         TextView materialName;
     }
 
