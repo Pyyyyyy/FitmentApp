@@ -132,7 +132,7 @@ public class SlideShowView extends FrameLayout {
         }
         mViewPager.setFocusable(true);
         mViewPager.setAdapter(new MyPagerAdapter());
-        mViewPager.setOnPageChangeListener(new MyPageChangeListener());
+        mViewPager.addOnPageChangeListener(new MyPageChangeListener());
     }
 
 

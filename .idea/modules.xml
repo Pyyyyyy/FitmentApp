@@ -2,8 +2,10 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/app.iml" filepath="$PROJECT_DIR$/app.iml" />
-      <module fileurl="file://$PROJECT_DIR$/app/app-app.iml" filepath="$PROJECT_DIR$/app/app-app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Adriod Studio Project.iml" filepath="$PROJECT_DIR$/Adriod Studio Project.iml" />
+      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://F:\Adriod Studio Project\app.iml" filepath="F:\Adriod Studio Project\app.iml" />
+      <module fileurl="file://F:\Adriod Studio Project\app\app-app.iml" filepath="F:\Adriod Studio Project\app\app-app.iml" />
     </modules>
   </component>
 </project>
