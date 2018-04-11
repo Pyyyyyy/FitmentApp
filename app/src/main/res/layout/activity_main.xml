@@ -56,7 +56,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:gravity="center"
-                    android:text="装修材料"
+                    android:text="讨论区"
                     android:textColor="@android:color/black" />
             </LinearLayout>
             <LinearLayout
@@ -72,7 +72,7 @@
                     android:layout_height="match_parent"
 
                     android:gravity="center"
-                    android:text="工人"
+                    android:text="购物车"
                     android:textColor="@android:color/black" />
             </LinearLayout>
 

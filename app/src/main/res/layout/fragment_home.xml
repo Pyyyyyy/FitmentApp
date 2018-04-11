@@ -1,11 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context="com.example.app.MainActivity">
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
     <LinearLayout
         android:id="@+id/LinearLayout1"
         android:orientation="horizontal"
@@ -43,88 +47,108 @@
         android:layout_height="200dp">
         <ImageView
             android:id="@+id/image3"
-            android:layout_width="400dp"
+            android:layout_width="match_parent"
             android:layout_height="200dp"
             android:src="@drawable/timg"
             android:scaleType="fitXY"
             />
     </LinearLayout>
-    <LinearLayout
-        android:id="@+id/LinearLayout3"
-        android:orientation="horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="50dp">
 
-        <Button
-            android:id="@+id/image4"
-            android:layout_width="0dp"
-            android:layout_height="50dp"
-            android:layout_weight="3"
-            android:layout_marginLeft="50dp"
+        <LinearLayout
+            android:id="@+id/LinearLayout3"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="100dp">
 
-            android:background="@drawable/first"
-            />
+            <Button
+                android:id="@+id/image4"
+                android:layout_width="0dp"
+                android:layout_height="100dp"
+                android:layout_weight="5"
+                android:text="装修前"
+                android:textSize="12sp"
+                android:paddingLeft="5dp"
+                android:paddingTop="5dp"
+                android:paddingRight="5dp"
+                android:paddingBottom="5dp"
+                android:drawableTop="@drawable/first"
+                android:background="#FFFFFF"
+                />
 
-        <Button
-            android:id="@+id/image5"
-            android:layout_width="0dp"
-            android:layout_height="50dp"
-            android:layout_weight="3"
-            android:background="@drawable/first"
-            />
-        <Button
-            android:id="@+id/image6"
-            android:layout_width="0dp"
-            android:layout_height="50dp"
-            android:layout_weight="3"
-            android:background="@drawable/first"
-            />
+            <Button
+                android:id="@+id/image5"
+                android:layout_width="0dp"
+                android:layout_height="100dp"
+                android:layout_weight="5"
+                android:text="清包"
+                android:textSize="12sp"
+                android:paddingLeft="5dp"
+                android:paddingTop="5dp"
+                android:paddingRight="5dp"
+                android:paddingBottom="5dp"
+                android:drawableTop="@drawable/first"
+                android:background="#FFFFFF"
+                />
+            <Button
+                android:id="@+id/image6"
+                android:layout_width="0dp"
+                android:layout_height="100dp"
+                android:layout_weight="5"
+                android:text="装修后"
+                android:textSize="12sp"
+                android:paddingLeft="5dp"
+                android:paddingTop="5dp"
+                android:paddingRight="5dp"
+                android:paddingBottom="5dp"
+                android:drawableTop="@drawable/first"
+                android:background="#FFFFFF"
+                />
+            <Button
+                android:id="@+id/image7"
+                android:layout_width="0dp"
+                android:layout_height="100dp"
+                android:layout_weight="5"
+                android:text="装修材料"
+                android:textSize="12sp"
+                android:paddingLeft="5dp"
+                android:paddingTop="5dp"
+                android:paddingRight="5dp"
+                android:paddingBottom="5dp"
+                android:drawableTop="@drawable/first"
+                android:background="#FFFFFF"
+                />
+            <Button
+                android:id="@+id/image8"
+                android:layout_width="0dp"
+                android:layout_height="100dp"
+                android:layout_weight="5"
+                android:text="工人"
+                android:textSize="12sp"
+                android:paddingLeft="5dp"
+                android:paddingTop="5dp"
+                android:paddingRight="5dp"
+                android:paddingBottom="5dp"
+                android:drawableTop="@drawable/first"
+                android:background="#FFFFFF"
+                />
 
 
 
-    </LinearLayout>
-    <LinearLayout
-        android:id="@+id/LinearLayout4"
-        android:orientation="horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="30dp">
+        </LinearLayout>
 
-        <TextView
-            android:layout_width="50dp"
-            android:layout_weight="5"
-            android:layout_height="30dp"
-
-            android:text="               装修前"
-            />
-        <TextView
-            android:layout_width="50dp"
-            android:layout_weight="5"
-            android:layout_height="30dp"
-
-            android:text="               装修中"
-            />
-        <TextView
-            android:layout_width="50dp"
-            android:layout_weight="5"
-            android:layout_height="30dp"
-
-            android:text="               装修后"
-            />
-
-
-    </LinearLayout>
     <LinearLayout
         android:id="@+id/LinearLayout5"
         android:layout_width="match_parent"
         android:orientation="horizontal"
         android:layout_height="150dp">
         <ImageView
-            android:id="@+id/image7"
+            android:id="@+id/image9"
             android:layout_width="match_parent"
             android:layout_height="150dp"
             android:src="@drawable/timg"
             android:scaleType="fitXY"
             />
     </LinearLayout>
+    </LinearLayout>
 
-</LinearLayout>
+</ScrollView>

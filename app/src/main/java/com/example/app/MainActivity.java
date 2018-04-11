@@ -37,6 +37,7 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        /*
         Button image4 = (Button) findViewById(R.id.image4);
         image4.setOnClickListener(new View.OnClickListener(){
             @Override
@@ -52,8 +53,9 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
             public void onClick(View v){
                 Intent intent = new Intent(MainActivity.this,zhuangxiuzhongActivity.class);
                 startActivity(intent);
+
             }
-        });
+        });*/
 
         initView();
         initEvent();
