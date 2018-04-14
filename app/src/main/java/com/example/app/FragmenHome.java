@@ -6,11 +6,7 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.View.OnClickListener;
-
-
 import android.widget.Button;
-
 import com.example.app.QingBao.zhuangxiuzhongActivity;
 
 
@@ -28,8 +24,8 @@ public class FragmenHome extends Fragment {
         // TODO Auto-generated method stub
         super.onActivityCreated(savedInstanceState);
         Button btn = (Button) getActivity().findViewById(R.id.button_zhuangxiuqian);
-        Button btn2= (Button) getActivity().findViewById(R.id.button_zhuangxiuhou);
-        Button btn3= (Button) getActivity().findViewById(R.id.button_qingbao);
+        Button btn2= (Button) getActivity().findViewById(R.id.button_qingbao);
+        Button btn3= (Button) getActivity().findViewById(R.id.button_zhuangxiuhou);
         Button btn4= (Button) getActivity().findViewById(R.id.button_zhuangxiucailiao);
         Button btn5= (Button) getActivity().findViewById(R.id.button_worker);
         btn.setOnClickListener(new View.OnClickListener() {
