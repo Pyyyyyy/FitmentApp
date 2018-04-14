@@ -61,7 +61,7 @@
             android:layout_height="100dp">
 
             <Button
-                android:id="@+id/image4"
+                android:id="@+id/button_zhuangxiuqian"
                 android:layout_width="0dp"
                 android:layout_height="100dp"
                 android:layout_weight="5"
@@ -76,7 +76,7 @@
                 />
 
             <Button
-                android:id="@+id/image5"
+                android:id="@+id/button_qingbao"
                 android:layout_width="0dp"
                 android:layout_height="100dp"
                 android:layout_weight="5"
@@ -90,7 +90,7 @@
                 android:background="#FFFFFF"
                 />
             <Button
-                android:id="@+id/image6"
+                android:id="@+id/button_zhuangxiuhou"
                 android:layout_width="0dp"
                 android:layout_height="100dp"
                 android:layout_weight="5"
@@ -104,7 +104,7 @@
                 android:background="#FFFFFF"
                 />
             <Button
-                android:id="@+id/image7"
+                android:id="@+id/button_zhuangxiucailiao"
                 android:layout_width="0dp"
                 android:layout_height="100dp"
                 android:layout_weight="5"
@@ -118,7 +118,7 @@
                 android:background="#FFFFFF"
                 />
             <Button
-                android:id="@+id/image8"
+                android:id="@+id/button_worker"
                 android:layout_width="0dp"
                 android:layout_height="100dp"
                 android:layout_weight="5"
