@@ -7,6 +7,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+
+import com.example.app.FitmentMaterial.FitmentMaterialActivity;
+import com.example.app.FitmentMaterial.Material;
 import com.example.app.QingBao.zhuangxiuzhongActivity;
 
 
@@ -48,12 +51,15 @@ public class FragmenHome extends Fragment {
             @Override
             public void onClick(View v) {
                 //button点击事件
+
             }
         });
         btn4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //button点击事件
+                Intent intent = new Intent();
+                intent.setClass(getActivity(), FitmentMaterialActivity.class);
+                startActivity(intent);
             }
         });
         btn5.setOnClickListener(new View.OnClickListener() {
