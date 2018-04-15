@@ -70,7 +70,7 @@
             android:inputType="textPersonName"
             android:id="@+id/username"
             android:drawableLeft="@android:drawable/ic_menu_myplaces"
-            android:hint="请输入您的用户名"
+            android:hint="请输入您的账号"
             android:layout_below="@+id/logo"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"

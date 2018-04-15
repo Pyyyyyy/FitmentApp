@@ -7,12 +7,14 @@ import android.net.Uri;
 import android.os.Build;
 import android.provider.MediaStore;
 import android.support.v4.content.FileProvider;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.app.R;
@@ -38,20 +40,24 @@ public class FitmentAddActivity extends AppCompatActivity implements View.OnClic
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.fitment_add_layout);
+        ActionBar actionBar = getSupportActionBar();
+        if (actionBar!=null){
+            actionBar.hide();
+        }
 
         name = (EditText) findViewById(R.id.name);
         type = (EditText) findViewById((R.id.type));
         price = (EditText) findViewById(R.id.price);
         description = (EditText) findViewById(R.id.description);
         //imageId = (ImageView) findViewById(R.id.picture);
-        Button add = (Button) findViewById(R.id.add);
-        Button cancle = (Button) findViewById(R.id.cancle);
+        TextView add = (TextView) findViewById(R.id.add);
+        ImageView cancel = (ImageView) findViewById(R.id.cancel);
         Button takePhoto = (Button) findViewById(R.id.take_photo);
         picture = (ImageView) findViewById(R.id.picture);
         Button chooseFromAlbum = (Button) findViewById(R.id.choose_from_album);
 
         add.setOnClickListener(this);
-        cancle.setOnClickListener(this);
+        cancel.setOnClickListener(this);
         takePhoto.setOnClickListener(this);
         chooseFromAlbum.setOnClickListener(this);
 
@@ -104,7 +110,7 @@ public class FitmentAddActivity extends AppCompatActivity implements View.OnClic
                     startActivity(intent2);
                     finish();
                     break;
-                case R.id.cancle:
+                case R.id.cancel:
                     Intent intent3 = new Intent(FitmentAddActivity.this,FitmentMaterialActivity.class);
                     startActivity(intent3);
                     break;
