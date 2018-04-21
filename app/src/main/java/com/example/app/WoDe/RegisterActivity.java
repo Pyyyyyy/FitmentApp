@@ -1,14 +1,11 @@
 package com.example.app.WoDe;
 
-import android.content.Intent;
 import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.widget.Button;
 import android.view.View;
 import android.widget.EditText;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.app.R;
@@ -26,11 +23,11 @@ import java.net.URL;
 public class RegisterActivity extends AppCompatActivity {
     private EditText account;
     private EditText name;
-    private EditText phone;
+    private EditText phoneNumber;
     private EditText password;
     private EditText repassword;
     private Button register;
-    private Button mCancelButton;
+    private Button cancel;
 
 
     @Override
@@ -38,9 +35,9 @@ public class RegisterActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.register_layout);
 
-        account = (EditText)findViewById(R.id.username);
+        account = (EditText)findViewById(R.id.account);
         name = (EditText)findViewById(R.id.name);
-        phone = (EditText)findViewById(R.id.phone);
+        phoneNumber = (EditText)findViewById(R.id.phoneNumber);
         password = (EditText)findViewById(R.id.password);
         repassword = (EditText)findViewById(R.id.repassword);
 
@@ -49,82 +46,72 @@ public class RegisterActivity extends AppCompatActivity {
         register.setOnClickListener(new View.OnClickListener(){
             @Override
             public  void onClick(View v){
-                register_check();
-                register(account.getText().toString().trim(),password.getText().toString().trim(), name.getText().toString().trim(), Integer.parseInt(phone.getText().toString().trim()));
+                if(register_check()) {//判断用户输入是否正常
+                    register(account.getText().toString().trim(), password.getText().toString().trim(), name.getText().toString().trim(), phoneNumber.getText().toString().trim());
+                }
+
             }
 
         });
+        cancel = (Button)findViewById(R.id.cancel);
+        cancel.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                finish();
+            }
+        });
+
 
     }
 
-    public void register_check(){
-        if(isUserNameAndPwdValid()){
-            String userName = account.getText().toString().trim();
-            String personalName = name.getText().toString().trim();
-            String pn = phone.getText().toString().trim();
-            int phoneNumber = Integer.parseInt(pn);
-            String userPwd = password.getText().toString().trim();
-            String userRepwd = repassword.getText().toString().trim();
-
-            //两次密码输入不一样
-            if(userPwd.equals(userRepwd)==false){
-                Toast.makeText(this,"两次密码不一致",Toast.LENGTH_SHORT).show();
-                return ;
-            }
-            /*
-            else {
-                User mUser = new User(userName,personalName,phoneNumber,userPwd);
-                mUserManager.openDataBase();
-                long flag = mUserManager.insertUserData(mUser); //新建用户信息
-                if (flag == -1) {
-                    Toast.makeText(this, "",Toast.LENGTH_SHORT).show();
-                }else{
-                    Toast.makeText(this,"",Toast.LENGTH_SHORT).show();
-                    Intent intent_Register_to_Login = new Intent(RegisterActivity.this,LoginActivity.class) ;    //切换RegisterActivity至LoginActivity
-                    startActivity(intent_Register_to_Login);
-                    finish();
-                }
-            }
-            */
-        }
-    }
-    public boolean isUserNameAndPwdValid() {
+    public boolean register_check(){
         if (account.getText().toString().trim().equals("")) {
-            Toast.makeText(this, "请输入账号",
+            Toast.makeText(this, "账号不能为空",
                     Toast.LENGTH_SHORT).show();
             return false;
-        } else if (password.getText().toString().trim().equals("")) {
-            Toast.makeText(this, "请输入密码",
+        } else if (name.getText().toString().trim().equals("")) {
+            Toast.makeText(this, "姓名不能为空",
                     Toast.LENGTH_SHORT).show();
             return false;
-        }else if(repassword.getText().toString().trim().equals("")) {
+        }else if(phoneNumber.getText().toString().trim().equals("")) {
+            Toast.makeText(this, "手机号不能为空",
+                    Toast.LENGTH_SHORT).show();
+            return false;
+        }
+        else if(password.getText().toString().trim().equals("")) {
+            Toast.makeText(this, "密码不能为空",
+                    Toast.LENGTH_SHORT).show();
+            return false;
+        }
+        else if(repassword.getText().toString().trim().equals("")) {
             Toast.makeText(this, "请重复密码",
                     Toast.LENGTH_SHORT).show();
             return false;
         }
-        else if(phone.getText().toString().trim().equals("")) {
-            Toast.makeText(this, "请输入手机号",
-                    Toast.LENGTH_SHORT).show();
-            return false;
-        }
-        else if(name.getText().toString().trim().equals("")) {
-            Toast.makeText(this, "请输入姓名",
-                    Toast.LENGTH_SHORT).show();
-            return false;
-        }
-        return true;
-    }
+            String userPwd = password.getText().toString().trim();
+            String userRepwd = repassword.getText().toString().trim();
 
-    private void register(String account, String password,String name,int phoneNumber) {
+            //两次密码输入不一样
+            if(!userPwd.equals(userRepwd)){
+                Toast.makeText(this,"密码不一致",Toast.LENGTH_SHORT).show();
+                return false;
+            }
+            return true;
+
+
+        }
+
+
+    private void register(String account, String password,String name,String phoneNumber) {
         String registerUrlStr = Constant.URL_Register + "?account=" + account + "&password=" + password + "&name=" + name + "&phoneNumber=" + phoneNumber;
         new MyAsyncTask().execute(registerUrlStr);
     }
 
-    public static class MyAsyncTask extends AsyncTask<String, Integer, String> {
+    public class MyAsyncTask extends AsyncTask<String, Integer, String> {
 
         @Override
         protected void onPreExecute() {
-
+            //后台任务开始执行前调用
         }
 
         /**
@@ -135,9 +122,9 @@ public class RegisterActivity extends AppCompatActivity {
             HttpURLConnection connection = null;
             StringBuilder response = new StringBuilder();
             try {
-                URL url = new URL(params[0]); // 声明一个URL,注意如果用百度首页实验，请使用https开头，否则获取不到返回报文
+                URL url = new URL(params[0]); // 声明一个URL
                 connection = (HttpURLConnection) url.openConnection(); // 打开该URL连接
-                connection.setRequestMethod("GET"); // 设置请求方法，“POST或GET”，我们这里用GET，在说到POST的时候再用POST
+                connection.setRequestMethod("GET"); // 设置请求方法
                 connection.setConnectTimeout(80000); // 设置连接建立的超时时间
                 connection.setReadTimeout(80000); // 设置网络报文收发超时时间
                 InputStream in = connection.getInputStream();  // 通过连接的输入流获取下发报文，然后就是Java的流处理
@@ -162,11 +149,14 @@ public class RegisterActivity extends AppCompatActivity {
 
         /**
          * 运行在UI线程中，所以可以直接操作UI元素
-         * @param s
+         *
          */
         @Override
-        protected void onPostExecute(String s) {
-
+        protected void onPostExecute(String message) {
+            Toast.makeText(RegisterActivity.this,message,Toast.LENGTH_SHORT).show();
+            if(message.equals("注册成功")){
+                finish();
+            }
         }
 
     }

@@ -60,7 +60,7 @@
             android:id="@+id/password"
             android:drawableLeft="@android:drawable/ic_lock_idle_lock"
             android:hint="请输入您的密码"
-            android:layout_below="@+id/username"
+            android:layout_below="@+id/account"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true" />
 
@@ -68,7 +68,7 @@
             android:layout_width="400dp"
             android:layout_height="60dp"
             android:inputType="textPersonName"
-            android:id="@+id/username"
+            android:id="@+id/account"
             android:drawableLeft="@android:drawable/ic_menu_myplaces"
             android:hint="请输入您的账号"
             android:layout_below="@+id/logo"
@@ -76,20 +76,6 @@
             android:layout_alignParentStart="true"
             android:layout_marginTop="20dp" />
 
-        <Button
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:text="注销"
-            android:id="@+id/login_btn_cancle"
-            android:textSize="20dp"
-            android:layout_below="@+id/register"
-            android:layout_marginTop="10dp"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:textColor="#ffffff"
-            android:background="#3a1313" />
 
         <CheckBox
             android:layout_width="100dp"
