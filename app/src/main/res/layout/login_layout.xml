@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/background"
     tools:context="com.example.app.WoDe.LoginActivity">
     <RelativeLayout
         android:id="@+id/login_view"
@@ -19,7 +20,7 @@
             android:id="@+id/register"
             android:onClick="resetpwd"
             android:textColor="#ffffff"
-            android:background="#e52525"
+            android:background="@drawable/shape2"
             android:textSize="20dp"
             android:layout_below="@+id/login"
             android:layout_alignParentLeft="true"
@@ -32,13 +33,51 @@
             android:text="登录"
             android:id="@+id/login"
             android:onClick="finish_login"
-            android:background="#545bcb"
+            android:background="@drawable/shape"
             android:textSize="20dp"
             android:textColor="#ffffff"
             android:layout_below="@+id/password"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
             android:layout_marginTop="52dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:orientation="horizontal"
+            >
+
+            <ImageView
+                android:id="@+id/lostandfound_back_imageview"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:paddingLeft="5dp"
+                android:paddingTop="5dp"
+                android:paddingRight="5dp"
+                android:paddingBottom="5dp"
+                android:background="@color/darkgray"
+                android:src="@drawable/ic_return"
+                />
+
+            <TextView
+                android:id="@+id/lostandfound_title_textview"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="5"
+                android:background="@color/darkgray"
+                android:maxLines="1"
+                android:gravity="center"
+                />
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@color/darkgray"
+                android:maxLines="1"
+                android:gravity="center"
+                />
+        </LinearLayout>
 
         <ImageView
             android:layout_width="300dp"
@@ -50,7 +89,8 @@
             android:layout_alignParentStart="true"
             android:layout_alignParentTop="true"
             android:layout_alignWithParentIfMissing="false"
-            android:background="#ffffff" />
+            android:background="@null"
+            />
 
         <EditText
             android:layout_width="400dp"
@@ -60,7 +100,7 @@
             android:id="@+id/password"
             android:drawableLeft="@android:drawable/ic_lock_idle_lock"
             android:hint="请输入您的密码"
-            android:layout_below="@+id/username"
+            android:layout_below="@+id/account"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true" />
 
@@ -68,28 +108,14 @@
             android:layout_width="400dp"
             android:layout_height="60dp"
             android:inputType="textPersonName"
-            android:id="@+id/username"
+            android:id="@+id/account"
             android:drawableLeft="@android:drawable/ic_menu_myplaces"
-            android:hint="请输入您的用户名"
+            android:hint="请输入您的账号"
             android:layout_below="@+id/logo"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
             android:layout_marginTop="20dp" />
 
-        <Button
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:text="注销"
-            android:id="@+id/login_btn_cancle"
-            android:textSize="20dp"
-            android:layout_below="@+id/register"
-            android:layout_marginTop="10dp"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:textColor="#ffffff"
-            android:background="#3a1313" />
 
         <CheckBox
             android:layout_width="100dp"
