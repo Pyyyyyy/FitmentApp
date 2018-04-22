@@ -1,11 +1,13 @@
 package com.example.app.FitmentMaterial;
 
 import android.content.Intent;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import com.example.app.R;
 
@@ -22,7 +24,11 @@ public class FitmentMaterialActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.fitment_material_layout);
-        Button add = (Button)findViewById(R.id.add);
+        TextView add = (TextView) findViewById(R.id.add);
+        ActionBar actionBar = getSupportActionBar();
+        if (actionBar!=null){
+            actionBar.hide();
+        }
         add.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){

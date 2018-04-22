@@ -6,6 +6,49 @@
     android:layout_height="match_parent"
     >
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:orientation="horizontal"
+        >
+
+        <ImageView
+            android:id="@+id/cancel"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:paddingLeft="5dp"
+            android:paddingTop="5dp"
+            android:paddingRight="5dp"
+            android:paddingBottom="5dp"
+            android:src="@drawable/ic_return"
+            />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="5"
+            android:text="装修材料"
+            android:textSize="23sp"
+
+            android:maxLines="1"
+            android:gravity="center"
+
+            />
+        <TextView
+            android:id="@+id/add"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:maxLines="1"
+            android:text="上架"
+            android:textSize="23sp"
+            android:textColor="#292929"
+            android:gravity="center"
+            />
+
+    </LinearLayout>
+
     <TableRow >
         <TextView
             android:layout_height="wrap_content"
@@ -71,23 +114,6 @@
 
 
 
-    <Button
-        android:id="@+id/add"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_span="2"
-        android:text="上架"
-        android:textSize="20dp"
-        android:background="@color/colorPrimary"
-        />
-
-
-    <Button
-        android:id="@+id/cancle"
-        android:layout_height="wrap_content"
-        android:layout_span="2"
-        android:text="取消"
-        android:textSize="20dp"/>
     >
     <ImageView
         android:id="@+id/picture"

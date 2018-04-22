@@ -9,13 +9,13 @@
     <TableRow >
         <TextView
             android:layout_height="wrap_content"
-            android:text="用户名:"
+            android:text="账号:"
             android:textSize="20dp"
             />
         <EditText
-            android:id="@+id/username"
+            android:id="@+id/account"
             android:layout_height="wrap_content"
-            android:hint="输入您的用户名"
+            android:hint="输入您的账号"
             android:layout_width="389dp"
 
             />
@@ -39,7 +39,7 @@
             android:textSize="20dp"
             />
         <EditText
-            android:id="@+id/phone"
+            android:id="@+id/phoneNumber"
             android:layout_height="wrap_content"
             android:hint="输入您的手机号码"
             android:layout_width="match_parent" />

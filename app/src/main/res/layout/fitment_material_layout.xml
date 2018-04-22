@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
     android:id="@+id/fitment_material_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -9,11 +10,116 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.example.app.FitmentMaterial.FitmentMaterialActivity">
-    <Button
-        android:id="@+id/add"
-        android:layout_width="wrap_content"
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:orientation="horizontal"
+        >
+
+        <ImageView
+            android:id="@+id/more_back_imageview"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:paddingLeft="5dp"
+            android:paddingTop="5dp"
+            android:paddingRight="5dp"
+            android:paddingBottom="5dp"
+            android:src="@drawable/ic_return"
+            />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="5"
+            android:text="装修材料"
+            android:textSize="23sp"
+            android:maxLines="1"
+            android:gravity="center"
+
+            />
+        <TextView
+            android:id="@+id/add"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:maxLines="1"
+            android:text="添加"
+            android:textSize="23sp"
+            android:textColor="#292929"
+            android:gravity="center"
+            />
+
+    </LinearLayout>
+
+
+
+
+    <RadioGroup
+        android:id="@+id/rg"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="添加"/>
+        android:orientation="horizontal">
+
+
+
+        <RadioButton
+            android:id="@+id/quanbucailiao"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:button="@null"
+            android:gravity="center"
+            android:text="全部"
+            android:textSize="22sp"
+            />
+
+        <RadioButton
+            android:id="@+id/tumucailiao"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:button="@null"
+            android:gravity="center"
+            android:text="土木"
+            android:textSize="22sp"
+            />
+
+        <RadioButton
+            android:id="@+id/youqicailiao"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:button="@null"
+            android:gravity="center"
+            android:text="油漆"
+            android:textSize="22sp"
+            />
+
+        <RadioButton
+            android:id="@+id/nimucailiao"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:button="@null"
+            android:gravity="center"
+            android:text="泥木"
+            android:textSize="22sp"
+            />
+
+        <RadioButton
+            android:id="@+id/chuyucailiao"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:button="@null"
+            android:gravity="center"
+            android:text="厨浴"
+            android:textSize="22sp"
+            />
+    </RadioGroup>
 
     <ListView
         android:id="@+id/list_view"
@@ -23,4 +129,5 @@
 
 
 
-</RelativeLayout>
+
+</LinearLayout>
