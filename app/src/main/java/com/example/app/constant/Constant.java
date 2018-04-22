@@ -5,8 +5,9 @@ package com.example.app.constant;
  */
 
 public class Constant {
-    public static String URL = "http://60.176.43.161:8080/FitmentApp/";
+    public static String URL = "http://w2062389t3.iask.in:39931/FitmentApp/";
 
     public static String URL_Register = URL + "RegisterServlet";
     public static String URL_Login = URL + "LoginServlet";
+    public static String URL_Fitment_Add = URL + "FitmentAddServlet";
 }
