@@ -11,7 +11,6 @@ import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.example.app.MainActivity;
 import com.example.app.R;
 import com.example.app.constant.Constant;
 
