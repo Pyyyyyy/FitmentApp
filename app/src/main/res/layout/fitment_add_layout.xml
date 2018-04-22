@@ -1,10 +1,10 @@
-<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools
-
-"
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    >
+    android:orientation="vertical"
+    android:weightSum="1">
+
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -30,7 +30,7 @@
             android:layout_weight="5"
             android:text="装修材料"
             android:textSize="23sp"
-
+            android:textColor="#292929"
             android:maxLines="1"
             android:gravity="center"
 
@@ -47,80 +47,135 @@
             android:gravity="center"
             />
 
-        
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="商品名："
+            android:textColor="#292929"
+            android:textSize="30sp"/>
+        <EditText
+            android:id="@+id/name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
 
     </LinearLayout>
 
-    <TableRow >
-        <TextView
-            android:layout_height="wrap_content"
-            android:text="商品名:"
-            android:textSize="20dp"
-            />
-        <EditText
-            android:id="@+id/name"
-            android:layout_height="wrap_content"
-            android:layout_width="389dp"
 
-            />
-    </TableRow>
-    <TableRow >
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        >
         <TextView
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="类别："
-            android:textSize="20dp"
-            />
+            android:textColor="#292929"
+            android:textSize="30sp"/>
         <EditText
             android:id="@+id/type"
-            android:layout_height="wrap_content"
-            />
-    </TableRow>
-    <TableRow >
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        >
         <TextView
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="价格："
-            android:textSize="20dp"
-            />
+            android:textColor="#292929"
+            android:textSize="30sp"/>
         <EditText
             android:id="@+id/price"
-            android:layout_height="wrap_content"
-            android:layout_width="match_parent" />
-    </TableRow>
-    <TableRow >
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        >
         <TextView
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="商品描述:"
-            android:textSize="20dp"
-            />
-        <EditText
-            android:id="@+id/description"
-            android:layout_height="wrap_content"
-            />
-    </TableRow>
+            android:text="商品描述："
+            android:textColor="#292929"
+            android:textSize="30sp"/>
 
 
-    <Button
+    </LinearLayout>
+    <EditText
+        android:id="@+id/description"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textMultiLine"
+        android:hint="描述一下商品的细节"
+        android:minLines="8"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="添加照片："
+        android:textSize="20sp"
+        />
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        >
+
+        <Button
             android:id="@+id/take_photo"
             android:layout_height="wrap_content"
             android:layout_width="wrap_content"
-            android:text="手机拍照"
-            android:textSize="20dp"/>
-    <Button
-        android:id="@+id/choose_from_album"
-        android:layout_height="wrap_content"
-        android:layout_width="wrap_content"
-        android:text="相册选取"
-        android:textSize="20dp"/>
+            android:background="#CCCCCC"
+            android:layout_marginLeft="10dp"
+            android:text="拍照"
+
+            />
+
+        <Button
+            android:id="@+id/choose_from_album"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:background="#CCCCCC"
+            android:layout_marginLeft="20dp"
+            android:text="相册"
 
 
 
+            />
 
 
-    >
+    </LinearLayout>
+
+
     <ImageView
         android:id="@+id/picture"
         android:layout_height="wrap_content"
         android:layout_width="wrap_content"
         android:layout_gravity="center_horizontal"/>
 
-</TableLayout>
+
+
+
+</LinearLayout>

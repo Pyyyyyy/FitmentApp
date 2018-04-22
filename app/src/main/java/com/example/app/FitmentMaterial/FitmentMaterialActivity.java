@@ -4,6 +4,8 @@ import android.content.Intent;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.GridLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ListView;
@@ -18,7 +20,9 @@ import java.util.List;
 
 
 public class FitmentMaterialActivity extends AppCompatActivity {
-    private List<Material>materialsName = new ArrayList<>();
+    private List<Material>materialList = new ArrayList<>();
+
+    private MaterialAdapter adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,16 +41,22 @@ public class FitmentMaterialActivity extends AppCompatActivity {
             }
         });
         initMaterials();
-        MaterialAdapter adapter = new MaterialAdapter(this,R.layout.material_item,materialsName);
-        ListView listView = (ListView)findViewById(R.id.list_view);
-        listView.setAdapter(adapter);
+        RecyclerView recyclerView = (RecyclerView) findViewById(R.id.recycler_view);
+        GridLayoutManager layoutManager = new GridLayoutManager(this,2);
+        recyclerView.setLayoutManager(layoutManager);
+        adapter = new MaterialAdapter(materialList);
+        recyclerView.setAdapter(adapter);
+
+
+
+
     }
 
     private void initMaterials(){
         List<Material>materials = DataSupport.findAll(Material.class);
         for(Material material:materials){
             Material name = new Material(material.getName());
-            materialsName.add(name);
+            materialList.add(name);
         }
 
     }

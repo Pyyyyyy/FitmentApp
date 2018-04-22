@@ -12,13 +12,13 @@ public class Material extends DataSupport {
     private String type;
     private double price;
     private String description;
-    //private int imageId;
+    private int imageId;
 
     public Material(){}
 
     public Material(String name){
         this.name = name;
-        //this.imageId = imageId;
+        this.imageId = imageId;
     }
 
     public int getId() {
@@ -61,7 +61,7 @@ public class Material extends DataSupport {
         this.description = description;
     }
 
-    /*
+
     public int getImageId() {
         return imageId;
     }
@@ -69,5 +69,5 @@ public class Material extends DataSupport {
     public void setImageId(int imageId) {
         this.imageId = imageId;
     }
-    */
+
 }

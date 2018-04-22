@@ -1,49 +1,67 @@
 package com.example.app.FitmentMaterial;
 
-import android.content.Context;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
-import android.widget.ImageView;
-import android.widget.TextView;
 
-import com.example.app.R;
 
-import java.util.List;
+        import android.content.Context;
+        import android.content.Intent;
+        import android.support.v7.widget.CardView;
+        import android.support.v7.widget.RecyclerView;
+        import android.view.LayoutInflater;
+        import android.view.View;
+        import android.view.ViewGroup;
+        import android.widget.ImageView;
+        import android.widget.TextView;
 
-/**
- * Created by 1 on 2018/3/25.
- */
+        import com.bumptech.glide.Glide;
+        import com.example.app.R;
 
-public class MaterialAdapter extends ArrayAdapter<Material> {
-    private int resourceId;
-    public MaterialAdapter(Context context,int textViewResourceId,List<Material> objects){
-        super(context,textViewResourceId,objects);
-        resourceId = textViewResourceId;
-    }
-    @Override
-    public View getView(int position, View convertView, ViewGroup parent){
-        Material material = getItem(position);
-        View view;
-        ViewHolder viewHolder;
-        if(convertView==null){
-            view = LayoutInflater.from(getContext()).inflate(resourceId,parent,false);
-            viewHolder = new ViewHolder();
-            //viewHolder.materialImage = (ImageView)view.findViewById(R.id.picture);
-            viewHolder.materialName = (TextView)view.findViewById(R.id.material_name);
-            view.setTag(viewHolder);
-        }else{
-            view = convertView;
-            viewHolder = (ViewHolder)view.getTag();
+        import java.util.List;
+
+public class MaterialAdapter extends RecyclerView.Adapter<MaterialAdapter.ViewHolder>{
+
+
+    private Context mContext;
+
+    private List<Material> mMaterialList;
+
+    static class ViewHolder extends RecyclerView.ViewHolder {
+        CardView cardView;
+        ImageView MaterialImage;
+        TextView MaterialName;
+
+        public ViewHolder(View view) {
+            super(view);
+            cardView = (CardView) view;
+            MaterialImage = (ImageView) view.findViewById(R.id.material_image);
+            MaterialName = (TextView) view.findViewById(R.id.material_name);
         }
-        //viewHolder.materialImage.setImageResource(material.getImageId());
-        viewHolder.materialName.setText(material.getName());
-        return view;
     }
-    class ViewHolder{
-        ImageView materialImage;
-        TextView materialName;
+
+    public MaterialAdapter(List<Material> materialList) {
+        mMaterialList = materialList;
+    }
+
+    @Override
+    public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+        if (mContext == null) {
+            mContext = parent.getContext();
+        }
+        View view = LayoutInflater.from(mContext).inflate(R.layout.material_item, parent, false);
+
+
+        return new ViewHolder(view);
+    }
+
+    @Override
+    public void onBindViewHolder(ViewHolder holder, int position) {
+        Material material = mMaterialList.get(position);
+        holder.MaterialName.setText(material.getName());
+        Glide.with(mContext).load(material.getImageId()).into(holder.MaterialImage);
+    }
+
+    @Override
+    public int getItemCount() {
+        return mMaterialList.size();
     }
 
 }
