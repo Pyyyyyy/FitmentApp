@@ -21,13 +21,13 @@ import java.util.List;
 
 public class FitmentMaterialActivity extends AppCompatActivity {
     private List<Material>materialList = new ArrayList<>();
-
     private MaterialAdapter adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.fitment_material_layout);
+        Button button01 = (Button) findViewById(R.id.button_shoppingcar);
         TextView add = (TextView) findViewById(R.id.add);
         ActionBar actionBar = getSupportActionBar();
         if (actionBar!=null){
@@ -37,6 +37,13 @@ public class FitmentMaterialActivity extends AppCompatActivity {
             @Override
             public void onClick(View v){
                 Intent intent = new Intent(FitmentMaterialActivity.this,FitmentAddActivity.class);
+                startActivity(intent);
+            }
+        });
+        button01.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(FitmentMaterialActivity.this,ShoppingCar.class);
                 startActivity(intent);
             }
         });

@@ -7,14 +7,19 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-
 import com.example.app.FitmentMaterial.FitmentMaterialActivity;
 import com.example.app.QingBao.zhuangxiuzhongActivity;
 import com.example.app.R;
 import com.example.app.zhuangXiuQian.zhuangxiuqianActivity;
+import com.example.app.zhuangXiuQian.SlideShowView;
+
+import java.util.ArrayList;
+import java.util.List;
 
 
 public class FragmenHome extends Fragment {
+    private SlideShowView mSlideShowView;
+    private SlideShowView mSlideShowView02;
 
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -69,6 +74,36 @@ public class FragmenHome extends Fragment {
                 //button点击事件
             }
         });
+        /**
+        * 轮播图
+         */
+        List<Integer> imageUris=new ArrayList<Integer>();
+        imageUris.add(R.drawable.one);
+        imageUris.add(R.drawable.two);
+        imageUris.add(R.drawable.three);
+        /**
+         * 获取控件
+         */
+        mSlideShowView=(SlideShowView) getActivity().findViewById(R.id.slideshowView);
+        /**
+         * 为控件设置图片
+         */
+        mSlideShowView.setImageUris(imageUris);
+        /**
+         * 轮播图2
+         */
+        List<Integer> imageUris01=new ArrayList<Integer>();
+        imageUris01.add(R.drawable.recommend01);
+        imageUris01.add(R.drawable.recommend02);
+        imageUris01.add(R.drawable.recommend03);
+        /**
+         * 获取控件
+         */
+        mSlideShowView02=(SlideShowView) getActivity().findViewById(R.id.slideshowView01);
+        /**
+         * 为控件设置图片
+         */
+        mSlideShowView02.setImageUris(imageUris01);
 
     }
 }

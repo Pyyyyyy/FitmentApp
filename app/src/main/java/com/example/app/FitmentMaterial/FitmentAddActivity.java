@@ -1,6 +1,7 @@
 package com.example.app.FitmentMaterial;
 
 import android.content.Intent;
+import android.database.Cursor;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.net.Uri;
@@ -35,6 +36,7 @@ import java.net.URL;
 
 public class FitmentAddActivity extends AppCompatActivity implements View.OnClickListener{
     public static final int TAKE_PHOTO =1;
+    private static int RESULT_LOAD_IMAGE=1;
     private ImageView picture;
     private Uri imageUri;
 
@@ -104,6 +106,18 @@ public class FitmentAddActivity extends AppCompatActivity implements View.OnClic
                         }
 
                     }
+                    Toast.makeText(FitmentAddActivity.this,"上架成功",Toast.LENGTH_SHORT).show();
+                    finish();
+                    break;
+                case R.id.choose_from_album:
+                    Intent i = new Intent(
+                            Intent.ACTION_PICK,
+                            android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI
+                    );
+                    startActivityForResult(i,RESULT_LOAD_IMAGE);
+                    break;
+
+
                     /*
                     String mName = name.getText().toString().trim();
                     String mType = type.getText().toString().trim();
@@ -124,9 +138,7 @@ public class FitmentAddActivity extends AppCompatActivity implements View.OnClic
                     //material.setImageId(mImageId);
                     material.save();
                     */
-                    Toast.makeText(FitmentAddActivity.this,"上架成功",Toast.LENGTH_SHORT).show();
-                    finish();
-                    break;
+
                 case R.id.cancel:
                     finish();
                     break;
@@ -135,6 +147,26 @@ public class FitmentAddActivity extends AppCompatActivity implements View.OnClic
 
         @Override
     protected void onActivityResult(int requestCode,int resultCode,Intent data){
+            super.onActivityResult(requestCode, resultCode, data);
+
+            if (requestCode == RESULT_LOAD_IMAGE && resultCode == RESULT_OK && null != data) {
+
+//获取返回的数据，这里是android自定义的Uri地址
+                Uri selectedImage = data.getData();
+                String[] filePathColumn = { MediaStore.Images.Media.DATA };
+                //获取选择照片的数据视图
+                Cursor cursor = getContentResolver().query(selectedImage,
+                        filePathColumn, null, null, null);
+                cursor.moveToFirst();
+                //从数据视图中获取已选择图片的路径
+                int columnIndex = cursor.getColumnIndex(filePathColumn[0]);
+                String picturePath = cursor.getString(columnIndex);
+                cursor.close();
+                //将图片显示到界面上
+                ImageView imageView = (ImageView) findViewById(R.id.picture);
+                imageView.setImageBitmap(BitmapFactory.decodeFile(picturePath));
+
+            }
         switch(requestCode){
             case TAKE_PHOTO:
                 if(resultCode==RESULT_OK){

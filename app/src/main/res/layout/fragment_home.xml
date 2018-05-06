@@ -45,13 +45,12 @@
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="200dp">
-        <ImageView
-            android:id="@+id/image3"
+        <com.example.app.zhuangXiuQian.SlideShowView
+            android:id="@+id/slideshowView"
             android:layout_width="match_parent"
-            android:layout_height="200dp"
-            android:src="@drawable/timg"
-            android:scaleType="fitXY"
-            />
+            android:layout_height="140dp"
+            android:layout_weight="0.43" />
+
     </LinearLayout>
 
         <LinearLayout
@@ -135,19 +134,31 @@
 
 
         </LinearLayout>
+     <LinearLayout
+         android:background="#E8E8E8"
+         android:layout_width="match_parent"
+         android:layout_height="5dp">
+     </LinearLayout>
 
     <LinearLayout
         android:id="@+id/LinearLayout5"
         android:layout_width="match_parent"
-        android:orientation="horizontal"
-        android:layout_height="150dp">
-        <ImageView
-            android:id="@+id/image9"
-            android:layout_width="match_parent"
-            android:layout_height="150dp"
-            android:src="@drawable/timg"
-            android:scaleType="fitXY"
+        android:orientation="vertical"
+        android:layout_height="200dp">
+        <TextView
+            android:id="@+id/text01"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#90EE90"
+            android:textStyle="bold"
+            android:textSize="17sp"
+            android:text="为您推荐:"
             />
+        <com.example.app.zhuangXiuQian.SlideShowView
+            android:id="@+id/slideshowView01"
+            android:layout_width="match_parent"
+            android:layout_height="132dp"
+            android:layout_weight="0.43" />
     </LinearLayout>
     </LinearLayout>
 
