@@ -4,13 +4,14 @@ import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.net.Uri;
-import android.os.AsyncTask;
+
 import android.os.Build;
 import android.provider.MediaStore;
 import android.support.v4.content.FileProvider;
 import android.support.v7.app.ActionBar;
-import android.support.v7.app.AppCompatActivity;
+
 import android.os.Bundle;
+import android.util.Base64;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -20,20 +21,21 @@ import android.widget.Toast;
 
 import com.example.app.R;
 
-import org.litepal.tablemanager.Connector;
+import com.example.app.http.BaseActivity;
+import com.example.app.http.CommonRequest;
+import com.example.app.http.CommonResponse;
+import com.example.app.http.ResponseHandler;
 
-import java.io.BufferedReader;
+
 import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.net.HttpURLConnection;
-import java.net.MalformedURLException;
-import java.net.URL;
 
-public class FitmentAddActivity extends AppCompatActivity implements View.OnClickListener{
+
+public class FitmentAddActivity extends BaseActivity implements View.OnClickListener{
+    private String URL_FITMENT_ADD = "http://w2062389t3.iask.in:39931/FitmentApp/FitmentAddServlet";
+
     public static final int TAKE_PHOTO =1;
     private ImageView picture;
     private Uri imageUri;
@@ -67,12 +69,11 @@ public class FitmentAddActivity extends AppCompatActivity implements View.OnClic
         takePhoto.setOnClickListener(this);
         chooseFromAlbum.setOnClickListener(this);
 
-        Connector.getDatabase();
 
     }
 
-        @Override
-        public void onClick(View v){
+    @Override
+    public void onClick(View v){
             switch(v.getId()){
                 case R.id.take_photo:
                     File outputImage = new File(getExternalCacheDir(),"output_image.jpg");
@@ -99,33 +100,12 @@ public class FitmentAddActivity extends AppCompatActivity implements View.OnClic
                         try {
                             Bitmap bitmap = BitmapFactory.decodeStream(getContentResolver().openInputStream(imageUri));
                             bitmap.compress(Bitmap.CompressFormat.JPEG, 100, baos);
+                            fitmentAdd(name.getText().toString().trim(),type.getText().toString().trim(),price.getText().toString().trim(),description.getText().toString().trim(),baos.toByteArray());
                         }catch(FileNotFoundException e){
                             e.printStackTrace();
                         }
 
                     }
-                    /*
-                    String mName = name.getText().toString().trim();
-                    String mType = type.getText().toString().trim();
-                    float mPrice=0f;
-                    try{
-                        mPrice = Float.parseFloat(price.getText().toString().trim());
-                    }catch(Exception e){
-                        e.printStackTrace();
-                    }
-                    String mDescription = description.getText().toString().trim();
-                    //int mImageId =imageId.getId();
-
-                    Material material = new Material();
-                    material.setName(mName);
-                    material.setType(mType);
-                    material.setPrice(mPrice);
-                    material.setDescription(mDescription);
-                    //material.setImageId(mImageId);
-                    material.save();
-                    */
-                    Toast.makeText(FitmentAddActivity.this,"上架成功",Toast.LENGTH_SHORT).show();
-                    finish();
                     break;
                 case R.id.cancel:
                     finish();
@@ -133,7 +113,7 @@ public class FitmentAddActivity extends AppCompatActivity implements View.OnClic
             }
         }
 
-        @Override
+    @Override
     protected void onActivityResult(int requestCode,int resultCode,Intent data){
         switch(requestCode){
             case TAKE_PHOTO:
@@ -173,9 +153,29 @@ public class FitmentAddActivity extends AppCompatActivity implements View.OnClic
         return true;
     }
 
-    public void fitmentAdd(String name,String type,float price,String description,byte[] picture){
+      public void fitmentAdd(String name,String type,String price,String description,byte[] picture){
+          final CommonRequest request = new CommonRequest();
+          request.addRequestParam("name",name);
+          request.addRequestParam("type",type);
+          request.addRequestParam("price",price);
+          request.addRequestParam("description",description);
+          request.addRequestParam("picture", Base64.encodeToString(picture, 0));
+          sendHttpPostRequest(URL_FITMENT_ADD,request,new ResponseHandler(){
+              @Override
+              public void success(CommonResponse response) {
+                  Toast.makeText(FitmentAddActivity.this,response.getResMsg(),Toast.LENGTH_SHORT).show();
+                  finish();
+              }
 
-    }
+              @Override
+              public void fail(String failCode, String failMsg) {
+                  Toast.makeText(FitmentAddActivity.this,failMsg,Toast.LENGTH_SHORT).show();
+
+              }
+
+          });
+
+     }
 
 
     }

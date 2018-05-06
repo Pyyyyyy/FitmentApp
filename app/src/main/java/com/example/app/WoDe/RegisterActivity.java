@@ -13,17 +13,10 @@ import com.example.app.http.CommonRequest;
 import com.example.app.http.CommonResponse;
 import com.example.app.http.ResponseHandler;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.net.HttpURLConnection;
-import java.net.MalformedURLException;
-import java.net.URL;
 
 
 public class RegisterActivity extends BaseActivity {
-    public String URL_REGISTER = "http://w2062389t3.iask.in:39931/FitmentApp/RegisterServlet";
+    private String URL_REGISTER = "http://w2062389t3.iask.in:39931/FitmentApp/RegisterServlet";
 
     private EditText account;
     private EditText name;
