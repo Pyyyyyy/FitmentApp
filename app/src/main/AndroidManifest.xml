@@ -12,14 +12,14 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity"
+        <activity android:name=".main.MainActivity"
                   android:windowSoftInputMode="adjustPan|stateHidden"  >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".zhuangxiuqianActivity" />
+        <activity android:name=".zhuangXiuQian.zhuangxiuqianActivity" />
         <activity android:name=".QingBao.zhuangxiuzhongActivity" />
         <activity android:name=".QingBao.shuidianliuchengActivity"/>
         <activity android:name=".QingBao.shuidiancailiao"/>

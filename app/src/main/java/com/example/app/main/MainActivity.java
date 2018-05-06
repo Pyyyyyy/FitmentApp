@@ -1,6 +1,5 @@
-package com.example.app;
+package com.example.app.main;
 
-import android.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
@@ -8,14 +7,14 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Button;
-import android.content.Intent;
-import android.widget.ImageButton;
 import android.widget.LinearLayout;
-import android.view.View;
 import android.view.View.OnClickListener;
-import com.example.app.QingBao.zhuangxiuzhongActivity;
 
+import com.example.app.R;
+import com.example.app.main.FragmenHome;
+import com.example.app.main.FragmenMy;
+import com.example.app.main.FragmenWorker;
+import com.example.app.main.FragmenZxcl;
 
 
 public class MainActivity extends AppCompatActivity implements OnClickListener {

@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.net.Uri;
+import android.os.AsyncTask;
 import android.os.Build;
 import android.provider.MediaStore;
 import android.support.v4.content.FileProvider;
@@ -21,9 +22,16 @@ import com.example.app.R;
 
 import org.litepal.tablemanager.Connector;
 
+import java.io.BufferedReader;
+import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
+import java.net.URL;
 
 public class FitmentAddActivity extends AppCompatActivity implements View.OnClickListener{
     public static final int TAKE_PHOTO =1;
@@ -34,7 +42,6 @@ public class FitmentAddActivity extends AppCompatActivity implements View.OnClic
     private EditText type;
     private EditText price;
     private EditText description;
-    //private ImageView imageId;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,7 +56,6 @@ public class FitmentAddActivity extends AppCompatActivity implements View.OnClic
         type = (EditText) findViewById((R.id.type));
         price = (EditText) findViewById(R.id.price);
         description = (EditText) findViewById(R.id.description);
-        //imageId = (ImageView) findViewById(R.id.picture);
         TextView add = (TextView) findViewById(R.id.add);
         ImageView cancel = (ImageView) findViewById(R.id.cancel);
         Button takePhoto = (Button) findViewById(R.id.take_photo);
@@ -88,16 +94,28 @@ public class FitmentAddActivity extends AppCompatActivity implements View.OnClic
                     startActivityForResult(intent1,TAKE_PHOTO);
                     break;
                 case R.id.add:
+                    if(add_check()){
+                        ByteArrayOutputStream baos = new ByteArrayOutputStream();
+                        try {
+                            Bitmap bitmap = BitmapFactory.decodeStream(getContentResolver().openInputStream(imageUri));
+                            bitmap.compress(Bitmap.CompressFormat.JPEG, 100, baos);
+                        }catch(FileNotFoundException e){
+                            e.printStackTrace();
+                        }
+
+                    }
+                    /*
                     String mName = name.getText().toString().trim();
                     String mType = type.getText().toString().trim();
-                    double mPrice=0d;
+                    float mPrice=0f;
                     try{
-                        mPrice = Double.parseDouble(price.getText().toString().trim());
+                        mPrice = Float.parseFloat(price.getText().toString().trim());
                     }catch(Exception e){
                         e.printStackTrace();
                     }
                     String mDescription = description.getText().toString().trim();
                     //int mImageId =imageId.getId();
+
                     Material material = new Material();
                     material.setName(mName);
                     material.setType(mType);
@@ -105,19 +123,17 @@ public class FitmentAddActivity extends AppCompatActivity implements View.OnClic
                     material.setDescription(mDescription);
                     //material.setImageId(mImageId);
                     material.save();
+                    */
                     Toast.makeText(FitmentAddActivity.this,"上架成功",Toast.LENGTH_SHORT).show();
-                    Intent intent2 = new Intent(FitmentAddActivity.this,FitmentMaterialActivity.class);
-                    startActivity(intent2);
                     finish();
                     break;
                 case R.id.cancel:
-                    Intent intent3 = new Intent(FitmentAddActivity.this,FitmentMaterialActivity.class);
-                    startActivity(intent3);
+                    finish();
                     break;
             }
         }
 
-    @Override
+        @Override
     protected void onActivityResult(int requestCode,int resultCode,Intent data){
         switch(requestCode){
             case TAKE_PHOTO:
@@ -134,6 +150,36 @@ public class FitmentAddActivity extends AppCompatActivity implements View.OnClic
                 break;
         }
     }
+    public boolean add_check() {
+        if (name.getText().toString().trim().equals("")) {
+            Toast.makeText(this, "商品名称不能为空",
+                    Toast.LENGTH_SHORT).show();
+            return false;
+        } else if (type.getText().toString().trim().equals("")) {
+            Toast.makeText(this, "类型不能为空",
+                    Toast.LENGTH_SHORT).show();
+            return false;
+        }
+        else if (price.getText().toString().trim().equals("")) {
+            Toast.makeText(this, "价格不能为空",
+                    Toast.LENGTH_SHORT).show();
+            return false;
+        }
+        else if (description.getText().toString().trim().equals("")) {
+            Toast.makeText(this, "描述不能为空",
+                    Toast.LENGTH_SHORT).show();
+            return false;
+        }
+        return true;
+    }
+
+    public void fitmentAdd(String name,String type,float price,String description,byte[] picture){
+
+    }
 
 
     }
+
+
+
+

@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.app.zhuangxiuqianActivity" >
+    tools:context="com.example.app.zhuangXiuQian.zhuangxiuqianActivity" >
 
     <LinearLayout
         android:orientation="vertical"
@@ -43,7 +43,7 @@
 
         </LinearLayout>
 
-        <com.example.app.SlideShowView
+        <com.example.app.zhuangXiuQian.SlideShowView
             android:id="@+id/slideshowView"
             android:layout_width="match_parent"
             android:layout_height="132dp"

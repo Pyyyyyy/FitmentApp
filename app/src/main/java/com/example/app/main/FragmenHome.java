@@ -1,4 +1,4 @@
-package com.example.app;
+package com.example.app.main;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -9,8 +9,9 @@ import android.view.ViewGroup;
 import android.widget.Button;
 
 import com.example.app.FitmentMaterial.FitmentMaterialActivity;
-import com.example.app.FitmentMaterial.Material;
 import com.example.app.QingBao.zhuangxiuzhongActivity;
+import com.example.app.R;
+import com.example.app.zhuangXiuQian.zhuangxiuqianActivity;
 
 
 public class FragmenHome extends Fragment {

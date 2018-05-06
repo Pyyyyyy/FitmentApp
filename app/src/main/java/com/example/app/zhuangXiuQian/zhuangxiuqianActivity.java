@@ -1,10 +1,12 @@
-package com.example.app;
+package com.example.app.zhuangXiuQian;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import android.app.Activity;
 import android.os.Bundle;
+
+import com.example.app.R;
 
 /**
  * 声明：由于此案例仅是一个Demo，故在此就没有使用UIL进行处理图片，本案例重点不在于防止OOM，重点在于轮播图片
