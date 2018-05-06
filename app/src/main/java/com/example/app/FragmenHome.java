@@ -11,6 +11,7 @@ import android.widget.Button;
 import com.example.app.FitmentMaterial.FitmentMaterialActivity;
 import com.example.app.QingBao.zhuangxiuzhongActivity;
 import com.example.app.R;
+import com.example.app.Worker.WorkerActivity;
 import com.example.app.zhuangXiuQian.zhuangxiuqianActivity;
 
 
@@ -67,6 +68,9 @@ public class FragmenHome extends Fragment {
             @Override
             public void onClick(View v) {
                 //button点击事件
+                Intent intent = new Intent();
+                intent.setClass(getActivity(), WorkerActivity.class);
+                startActivity(intent);
             }
         });
 
