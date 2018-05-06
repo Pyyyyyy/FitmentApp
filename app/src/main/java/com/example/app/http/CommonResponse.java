@@ -50,7 +50,7 @@ public class CommonResponse {
 
             /* 说明：
                 以下名称"resCode"、"resMsg"、"property"、"list"
-                和请求体中提到的字段名称一样，都是和服务器程序开发者约定好的字段名字，在本文接下来的服务端代码会说到
+                和请求体中提到的字段名称一样，都是和服务器程序开发者约定好的字段名字
              */
             resCode = root.getString("resCode");
             resMsg = root.optString("resMsg");

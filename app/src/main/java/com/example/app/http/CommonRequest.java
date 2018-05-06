@@ -28,7 +28,7 @@ public class CommonRequest {
     }
 
     /**
-     * 设置请求代码，即接口号，在本例中暂时未用到
+     * 设置请求代码，即接口号
      */
     public void setRequestCode(String requestCode) {
         this.requestCode = requestCode;
@@ -48,7 +48,7 @@ public class CommonRequest {
      * @return 请求报文的json字符串
      */
     public String getJsonStr() {
-        // 由于Android源码自带的JSon功能不够强大（没有直接从Bean转到JSonObject的API），为了不引入第三方资源这里我们只能手动拼装一下啦
+
         JSONObject object = new JSONObject();
         JSONObject param = new JSONObject(requestParam);
         try {
