@@ -18,7 +18,7 @@ import com.example.app.http.ResponseHandler;
 
 
 public class LoginActivity extends BaseActivity {
-    public String URL_LOGIN = "http://w2062389t3.iask.in:39931/FitmentApp/LoginServlet";
+    private String URL_LOGIN = "http://w2062389t3.iask.in:39931/FitmentApp/LoginServlet";
 
     private EditText account;                        //用户名编辑
     private EditText password;                            //密码编辑
