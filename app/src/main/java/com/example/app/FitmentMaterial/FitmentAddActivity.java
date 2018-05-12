@@ -92,25 +92,22 @@ public class FitmentAddActivity extends BaseActivity implements View.OnClickList
                     }else{
                         imageUri = Uri.fromFile(outputImage);
                     }
-                    Intent intent1 = new Intent("android.media.action.IMAGE_CAPTURE");
-                    intent1.putExtra(MediaStore.EXTRA_OUTPUT,imageUri);
-                    startActivityForResult(intent1,TAKE_PHOTO);
+                    Intent intent = new Intent("android.media.action.IMAGE_CAPTURE");
+                    intent.putExtra(MediaStore.EXTRA_OUTPUT,imageUri);
+                    startActivityForResult(intent,TAKE_PHOTO);
                     break;
                 case R.id.add:
                     if(add_check()){
                         ByteArrayOutputStream baos = new ByteArrayOutputStream();
                         try {
                             Bitmap bitmap = BitmapFactory.decodeStream(getContentResolver().openInputStream(imageUri));
-                            bitmap.compress(Bitmap.CompressFormat.JPEG, 100, baos);
+                            bitmap.compress(Bitmap.CompressFormat.PNG, 10, baos);
                             fitmentAdd(name.getText().toString().trim(),type.getText().toString().trim(),price.getText().toString().trim(),description.getText().toString().trim(),baos.toByteArray());
                         }catch(FileNotFoundException e){
                             e.printStackTrace();
                         }
 
                     }
-<<<<<<< HEAD
-                    Toast.makeText(FitmentAddActivity.this,"上架成功",Toast.LENGTH_SHORT).show();
-                    finish();
                     break;
                 case R.id.choose_from_album:
                     Intent i = new Intent(
@@ -142,9 +139,6 @@ public class FitmentAddActivity extends BaseActivity implements View.OnClickList
                     material.save();
                     */
 
-=======
-                    break;
->>>>>>> 32a60dff65eeb4be5a2e2e64f962972aea2f062f
                 case R.id.cancel:
                     finish();
                     break;
@@ -157,7 +151,7 @@ public class FitmentAddActivity extends BaseActivity implements View.OnClickList
 
             if (requestCode == RESULT_LOAD_IMAGE && resultCode == RESULT_OK && null != data) {
 
-//获取返回的数据，这里是android自定义的Uri地址
+                //获取返回的数据，这里是android自定义的Uri地址
                 Uri selectedImage = data.getData();
                 String[] filePathColumn = { MediaStore.Images.Media.DATA };
                 //获取选择照片的数据视图

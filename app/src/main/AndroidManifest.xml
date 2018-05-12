@@ -39,14 +39,12 @@
         <activity android:name=".WoDe.LoginActivity" />
         <activity android:name=".WoDe.RegisterActivity" />
         <activity android:name=".FitmentMaterial.FitmentMaterialActivity" />
-<<<<<<< HEAD
+
         <activity android:name=".FitmentMaterial.ShoppingCar"/>
-        <activity android:name=".FitmentMaterial.FitmentAddActivity">
-=======
         <activity android:name=".FitmentMaterial.FitmentAddActivity"/>
         <activity android:name=".Worker.WorkerActivity"/>
             <activity android:name=".Worker.WorkerAddActivity">
->>>>>>> 32a60dff65eeb4be5a2e2e64f962972aea2f062f
+
         </activity>
 
         <provider

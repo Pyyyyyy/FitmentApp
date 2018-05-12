@@ -1,24 +1,24 @@
 package com.example.app.FitmentMaterial;
 
-import org.litepal.crud.DataSupport;
+import android.graphics.Bitmap;
+
 
 /**
  * Created by 1 on 2018/3/24.
  */
 
-public class Material extends DataSupport {
+public class Material {
     private int id;
     private String name;
     private String type;
     private double price;
     private String description;
-    private int imageId;
+    private Bitmap picture;
 
-    public Material(){}
 
-    public Material(String name){
+    public Material(String name,Bitmap picture){
         this.name = name;
-        this.imageId = imageId;
+        this.picture = picture;
     }
 
     public int getId() {
@@ -62,12 +62,12 @@ public class Material extends DataSupport {
     }
 
 
-    public int getImageId() {
-        return imageId;
+    public Bitmap getPicture() {
+        return picture;
     }
 
-    public void setImageId(int imageId) {
-        this.imageId = imageId;
+    public void setPicture(Bitmap picture) {
+        this.picture = picture;
     }
 
 }

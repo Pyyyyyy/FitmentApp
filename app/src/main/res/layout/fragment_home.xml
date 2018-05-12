@@ -39,17 +39,22 @@
             android:scaleType="fitXY"
             android:layout_weight="1"
             android:src="@drawable/xiaoxi" />
+
     </LinearLayout>
     <LinearLayout
         android:id="@+id/LinearLayout2"
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="200dp">
-        <com.example.app.zhuangXiuQian.SlideShowView
-            android:id="@+id/slideshowView"
-            android:layout_width="match_parent"
-            android:layout_height="140dp"
-            android:layout_weight="0.43" />
+        <ImageView
+        android:id="@+id/im"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:scaleType="fitXY"
+        android:layout_weight="1"
+        android:src="@drawable/timg" />
+
+
 
     </LinearLayout>
 
@@ -154,11 +159,13 @@
             android:textSize="17sp"
             android:text="为您推荐:"
             />
-        <com.example.app.zhuangXiuQian.SlideShowView
-            android:id="@+id/slideshowView01"
+        <ImageView
+            android:id="@+id/img"
             android:layout_width="match_parent"
-            android:layout_height="132dp"
-            android:layout_weight="0.43" />
+            android:layout_height="30dp"
+            android:scaleType="fitXY"
+            android:layout_weight="1"
+            android:src="@drawable/recommend02" />
     </LinearLayout>
     </LinearLayout>
 
