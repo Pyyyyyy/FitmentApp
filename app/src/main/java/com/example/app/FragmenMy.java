@@ -7,6 +7,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.TextView;
 
 import com.example.app.R;
 import com.example.app.WoDe.LoginActivity;
@@ -23,7 +24,7 @@ public class FragmenMy extends Fragment
     public void onActivityCreated(Bundle savedInstanceState) {
         // TODO Auto-generated method stub
         super.onActivityCreated(savedInstanceState);
-        Button btn = (Button) getActivity().findViewById(R.id.enter);
+        TextView btn = (TextView) getActivity().findViewById(R.id.enter);
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

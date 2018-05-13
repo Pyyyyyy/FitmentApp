@@ -2,6 +2,7 @@ package com.example.app.FitmentMaterial;
 
 import android.content.Intent;
 import android.graphics.BitmapFactory;
+import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.ActionBar;
 import android.os.Bundle;
 import android.support.v7.widget.GridLayoutManager;
@@ -26,6 +27,7 @@ import java.util.List;
 
 public class FitmentMaterialActivity extends BaseActivity {
     private String URL_FITMENT = "http://w2062389t3.iask.in:39931/FitmentApp/FitmentMaterialServlet";
+    private SwipeRefreshLayout swipeRefresh;
 
     private List<Material>materialList = new ArrayList<>();
     private MaterialAdapter adapter;
@@ -65,6 +67,14 @@ public class FitmentMaterialActivity extends BaseActivity {
         recyclerView.setAdapter(adapter);
 
 
+        swipeRefresh = (SwipeRefreshLayout) findViewById(R.id.swipe_refresh);
+        swipeRefresh.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+                refreshMaterial();
+            }
+        });
+
 
 
     }
@@ -94,5 +104,29 @@ public class FitmentMaterialActivity extends BaseActivity {
 
         });
 
+    }
+
+
+
+
+    private void refreshMaterial(){
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                try{
+                    Thread.sleep(1000);
+                }catch (InterruptedException e){
+                    e.printStackTrace();
+                }
+                runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+
+                        adapter.notifyDataSetChanged();
+                        swipeRefresh.setRefreshing(false);
+                    }
+                });
+            }
+        }).start();
     }
 }
