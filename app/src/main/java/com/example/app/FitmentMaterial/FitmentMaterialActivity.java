@@ -47,7 +47,7 @@ public class FitmentMaterialActivity extends BaseActivity {
                 startActivity(intent);
             }
         });
-<<<<<<< HEAD
+
         button01.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -55,11 +55,11 @@ public class FitmentMaterialActivity extends BaseActivity {
                 startActivity(intent);
             }
         });
-=======
+
         fitmentMaterial();
 
 
->>>>>>> 32a60dff65eeb4be5a2e2e64f962972aea2f062f
+
         initMaterials();
         RecyclerView recyclerView = (RecyclerView) findViewById(R.id.recycler_view);
         GridLayoutManager layoutManager = new GridLayoutManager(this,2);
