@@ -78,36 +78,6 @@ public class FragmenHome extends Fragment {
                 startActivity(intent);
             }
         });
-        /**
-        * 轮播图
-         */
-        List<Integer> imageUris=new ArrayList<Integer>();
-        imageUris.add(R.drawable.one);
-        imageUris.add(R.drawable.two);
-        imageUris.add(R.drawable.three);
-        /**
-         * 获取控件
-         */
-        mSlideShowView=(SlideShowView) getActivity().findViewById(R.id.slideshowView);
-        /**
-         * 为控件设置图片
-         */
-        mSlideShowView.setImageUris(imageUris);
-        /**
-         * 轮播图2
-         */
-        List<Integer> imageUris01=new ArrayList<Integer>();
-        imageUris01.add(R.drawable.recommend01);
-        imageUris01.add(R.drawable.recommend02);
-        imageUris01.add(R.drawable.recommend03);
-        /**
-         * 获取控件
-         */
-        mSlideShowView02=(SlideShowView) getActivity().findViewById(R.id.slideshowView01);
-        /**
-         * 为控件设置图片
-         */
-        mSlideShowView02.setImageUris(imageUris01);
 
     }
 }

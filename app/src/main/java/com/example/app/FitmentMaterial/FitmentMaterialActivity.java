@@ -1,6 +1,8 @@
 package com.example.app.FitmentMaterial;
 
 import android.content.Intent;
+import android.graphics.BitmapFactory;
+import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.ActionBar;
 import android.os.Bundle;
 import android.support.v7.widget.GridLayoutManager;
@@ -8,7 +10,6 @@ import android.support.v7.widget.RecyclerView;
 import android.util.Base64;
 import android.view.View;
 import android.widget.Button;
-import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -18,14 +19,15 @@ import com.example.app.http.CommonRequest;
 import com.example.app.http.CommonResponse;
 import com.example.app.http.ResponseHandler;
 
-import org.litepal.crud.DataSupport;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 
 public class FitmentMaterialActivity extends BaseActivity {
     private String URL_FITMENT = "http://w2062389t3.iask.in:39931/FitmentApp/FitmentMaterialServlet";
+    private SwipeRefreshLayout swipeRefresh;
 
     private List<Material>materialList = new ArrayList<>();
     private MaterialAdapter adapter;
@@ -55,12 +57,19 @@ public class FitmentMaterialActivity extends BaseActivity {
                 startActivity(intent);
             }
         });
+<<<<<<< HEAD
+
+        fitmentMaterial();
+=======
+>>>>>>> 06cad5082f65cdf88d78d9a1b75b9477961ab7bc
 
         fitmentMaterial();
 
-
+<<<<<<< HEAD
 
         initMaterials();
+=======
+>>>>>>> 06cad5082f65cdf88d78d9a1b75b9477961ab7bc
         RecyclerView recyclerView = (RecyclerView) findViewById(R.id.recycler_view);
         GridLayoutManager layoutManager = new GridLayoutManager(this,2);
         recyclerView.setLayoutManager(layoutManager);
@@ -68,34 +77,66 @@ public class FitmentMaterialActivity extends BaseActivity {
         recyclerView.setAdapter(adapter);
 
 
+        swipeRefresh = (SwipeRefreshLayout) findViewById(R.id.swipe_refresh);
+        swipeRefresh.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+                refreshMaterial();
+            }
+        });
+
 
 
     }
 
-    private void initMaterials(){
-        List<Material>materials = DataSupport.findAll(Material.class);
-        for(Material material:materials){
-            Material name = new Material(material.getName());
-            materialList.add(name);
-        }
-
-    }
 
     public void fitmentMaterial(){
         final CommonRequest request = new CommonRequest();
         sendHttpPostRequest(URL_FITMENT,request,new ResponseHandler(){
             @Override
             public void success(CommonResponse response) {
+                /*
+                ArrayList<HashMap<String, String>> materials = response.getDataList();
+                for(HashMap material:materials){
+                    byte[] bytes = Base64.decode(material.get("picture").toString(), Base64.DEFAULT);
+                    Material material1 = new Material(material.get("name").toString(), BitmapFactory.decodeByteArray(bytes, 0, bytes.length));
+                    materialList.add(material1);
+                }
 
-                finish();
+                Toast.makeText(FitmentMaterialActivity.this,response.getResMsg(),Toast.LENGTH_SHORT).show();
+                */
             }
 
             @Override
             public void fail(String failCode, String failMsg) {
-
+                Toast.makeText(FitmentMaterialActivity.this,failMsg,Toast.LENGTH_SHORT).show();
             }
 
         });
 
+    }
+
+
+
+
+    private void refreshMaterial(){
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                try{
+                    Thread.sleep(1000);
+                }catch (InterruptedException e){
+                    e.printStackTrace();
+                }
+                runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+
+                        adapter.notifyDataSetChanged();
+                        swipeRefresh.setRefreshing(false);
+                    }
+                });
+            }
+        }).start();
     }
 }
