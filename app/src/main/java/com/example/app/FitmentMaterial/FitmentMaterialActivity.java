@@ -57,19 +57,11 @@ public class FitmentMaterialActivity extends BaseActivity {
                 startActivity(intent);
             }
         });
-<<<<<<< HEAD
 
-        fitmentMaterial();
-=======
->>>>>>> 06cad5082f65cdf88d78d9a1b75b9477961ab7bc
 
         fitmentMaterial();
 
-<<<<<<< HEAD
 
-        initMaterials();
-=======
->>>>>>> 06cad5082f65cdf88d78d9a1b75b9477961ab7bc
         RecyclerView recyclerView = (RecyclerView) findViewById(R.id.recycler_view);
         GridLayoutManager layoutManager = new GridLayoutManager(this,2);
         recyclerView.setLayoutManager(layoutManager);
@@ -115,7 +107,6 @@ public class FitmentMaterialActivity extends BaseActivity {
         });
 
     }
-
 
 
 

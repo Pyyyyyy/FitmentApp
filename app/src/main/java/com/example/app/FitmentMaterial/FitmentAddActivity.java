@@ -116,12 +116,11 @@ public class FitmentAddActivity extends BaseActivity implements View.OnClickList
                         }
 
                     }
-<<<<<<< HEAD
+
 
                     Toast.makeText(FitmentAddActivity.this,"上架成功",Toast.LENGTH_SHORT).show();
                     finish();
-=======
->>>>>>> 06cad5082f65cdf88d78d9a1b75b9477961ab7bc
+
                     break;
                 case R.id.choose_from_album:
                     if (ContextCompat.checkSelfPermission(FitmentAddActivity.this, Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED){
@@ -184,18 +183,13 @@ public class FitmentAddActivity extends BaseActivity implements View.OnClickList
                     material.save();
                     */
 
-<<<<<<< HEAD
 
 
 
 
-=======
-                case R.id.cancel:
-                    finish();
-                    break;
-            }
-        }
->>>>>>> 06cad5082f65cdf88d78d9a1b75b9477961ab7bc
+
+
+
 
     @Override
     protected void onActivityResult(int requestCode,int resultCode,Intent data){
