@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Base64;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -79,6 +80,7 @@ public class FitmentMaterialActivity extends BaseActivity {
 
 
 
+
     }
 
 
@@ -87,16 +89,13 @@ public class FitmentMaterialActivity extends BaseActivity {
         sendHttpPostRequest(URL_FITMENT,request,new ResponseHandler(){
             @Override
             public void success(CommonResponse response) {
-                /*
+
                 ArrayList<HashMap<String, String>> materials = response.getDataList();
-                for(HashMap material:materials){
-                    byte[] bytes = Base64.decode(material.get("picture").toString(), Base64.DEFAULT);
+                for(HashMap<String,String> material:materials){
+                    byte[] bytes = Base64.decode(material.get("picture"), Base64.DEFAULT);
                     Material material1 = new Material(material.get("name").toString(), BitmapFactory.decodeByteArray(bytes, 0, bytes.length));
                     materialList.add(material1);
                 }
-
-                Toast.makeText(FitmentMaterialActivity.this,response.getResMsg(),Toast.LENGTH_SHORT).show();
-                */
             }
 
             @Override

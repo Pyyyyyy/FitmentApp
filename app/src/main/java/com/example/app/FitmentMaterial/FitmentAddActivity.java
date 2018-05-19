@@ -2,6 +2,7 @@ package com.example.app.FitmentMaterial;
 
 import android.Manifest;
 import android.annotation.TargetApi;
+import android.app.ProgressDialog;
 import android.content.ContentUris;
 import android.content.Intent;
 import android.content.pm.PackageManager;
@@ -162,35 +163,6 @@ public class FitmentAddActivity extends BaseActivity implements View.OnClickList
 
 
 
-                    /*
-                    String mName = name.getText().toString().trim();
-                    String mType = type.getText().toString().trim();
-                    float mPrice=0f;
-                    try{
-                        mPrice = Float.parseFloat(price.getText().toString().trim());
-                    }catch(Exception e){
-                        e.printStackTrace();
-                    }
-                    String mDescription = description.getText().toString().trim();
-                    //int mImageId =imageId.getId();
-
-                    Material material = new Material();
-                    material.setName(mName);
-                    material.setType(mType);
-                    material.setPrice(mPrice);
-                    material.setDescription(mDescription);
-                    //material.setImageId(mImageId);
-                    material.save();
-                    */
-
-
-
-
-
-
-
-
-
     @Override
     protected void onActivityResult(int requestCode,int resultCode,Intent data){
           /*  super.onActivityResult(requestCode, resultCode, data);
@@ -319,21 +291,31 @@ public class FitmentAddActivity extends BaseActivity implements View.OnClickList
     }
 
       public void fitmentAdd(String name,String type,String price,String description,byte[] picture){
+          final ProgressDialog  progressDialog = new ProgressDialog(this);
+          progressDialog.setTitle("Wait");
+          progressDialog.setMessage("Loading.");
+          progressDialog.setCancelable(false);
+          progressDialog.show();
+
           final CommonRequest request = new CommonRequest();
           request.addRequestParam("name",name);
           request.addRequestParam("type",type);
           request.addRequestParam("price",price);
           request.addRequestParam("description",description);
           request.addRequestParam("picture", Base64.encodeToString(picture, 0));
+
+
           sendHttpPostRequest(URL_FITMENT_ADD,request,new ResponseHandler(){
               @Override
               public void success(CommonResponse response) {
+                  progressDialog.dismiss();
                   Toast.makeText(FitmentAddActivity.this,response.getResMsg(),Toast.LENGTH_SHORT).show();
                   finish();
               }
 
               @Override
               public void fail(String failCode, String failMsg) {
+                  progressDialog.dismiss();
                   Toast.makeText(FitmentAddActivity.this,failMsg,Toast.LENGTH_SHORT).show();
 
               }

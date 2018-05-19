@@ -31,7 +31,7 @@ public class BaseActivity extends AppCompatActivity {
                 Toast.makeText(BaseActivity.this,"请求接受失败",Toast.LENGTH_SHORT).show();
 
             } else if (msg.what == 2) {
-                Toast.makeText(BaseActivity.this,"当前网络异常",Toast.LENGTH_SHORT).show();
+                Toast.makeText(BaseActivity.this,"连接失败",Toast.LENGTH_SHORT).show();
 
             }
         }
