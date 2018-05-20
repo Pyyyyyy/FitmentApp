@@ -25,11 +25,20 @@ public class FragmenMy extends Fragment
         // TODO Auto-generated method stub
         super.onActivityCreated(savedInstanceState);
         TextView btn = (TextView) getActivity().findViewById(R.id.enter);
+        TextView btn2 =(TextView) getActivity().findViewById(R.id.wallet);
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent();
                 intent.setClass(getActivity(), LoginActivity.class);
+                startActivity(intent);
+            }
+        });
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent();
+                intent.setClass(getActivity(), wallet.class);
                 startActivity(intent);
             }
         });
