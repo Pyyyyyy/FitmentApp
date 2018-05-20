@@ -60,6 +60,7 @@ public class FitmentAddActivity extends BaseActivity implements View.OnClickList
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.fitment_add_layout);
+
         ActionBar actionBar = getSupportActionBar();
         if (actionBar!=null){
             actionBar.hide();
@@ -105,6 +106,7 @@ public class FitmentAddActivity extends BaseActivity implements View.OnClickList
                     intent.putExtra(MediaStore.EXTRA_OUTPUT,imageUri);
                     startActivityForResult(intent,TAKE_PHOTO);
                     break;
+
                 case R.id.add:
                     if(add_check()){
                         ByteArrayOutputStream baos = new ByteArrayOutputStream();
@@ -123,16 +125,15 @@ public class FitmentAddActivity extends BaseActivity implements View.OnClickList
                     finish();
 
                     break;
+
                 case R.id.choose_from_album:
                     if (ContextCompat.checkSelfPermission(FitmentAddActivity.this, Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED){
-                    ActivityCompat.requestPermissions(FitmentAddActivity.this,new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE},1);
-
-                }
-                else{
+                        ActivityCompat.requestPermissions(FitmentAddActivity.this,new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE},1);
+                    } else{
                         openAlbum();
-                }
-
+                    }
                     break;
+
                 case R.id.cancel:
                     finish();
                     break;
@@ -143,7 +144,7 @@ public class FitmentAddActivity extends BaseActivity implements View.OnClickList
         intent02.setType("image/*");
         startActivityForResult(intent02, CHOOSE_PHOTO);
 
-                }
+    }
 
     @Override
     public void onRequestPermissionsResult(int requestCode, String[] permissions,int [] grantResults){
@@ -157,7 +158,8 @@ public class FitmentAddActivity extends BaseActivity implements View.OnClickList
 
                 }
                 break;
-                default:
+            default:
+                break;
         }
     }
 
@@ -205,6 +207,7 @@ public class FitmentAddActivity extends BaseActivity implements View.OnClickList
                     }
 
                 }
+                break;
             default:
                 break;
         }

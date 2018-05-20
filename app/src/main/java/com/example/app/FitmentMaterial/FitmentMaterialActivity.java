@@ -11,6 +11,7 @@ import android.util.Base64;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -37,12 +38,15 @@ public class FitmentMaterialActivity extends BaseActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.fitment_material_layout);
-        Button button01 = (Button) findViewById(R.id.button_shoppingcar);
-        TextView add = (TextView) findViewById(R.id.add);
         ActionBar actionBar = getSupportActionBar();
         if (actionBar!=null){
             actionBar.hide();
         }
+
+        Button button01 = (Button) findViewById(R.id.button_shoppingcar);
+        TextView add = (TextView) findViewById(R.id.add);
+        ImageView cancel = (ImageView) findViewById(R.id.cancel);
+
         add.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
@@ -59,6 +63,12 @@ public class FitmentMaterialActivity extends BaseActivity {
             }
         });
 
+        cancel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
+            }
+        });
 
         fitmentMaterial();
 
