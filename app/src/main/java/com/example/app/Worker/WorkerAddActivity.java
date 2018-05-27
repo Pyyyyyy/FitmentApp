@@ -52,7 +52,7 @@ public class WorkerAddActivity extends BaseActivity {
 
     private EditText workerPhoneNumber;
 
-    private String URL_FITMENT_ADD = "http://w2062389t3.iask.in:39931/FitmentApp/FitmentAddServlet";
+    private String URL_FITMENT_ADD = "http://w2062389t3.iask.in:39931/FitmentApp/WorkerAddServlet";
 
 
     @Override

@@ -25,7 +25,7 @@ import java.util.HashMap;
 import java.util.List;
 
 public class WorkerActivity extends BaseActivity {
-    private String URL_FITMENT = "http://w2062389t3.iask.in:39931/FitmentApp/FitmentMaterialServlet";
+    private String URL_FITMENT = "http://w2062389t3.iask.in:39931/FitmentApp/WorkerServlet";
 
     private SwipeRefreshLayout swipeRefresh;
 
@@ -41,7 +41,9 @@ public class WorkerActivity extends BaseActivity {
         if (actionBar!=null){
             actionBar.hide();
         }
+
         TextView add = (TextView) findViewById(R.id.add);
+
         add.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
@@ -51,14 +53,14 @@ public class WorkerActivity extends BaseActivity {
         });
 
 
-        fitmentWorker();
-
 
         RecyclerView recyclerView = (RecyclerView) findViewById(R.id.recycler_view);
         GridLayoutManager layoutManager = new GridLayoutManager(this,2);
         recyclerView.setLayoutManager(layoutManager);
         adapter = new WorkerAdapter(workerList);
         recyclerView.setAdapter(adapter);
+
+        fitmentWorker();
 
 
         swipeRefresh = (SwipeRefreshLayout) findViewById(R.id.swipe_refresh);
