@@ -13,7 +13,7 @@
         >
 
         <ImageView
-            android:id="@+id/more_back_imageview"
+            android:id="@+id/back"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
@@ -35,6 +35,7 @@
             android:maxLines="1"
             android:gravity="center"
             />
+
         <TextView
             android:layout_width="0dp"
             android:layout_height="match_parent"
@@ -71,7 +72,7 @@
                 android:layout_width="72dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                app:srcCompat="@drawable/icons1" />
+                app:srcCompat="@drawable/iconsb1" />
         </LinearLayout>
 
         <LinearLayout
@@ -118,7 +119,7 @@
                 android:layout_width="72dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                app:srcCompat="@drawable/icons2" />
+                app:srcCompat="@drawable/iconsb2" />
         </LinearLayout>
 
         <LinearLayout
@@ -136,6 +137,7 @@
                 android:gravity="left"
                 android:text="水电改造所需材料"
                 android:textSize="20sp" />
+
 
         </LinearLayout>
 
@@ -165,7 +167,7 @@
                 android:layout_width="72dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                app:srcCompat="@drawable/icons3" />
+                app:srcCompat="@drawable/iconsb3" />
         </LinearLayout>
 
         <LinearLayout
@@ -212,7 +214,7 @@
                 android:layout_width="72dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                app:srcCompat="@drawable/icons4" />
+                app:srcCompat="@drawable/iconsb4" />
         </LinearLayout>
 
         <LinearLayout
@@ -260,7 +262,7 @@
                 android:layout_width="72dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                app:srcCompat="@drawable/icons5" />
+                app:srcCompat="@drawable/iconsb5" />
         </LinearLayout>
 
         <LinearLayout
@@ -307,7 +309,7 @@
                 android:layout_width="72dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                app:srcCompat="@drawable/icons6" />
+                app:srcCompat="@drawable/iconsb6" />
         </LinearLayout>
 
         <LinearLayout

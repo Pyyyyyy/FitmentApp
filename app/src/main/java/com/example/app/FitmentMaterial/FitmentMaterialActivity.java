@@ -8,7 +8,6 @@ import android.os.Bundle;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Base64;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -70,15 +69,13 @@ public class FitmentMaterialActivity extends BaseActivity {
             }
         });
 
-        fitmentMaterial();
-
-
         RecyclerView recyclerView = (RecyclerView) findViewById(R.id.recycler_view);
         GridLayoutManager layoutManager = new GridLayoutManager(this,2);
         recyclerView.setLayoutManager(layoutManager);
         adapter = new MaterialAdapter(materialList);
         recyclerView.setAdapter(adapter);
 
+        fitmentMaterial();
 
         swipeRefresh = (SwipeRefreshLayout) findViewById(R.id.swipe_refresh);
         swipeRefresh.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
@@ -90,22 +87,21 @@ public class FitmentMaterialActivity extends BaseActivity {
 
 
 
-
     }
-
 
     public void fitmentMaterial(){
         final CommonRequest request = new CommonRequest();
         sendHttpPostRequest(URL_FITMENT,request,new ResponseHandler(){
             @Override
             public void success(CommonResponse response) {
-
+                materialList.clear();
                 ArrayList<HashMap<String, String>> materials = response.getDataList();
                 for(HashMap<String,String> material:materials){
                     byte[] bytes = Base64.decode(material.get("picture"), Base64.DEFAULT);
                     Material material1 = new Material(material.get("name").toString(), BitmapFactory.decodeByteArray(bytes, 0, bytes.length));
                     materialList.add(material1);
                 }
+                adapter.notifyDataSetChanged();
             }
 
             @Override
@@ -116,8 +112,6 @@ public class FitmentMaterialActivity extends BaseActivity {
         });
 
     }
-
-
 
     private void refreshMaterial(){
         new Thread(new Runnable() {
@@ -131,8 +125,7 @@ public class FitmentMaterialActivity extends BaseActivity {
                 runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
-
-                        adapter.notifyDataSetChanged();
+                        fitmentMaterial();
                         swipeRefresh.setRefreshing(false);
                     }
                 });

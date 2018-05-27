@@ -91,29 +91,32 @@
         android:layout_width="match_parent"
         android:layout_height="56dp">
 
-        <EditText
+        <TextView
+            android:id="@+id/TextView1"
             android:layout_width="129dp"
             android:layout_height="match_parent"
-            android:inputType="textPersonName"
-            android:text="       水电工程"
             android:ems="10"
-            android:id="@+id/editText1" />
+            android:inputType="textPersonName"
+            android:text="     水电工程"
+            android:textSize="20dp" />
 
-        <EditText
+        <TextView
             android:layout_width="128dp"
             android:layout_height="match_parent"
             android:inputType="textPersonName"
-            android:text="       泥木工程"
+            android:text="     泥木工程"
+            android:textSize="20dp"
             android:ems="10"
-            android:id="@+id/editText2" />
+            android:id="@+id/TextView2" />
 
-        <EditText
+        <TextView
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:inputType="textPersonName"
-            android:text="       土木工程"
+            android:text="     土木工程"
+            android:textSize="20dp"
             android:ems="10"
-            android:id="@+id/editText3"
+            android:id="@+id/TextView3"
             android:layout_weight="1" />
     </LinearLayout>
 
@@ -153,29 +156,32 @@
         android:layout_width="match_parent"
         android:layout_height="56dp">
 
-        <EditText
+        <TextView
             android:layout_width="129dp"
             android:layout_height="match_parent"
             android:inputType="textPersonName"
-            android:text="       油漆工程"
+            android:text="     油漆工程"
+            android:textSize="20dp"
             android:ems="10"
-            android:id="@+id/editText4" />
+            android:id="@+id/TextView4" />
 
-        <EditText
+        <TextView
             android:layout_width="128dp"
             android:layout_height="match_parent"
             android:inputType="textPersonName"
-            android:text="       厨具安装"
+            android:text="     厨具安装"
+            android:textSize="20dp"
             android:ems="10"
-            android:id="@+id/editText5" />
+            android:id="@+id/TextView5" />
 
-        <EditText
+        <TextView
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:inputType="textPersonName"
-            android:text="       灯具安装"
+            android:text="     灯具安装"
+            android:textSize="20dp"
             android:ems="10"
-            android:id="@+id/editText6"
+            android:id="@+id/TextView6"
             android:layout_weight="1" />
     </LinearLayout>
 
@@ -213,13 +219,14 @@
         android:layout_width="match_parent"
         android:layout_height="56dp">
 
-        <EditText
+        <TextView
             android:layout_width="129dp"
             android:layout_height="match_parent"
             android:inputType="textPersonName"
-            android:text="       家具置办"
+            android:text="     家具置办"
+            android:textSize="20dp"
             android:ems="10"
-            android:id="@+id/editText7" />
+            android:id="@+id/TextView7" />
 
 
     </LinearLayout>
