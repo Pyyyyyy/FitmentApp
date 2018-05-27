@@ -40,15 +40,16 @@
         <activity android:name=".WoDe.RegisterActivity" />
         <activity android:name=".FitmentMaterial.FitmentMaterialActivity" />
 
-        <activity android:name=".FitmentMaterial.ShoppingCar"/>
-        <activity android:name=".FitmentMaterial.FitmentAddActivity"/>
-        <activity android:name=".Worker.WorkerActivity"/>
-        <activity android:name=".Worker.WorkerAddActivity">
+        <activity android:name=".FitmentMaterial.ShoppingCar" />
+        <activity android:name=".FitmentMaterial.FitmentAddActivity" />
+        <activity android:name=".Worker.WorkerActivity" />
+        <activity android:name=".Worker.WorkerAddActivity" />
+        <activity android:name=".wallet" />
 
 
 
 
-        </activity>
+
 
 
         <provider
@@ -60,7 +61,6 @@
                 android:name="android.support.FILE_PROVIDER_PATHS"
                 android:resource="@xml/file_paths" />
         </provider>
-
 
     </application>
 

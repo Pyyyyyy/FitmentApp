@@ -113,7 +113,6 @@ public class FitmentAddActivity extends BaseActivity implements View.OnClickList
                         }
 
                     }
-
                     break;
 
                 case R.id.choose_from_album:
