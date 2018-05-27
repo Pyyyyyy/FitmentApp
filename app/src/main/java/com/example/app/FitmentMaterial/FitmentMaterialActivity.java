@@ -10,6 +10,7 @@ import android.support.v7.widget.RecyclerView;
 import android.util.Base64;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -36,12 +37,15 @@ public class FitmentMaterialActivity extends BaseActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.fitment_material_layout);
-        Button button01 = (Button) findViewById(R.id.button_shoppingcar);
-        TextView add = (TextView) findViewById(R.id.add);
         ActionBar actionBar = getSupportActionBar();
         if (actionBar!=null){
             actionBar.hide();
         }
+
+        Button button01 = (Button) findViewById(R.id.button_shoppingcar);
+        TextView add = (TextView) findViewById(R.id.add);
+        ImageView cancel = (ImageView) findViewById(R.id.cancel);
+
         add.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
@@ -58,8 +62,17 @@ public class FitmentMaterialActivity extends BaseActivity {
             }
         });
 
+<<<<<<< HEAD
         fitmentMaterial();
         /*initMaterials();*/
+=======
+        cancel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
+            }
+        });
+>>>>>>> 0d2a73190cb1d0e4aa4ae76bf1a65e49ca8e12b7
 
         RecyclerView recyclerView = (RecyclerView) findViewById(R.id.recycler_view);
         GridLayoutManager layoutManager = new GridLayoutManager(this,2);
@@ -67,6 +80,7 @@ public class FitmentMaterialActivity extends BaseActivity {
         adapter = new MaterialAdapter(materialList);
         recyclerView.setAdapter(adapter);
 
+        fitmentMaterial();
 
         swipeRefresh = (SwipeRefreshLayout) findViewById(R.id.swipe_refresh);
         swipeRefresh.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
@@ -80,22 +94,19 @@ public class FitmentMaterialActivity extends BaseActivity {
 
     }
 
-
     public void fitmentMaterial(){
         final CommonRequest request = new CommonRequest();
         sendHttpPostRequest(URL_FITMENT,request,new ResponseHandler(){
             @Override
             public void success(CommonResponse response) {
-                /*
+                materialList.clear();
                 ArrayList<HashMap<String, String>> materials = response.getDataList();
-                for(HashMap material:materials){
-                    byte[] bytes = Base64.decode(material.get("picture").toString(), Base64.DEFAULT);
+                for(HashMap<String,String> material:materials){
+                    byte[] bytes = Base64.decode(material.get("picture"), Base64.DEFAULT);
                     Material material1 = new Material(material.get("name").toString(), BitmapFactory.decodeByteArray(bytes, 0, bytes.length));
                     materialList.add(material1);
                 }
-
-                Toast.makeText(FitmentMaterialActivity.this,response.getResMsg(),Toast.LENGTH_SHORT).show();
-                */
+                adapter.notifyDataSetChanged();
             }
 
             @Override
@@ -106,9 +117,6 @@ public class FitmentMaterialActivity extends BaseActivity {
         });
 
     }
-
-
-
 
     private void refreshMaterial(){
         new Thread(new Runnable() {
@@ -122,8 +130,7 @@ public class FitmentMaterialActivity extends BaseActivity {
                 runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
-
-                        adapter.notifyDataSetChanged();
+                        fitmentMaterial();
                         swipeRefresh.setRefreshing(false);
                     }
                 });

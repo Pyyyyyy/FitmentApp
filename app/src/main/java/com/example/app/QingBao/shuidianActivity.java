@@ -23,12 +23,11 @@ public class shuidianActivity extends AppCompatActivity {
         Button button1 = (Button) findViewById(R.id.button1) ;
         Button button2 = (Button) findViewById(R.id.button2) ;
         Button button3 = (Button) findViewById(R.id.button3) ;
-        ImageView back = (ImageView) findViewById(R.id.more_back_imageview);
+        ImageView back = (ImageView) findViewById(R.id.back);
         back.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
-                Intent intent = new Intent(shuidianActivity.this,zhuangxiuzhongActivity.class);
-                startActivity(intent);
+                finish();
             }
         });
         button1.setOnClickListener(new View.OnClickListener(){

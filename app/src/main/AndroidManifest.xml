@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.app">
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
-
-
 
     <application
         android:name="org.litepal.LitePalApplication"
@@ -15,20 +14,20 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".main.MainActivity"
-                  android:windowSoftInputMode="adjustPan|stateHidden"  >
+        <activity
+            android:name=".main.MainActivity"
+            android:windowSoftInputMode="adjustPan|stateHidden">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <activity android:name=".zhuangXiuQian.zhuangxiuqianActivity" />
         <activity android:name=".QingBao.zhuangxiuzhongActivity" />
-        <activity android:name=".QingBao.shuidianliuchengActivity"/>
-        <activity android:name=".QingBao.shuidiancailiao"/>
-        <activity android:name=".QingBao.shuidianzhuyishixian"/>
+        <activity android:name=".QingBao.shuidianliuchengActivity" />
+        <activity android:name=".QingBao.shuidiancailiao" />
+        <activity android:name=".QingBao.shuidianzhuyishixian" />
         <activity android:name=".QingBao.shuidianActivity" />
         <activity android:name=".QingBao.nimuActivity" />
         <activity android:name=".QingBao.tumuActivity" />
@@ -40,6 +39,7 @@
         <activity android:name=".WoDe.LoginActivity" />
         <activity android:name=".WoDe.RegisterActivity" />
         <activity android:name=".FitmentMaterial.FitmentMaterialActivity" />
+<<<<<<< HEAD
         <activity android:name=".FitmentMaterial.ShoppingCar"/>
         <activity android:name=".FitmentMaterial.FitmentAddActivity"/>
         <activity android:name=".Worker.WorkerActivity"/>
@@ -49,6 +49,13 @@
 
 
         </activity>
+=======
+        <activity android:name=".FitmentMaterial.ShoppingCar" />
+        <activity android:name=".FitmentMaterial.FitmentAddActivity" />
+        <activity android:name=".Worker.WorkerActivity" />
+        <activity android:name=".Worker.WorkerAddActivity"/>
+        <activity android:name=".wallet"></activity>
+>>>>>>> 0d2a73190cb1d0e4aa4ae76bf1a65e49ca8e12b7
 
         <provider
             android:name="android.support.v4.content.FileProvider"
@@ -57,8 +64,10 @@
             android:grantUriPermissions="true">
             <meta-data
                 android:name="android.support.FILE_PROVIDER_PATHS"
-                android:resource="@xml/file_paths"/>
+                android:resource="@xml/file_paths" />
         </provider>
+
+
     </application>
 
 </manifest>

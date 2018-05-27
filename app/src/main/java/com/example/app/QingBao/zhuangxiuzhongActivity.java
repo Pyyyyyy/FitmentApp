@@ -3,8 +3,9 @@ package com.example.app.QingBao;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
+
 import android.content.Intent;
+import android.widget.ImageButton;
 
 import com.example.app.R;
 
@@ -15,7 +16,7 @@ public class zhuangxiuzhongActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.zhuangxiuzhong_layout);
 
-        Button button1 = (Button) findViewById(R.id.button1);
+        ImageButton button1 = (ImageButton) findViewById(R.id.button1);
         button1.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
@@ -24,7 +25,7 @@ public class zhuangxiuzhongActivity extends AppCompatActivity {
             }
         });
 
-        Button button2 = (Button) findViewById(R.id.button2);
+        ImageButton button2 = (ImageButton) findViewById(R.id.button2);
         button2.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
@@ -33,7 +34,7 @@ public class zhuangxiuzhongActivity extends AppCompatActivity {
             }
         });
 
-        Button button3 = (Button) findViewById(R.id.button3);
+        ImageButton button3 = (ImageButton) findViewById(R.id.button3);
         button3.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
@@ -42,7 +43,7 @@ public class zhuangxiuzhongActivity extends AppCompatActivity {
             }
         });
 
-        Button button4 = (Button) findViewById(R.id.button4);
+        ImageButton button4 = (ImageButton) findViewById(R.id.button4);
         button4.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
@@ -51,7 +52,7 @@ public class zhuangxiuzhongActivity extends AppCompatActivity {
             }
         });
 
-        Button button5 = (Button) findViewById(R.id.button5);
+        ImageButton button5 = (ImageButton) findViewById(R.id.button5);
         button5.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
@@ -60,7 +61,7 @@ public class zhuangxiuzhongActivity extends AppCompatActivity {
             }
         });
 
-        Button button6 = (Button) findViewById(R.id.button6);
+        ImageButton button6 = (ImageButton) findViewById(R.id.button6);
         button6.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
@@ -69,7 +70,7 @@ public class zhuangxiuzhongActivity extends AppCompatActivity {
             }
         });
 
-        Button button7 = (Button) findViewById(R.id.button7);
+        ImageButton button7 = (ImageButton) findViewById(R.id.button7);
         button7.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){

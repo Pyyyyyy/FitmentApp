@@ -2,6 +2,7 @@ package com.example.app.FitmentMaterial;
 
 import android.Manifest;
 import android.annotation.TargetApi;
+import android.app.ProgressDialog;
 import android.content.ContentUris;
 import android.content.Intent;
 import android.content.pm.PackageManager;
@@ -53,6 +54,7 @@ public class FitmentAddActivity extends BaseActivity implements View.OnClickList
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.fitment_add_layout);
+
         ActionBar actionBar = getSupportActionBar();
         if (actionBar!=null){
             actionBar.hide();
@@ -98,6 +100,7 @@ public class FitmentAddActivity extends BaseActivity implements View.OnClickList
                     intent.putExtra(MediaStore.EXTRA_OUTPUT,imageUri);
                     startActivityForResult(intent,TAKE_PHOTO);
                     break;
+
                 case R.id.add:
                     if(add_check()){
                         ByteArrayOutputStream baos = new ByteArrayOutputStream();
@@ -116,16 +119,15 @@ public class FitmentAddActivity extends BaseActivity implements View.OnClickList
                     finish();
 
                     break;
+
                 case R.id.choose_from_album:
                     if (ContextCompat.checkSelfPermission(FitmentAddActivity.this, Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED){
-                    ActivityCompat.requestPermissions(FitmentAddActivity.this,new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE},1);
-
-                }
-                else{
+                        ActivityCompat.requestPermissions(FitmentAddActivity.this,new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE},1);
+                    } else{
                         openAlbum();
-                }
-
+                    }
                     break;
+
                 case R.id.cancel:
                     finish();
                     break;
@@ -136,7 +138,7 @@ public class FitmentAddActivity extends BaseActivity implements View.OnClickList
         intent02.setType("image/*");
         startActivityForResult(intent02, CHOOSE_PHOTO);
 
-                }
+    }
 
     @Override
     public void onRequestPermissionsResult(int requestCode, String[] permissions,int [] grantResults){
@@ -150,12 +152,14 @@ public class FitmentAddActivity extends BaseActivity implements View.OnClickList
 
                 }
                 break;
-                default:
+            default:
+                break;
         }
     }
 
 
 
+<<<<<<< HEAD
                     /*
                     String mName = name.getText().toString().trim();
                     String mType = type.getText().toString().trim();
@@ -187,6 +191,8 @@ public class FitmentAddActivity extends BaseActivity implements View.OnClickList
 
 
 
+=======
+>>>>>>> 0d2a73190cb1d0e4aa4ae76bf1a65e49ca8e12b7
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         switch (requestCode) {
@@ -297,6 +303,7 @@ public class FitmentAddActivity extends BaseActivity implements View.OnClickList
     }
 
       public void fitmentAdd(String name,String type,String price,String description,byte[] picture){
+<<<<<<< HEAD
         final CommonRequest request = new CommonRequest();
         request.addRequestParam("name",name);
         request.addRequestParam("type",type);
@@ -317,6 +324,38 @@ public class FitmentAddActivity extends BaseActivity implements View.OnClickList
             }
 
         });
+=======
+          final ProgressDialog  progressDialog = new ProgressDialog(this);
+          progressDialog.setTitle("Wait");
+          progressDialog.setMessage("Loading.");
+          progressDialog.setCancelable(false);
+          progressDialog.show();
+
+          final CommonRequest request = new CommonRequest();
+          request.addRequestParam("name",name);
+          request.addRequestParam("type",type);
+          request.addRequestParam("price",price);
+          request.addRequestParam("description",description);
+          request.addRequestParam("picture", Base64.encodeToString(picture, 0));
+
+
+          sendHttpPostRequest(URL_FITMENT_ADD,request,new ResponseHandler(){
+              @Override
+              public void success(CommonResponse response) {
+                  progressDialog.dismiss();
+                  Toast.makeText(FitmentAddActivity.this,response.getResMsg(),Toast.LENGTH_SHORT).show();
+                  finish();
+              }
+
+              @Override
+              public void fail(String failCode, String failMsg) {
+                  progressDialog.dismiss();
+                  Toast.makeText(FitmentAddActivity.this,failMsg,Toast.LENGTH_SHORT).show();
+
+              }
+
+          });
+>>>>>>> 0d2a73190cb1d0e4aa4ae76bf1a65e49ca8e12b7
 
      }
 

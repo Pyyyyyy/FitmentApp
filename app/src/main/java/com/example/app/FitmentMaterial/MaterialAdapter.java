@@ -16,6 +16,7 @@ import com.example.app.R;
 
 import java.util.List;
 
+
 public class MaterialAdapter extends RecyclerView.Adapter<MaterialAdapter.ViewHolder>{
 
 
@@ -55,8 +56,8 @@ public class MaterialAdapter extends RecyclerView.Adapter<MaterialAdapter.ViewHo
     public void onBindViewHolder(ViewHolder holder, int position) {
         Material material = mMaterialList.get(position);
         holder.MaterialName.setText(material.getName());
-        //holder.MaterialImage.setImageBitmap(material.getPicture());
-        Glide.with(mContext).load(material.getPicture()).into(holder.MaterialImage);
+        holder.MaterialImage.setImageBitmap(material.getPicture());
+        //Glide.with(mContext).load(material.getPicture()).into(holder.MaterialImage);
     }
 
     @Override
