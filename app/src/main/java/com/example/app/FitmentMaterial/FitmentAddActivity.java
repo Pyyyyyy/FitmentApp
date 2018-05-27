@@ -114,10 +114,6 @@ public class FitmentAddActivity extends BaseActivity implements View.OnClickList
 
                     }
 
-
-                    Toast.makeText(FitmentAddActivity.this,"上架成功",Toast.LENGTH_SHORT).show();
-                    finish();
-
                     break;
 
                 case R.id.choose_from_album:

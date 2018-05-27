@@ -1,11 +1,13 @@
 package com.example.app.Worker;
 
 import android.content.Intent;
+import android.graphics.BitmapFactory;
 import android.support.v7.app.ActionBar;
-import android.support.v7.app.AppCompatActivity;
+
 import android.os.Bundle;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Base64;
 import android.view.View;
 import android.widget.TextView;
 import android.support.v4.widget.SwipeRefreshLayout;
@@ -19,6 +21,7 @@ import com.example.app.http.CommonResponse;
 import com.example.app.http.ResponseHandler;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 public class WorkerActivity extends BaseActivity {
@@ -72,16 +75,14 @@ public class WorkerActivity extends BaseActivity {
         sendHttpPostRequest(URL_FITMENT,request,new ResponseHandler(){
             @Override
             public void success(CommonResponse response) {
-                /*
-                ArrayList<HashMap<String, String>> materials = response.getDataList();
-                for(HashMap material:materials){
-                    byte[] bytes = Base64.decode(material.get("picture").toString(), Base64.DEFAULT);
-                    Material material1 = new Material(material.get("name").toString(), BitmapFactory.decodeByteArray(bytes, 0, bytes.length));
-                    materialList.add(material1);
+                workerList.clear();
+                ArrayList<HashMap<String, String>> workers = response.getDataList();
+                for(HashMap<String,String> worker:workers){
+                    byte[] bytes = Base64.decode(worker.get("picture"), Base64.DEFAULT);
+                    Worker worker1 = new Worker(worker.get("name").toString(), BitmapFactory.decodeByteArray(bytes, 0, bytes.length));
+                    workerList.add(worker1);
                 }
-
-                Toast.makeText(FitmentMaterialActivity.this,response.getResMsg(),Toast.LENGTH_SHORT).show();
-                */
+                adapter.notifyDataSetChanged();
             }
 
             @Override
@@ -109,7 +110,7 @@ public class WorkerActivity extends BaseActivity {
                     @Override
                     public void run() {
 
-                        adapter.notifyDataSetChanged();
+                        fitmentWorker();
                         swipeRefresh.setRefreshing(false);
                     }
                 });

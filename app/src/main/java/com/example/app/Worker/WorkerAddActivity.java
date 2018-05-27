@@ -50,7 +50,7 @@ public class WorkerAddActivity extends BaseActivity {
     private EditText workerName;
     private EditText workerType;
 
-    private EditText workerDescription;
+    private EditText workerPhoneNumber;
 
     private String URL_FITMENT_ADD = "http://w2062389t3.iask.in:39931/FitmentApp/FitmentAddServlet";
 
@@ -63,6 +63,9 @@ public class WorkerAddActivity extends BaseActivity {
         if (actionBar!=null){
             actionBar.hide();
         }
+        workerName = (EditText) findViewById(R.id.name);
+        workerType = (EditText) findViewById((R.id.type));
+        workerPhoneNumber = (EditText) findViewById(R.id.phone);
 
         Button takePhoto = (Button) findViewById(R.id.take_photo);
         Button chooseFromAlbum = (Button) findViewById(R.id.choose_from_album);
@@ -76,16 +79,12 @@ public class WorkerAddActivity extends BaseActivity {
                     try {
                         Bitmap bitmap = BitmapFactory.decodeStream(getContentResolver().openInputStream(imageUri));
                         bitmap.compress(Bitmap.CompressFormat.PNG, 10, baos);
-                        workerAdd(workerName.getText().toString().trim(),workerType.getText().toString().trim(),workerDescription.getText().toString().trim(),baos.toByteArray());
+                        workerAdd(workerName.getText().toString().trim(),workerType.getText().toString().trim(),workerPhoneNumber.getText().toString().trim(),baos.toByteArray());
                     }catch(FileNotFoundException e){
                         e.printStackTrace();
                     }
 
                 }
-
-
-                Toast.makeText(WorkerAddActivity.this,"上架成功",Toast.LENGTH_SHORT).show();
-                finish();
 
             }
         });
@@ -234,7 +233,7 @@ public class WorkerAddActivity extends BaseActivity {
     }
     public boolean add_check() {
         if (workerName.getText().toString().trim().equals("")) {
-            Toast.makeText(this, "商品名称不能为空",
+            Toast.makeText(this, "名称不能为空",
                     Toast.LENGTH_SHORT).show();
             return false;
         } else if (workerType.getText().toString().trim().equals("")) {
@@ -243,8 +242,8 @@ public class WorkerAddActivity extends BaseActivity {
             return false;
         }
 
-        else if (workerDescription.getText().toString().trim().equals("")) {
-            Toast.makeText(this, "描述不能为空",
+        else if (workerPhoneNumber.getText().toString().trim().equals("")) {
+            Toast.makeText(this, "电话不能为空",
                     Toast.LENGTH_SHORT).show();
             return false;
         }

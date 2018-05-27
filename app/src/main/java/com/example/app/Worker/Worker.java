@@ -16,9 +16,9 @@ public class Worker {
 
     private  String workerType;
 
-    private  String workerDescription;
+    private  String workerPhoneNumber;
 
-    public void Worker(String workerName, Bitmap workerImage){
+    public  Worker(String workerName, Bitmap workerImage){
         this.workerName = workerName;
          this.workerImage= workerImage;
     }
@@ -47,12 +47,12 @@ public class Worker {
         this.workerType = workerType;
     }
 
-    public String getWorkerDescription() {
-        return workerDescription;
+    public String getWorkerPhoneNumber() {
+        return workerPhoneNumber;
     }
 
-    public void setWorkerDescription(String workerDescription) {
-        this.workerDescription = workerDescription;
+    public void setWorkerPhoneNumber(String workerPhoneNumber) {
+        this.workerPhoneNumber = workerPhoneNumber;
     }
 
     public Bitmap getWorkerImage() {
