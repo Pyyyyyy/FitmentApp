@@ -42,8 +42,8 @@
         <activity android:name=".FitmentMaterial.ShoppingCar" />
         <activity android:name=".FitmentMaterial.FitmentAddActivity" />
         <activity android:name=".Worker.WorkerActivity" />
-        <activity android:name=".Worker.WorkerAddActivity"/>
-        <activity android:name=".wallet"></activity>
+        <activity android:name=".Worker.WorkerAddActivity" />
+        <activity android:name=".wallet" />
 
         <provider
             android:name="android.support.v4.content.FileProvider"
@@ -54,7 +54,6 @@
                 android:name="android.support.FILE_PROVIDER_PATHS"
                 android:resource="@xml/file_paths" />
         </provider>
-
 
     </application>
 
