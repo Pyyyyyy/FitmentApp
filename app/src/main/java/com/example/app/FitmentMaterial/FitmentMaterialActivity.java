@@ -62,17 +62,14 @@ public class FitmentMaterialActivity extends BaseActivity {
             }
         });
 
-<<<<<<< HEAD
-        fitmentMaterial();
-        /*initMaterials();*/
-=======
+
         cancel.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 finish();
             }
         });
->>>>>>> 0d2a73190cb1d0e4aa4ae76bf1a65e49ca8e12b7
+
 
         RecyclerView recyclerView = (RecyclerView) findViewById(R.id.recycler_view);
         GridLayoutManager layoutManager = new GridLayoutManager(this,2);

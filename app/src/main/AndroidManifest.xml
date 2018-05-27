@@ -39,7 +39,7 @@
         <activity android:name=".WoDe.LoginActivity" />
         <activity android:name=".WoDe.RegisterActivity" />
         <activity android:name=".FitmentMaterial.FitmentMaterialActivity" />
-<<<<<<< HEAD
+
         <activity android:name=".FitmentMaterial.ShoppingCar"/>
         <activity android:name=".FitmentMaterial.FitmentAddActivity"/>
         <activity android:name=".Worker.WorkerActivity"/>
@@ -49,13 +49,7 @@
 
 
         </activity>
-=======
-        <activity android:name=".FitmentMaterial.ShoppingCar" />
-        <activity android:name=".FitmentMaterial.FitmentAddActivity" />
-        <activity android:name=".Worker.WorkerActivity" />
-        <activity android:name=".Worker.WorkerAddActivity"/>
-        <activity android:name=".wallet"></activity>
->>>>>>> 0d2a73190cb1d0e4aa4ae76bf1a65e49ca8e12b7
+
 
         <provider
             android:name="android.support.v4.content.FileProvider"

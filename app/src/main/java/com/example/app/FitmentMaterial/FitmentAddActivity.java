@@ -158,41 +158,6 @@ public class FitmentAddActivity extends BaseActivity implements View.OnClickList
     }
 
 
-
-<<<<<<< HEAD
-                    /*
-                    String mName = name.getText().toString().trim();
-                    String mType = type.getText().toString().trim();
-                    float mPrice=0f;
-                    try{
-                        mPrice = Float.parseFloat(price.getText().toString().trim());
-                    }catch(Exception e){
-                        e.printStackTrace();
-                    }
-                    String mDescription = description.getText().toString().trim();
-                    //int mImageId =imageId.getId();
-
-                    Material material = new Material();
-                    material.setName(mName);
-                    material.setType(mType);
-                    material.setPrice(mPrice);
-                    material.setDescription(mDescription);
-                    //material.setImageId(mImageId);
-                    material.save();
-                    */
-
-
-
-
-
-
-
-
-
-
-
-=======
->>>>>>> 0d2a73190cb1d0e4aa4ae76bf1a65e49ca8e12b7
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         switch (requestCode) {
@@ -303,28 +268,8 @@ public class FitmentAddActivity extends BaseActivity implements View.OnClickList
     }
 
       public void fitmentAdd(String name,String type,String price,String description,byte[] picture){
-<<<<<<< HEAD
-        final CommonRequest request = new CommonRequest();
-        request.addRequestParam("name",name);
-        request.addRequestParam("type",type);
-        request.addRequestParam("price",price);
-        request.addRequestParam("description",description);
-        request.addRequestParam("picture", Base64.encodeToString(picture, 0));
-        sendHttpPostRequest(URL_FITMENT_ADD,request,new ResponseHandler(){
-            @Override
-            public void success(CommonResponse response) {
-                Toast.makeText(FitmentAddActivity.this,response.getResMsg(),Toast.LENGTH_SHORT).show();
-                finish();
-            }
 
-            @Override
-            public void fail(String failCode, String failMsg) {
-                Toast.makeText(FitmentAddActivity.this,failMsg,Toast.LENGTH_SHORT).show();
 
-            }
-
-        });
-=======
           final ProgressDialog  progressDialog = new ProgressDialog(this);
           progressDialog.setTitle("Wait");
           progressDialog.setMessage("Loading.");
@@ -337,7 +282,6 @@ public class FitmentAddActivity extends BaseActivity implements View.OnClickList
           request.addRequestParam("price",price);
           request.addRequestParam("description",description);
           request.addRequestParam("picture", Base64.encodeToString(picture, 0));
-
 
           sendHttpPostRequest(URL_FITMENT_ADD,request,new ResponseHandler(){
               @Override
@@ -355,7 +299,6 @@ public class FitmentAddActivity extends BaseActivity implements View.OnClickList
               }
 
           });
->>>>>>> 0d2a73190cb1d0e4aa4ae76bf1a65e49ca8e12b7
 
      }
 
