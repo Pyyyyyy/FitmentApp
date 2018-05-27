@@ -10,7 +10,6 @@ import android.database.Cursor;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.net.Uri;
-
 import android.os.Build;
 import android.provider.DocumentsContract;
 import android.provider.MediaStore;
@@ -18,24 +17,20 @@ import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
 import android.support.v4.content.FileProvider;
 import android.support.v7.app.ActionBar;
-
 import android.os.Bundle;
 import android.util.Base64;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import com.example.app.R;
-
 import com.example.app.http.BaseActivity;
 import com.example.app.http.CommonRequest;
 import com.example.app.http.CommonResponse;
 import com.example.app.http.ResponseHandler;
-
-
 import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -50,7 +45,6 @@ public class FitmentAddActivity extends BaseActivity implements View.OnClickList
     private static int RESULT_LOAD_IMAGE=1;
     private ImageView picture;
     private Uri imageUri;
-
     private EditText name;
     private EditText type;
     private EditText price;
@@ -120,10 +114,6 @@ public class FitmentAddActivity extends BaseActivity implements View.OnClickList
 
                     }
 
-
-                    Toast.makeText(FitmentAddActivity.this,"上架成功",Toast.LENGTH_SHORT).show();
-                    finish();
-
                     break;
 
                 case R.id.choose_from_album:
@@ -164,48 +154,30 @@ public class FitmentAddActivity extends BaseActivity implements View.OnClickList
     }
 
 
-
     @Override
-    protected void onActivityResult(int requestCode,int resultCode,Intent data){
-          /*  super.onActivityResult(requestCode, resultCode, data);
-
-            if (requestCode == RESULT_LOAD_IMAGE && resultCode == RESULT_OK && null != data) {
-
-                //获取返回的数据，这里是android自定义的Uri地址
-                Uri selectedImage = data.getData();
-                String[] filePathColumn = { MediaStore.Images.Media.DATA };
-                //获取选择照片的数据视图
-                Cursor cursor = getContentResolver().query(selectedImage,
-                        filePathColumn, null, null, null);
-                cursor.moveToFirst();
-                //从数据视图中获取已选择图片的路径
-                int columnIndex = cursor.getColumnIndex(filePathColumn[0]);
-                String picturePath = cursor.getString(columnIndex);
-                cursor.close();
-                //将图片显示到界面上
-                ImageView imageView = (ImageView) findViewById(R.id.picture);
-                imageView.setImageBitmap(BitmapFactory.decodeFile(picturePath));
-
-            }*/
-        switch(requestCode){
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        switch (requestCode) {
             case TAKE_PHOTO:
-                if(resultCode==RESULT_OK){
-                    try{
+                if (resultCode == RESULT_OK) {
+                    try {
+                        // 将拍摄的照片显示出来
                         Bitmap bitmap = BitmapFactory.decodeStream(getContentResolver().openInputStream(imageUri));
                         picture.setImageBitmap(bitmap);
-                    }catch(FileNotFoundException e){
+                    } catch (Exception e) {
                         e.printStackTrace();
                     }
                 }
                 break;
-            case  CHOOSE_PHOTO:
-                if(requestCode== RESULT_OK){
-                    if(Build.VERSION.SDK_INT>=19){
+            case CHOOSE_PHOTO:
+                if (resultCode == RESULT_OK) {
+                    // 判断手机系统版本号
+                    if (Build.VERSION.SDK_INT >= 19) {
+                        // 4.4及以上系统使用这个方法处理图片
                         handleImageOnKitKat(data);
-                    }else {
-                        handleImageBeforeKitkat(data);
+                    } else {
+                        // 4.4以下系统使用这个方法处理图片
+                        handleImageBeforeKitKat(data);
                     }
-
                 }
                 break;
             default:
@@ -214,60 +186,58 @@ public class FitmentAddActivity extends BaseActivity implements View.OnClickList
     }
 
     @TargetApi(19)
-    private void handleImageOnKitKat(Intent data){
-        String  imagePath = null;
+    private void handleImageOnKitKat(Intent data) {
+        String imagePath = null;
         Uri uri = data.getData();
-        if (DocumentsContract.isDocumentUri(this,uri)) {
-            String docID = DocumentsContract.getDocumentId(uri);
-            if ("com.android.providers.media.documents".equals(uri.getAuthority())) {
-                String id = docID.split(":")[1];
+        Log.d("TAG", "handleImageOnKitKat: uri is " + uri);
+        if (DocumentsContract.isDocumentUri(this, uri)) {
+            // 如果是document类型的Uri，则通过document id处理
+            String docId = DocumentsContract.getDocumentId(uri);
+            if("com.android.providers.media.documents".equals(uri.getAuthority())) {
+                String id = docId.split(":")[1]; // 解析出数字格式的id
                 String selection = MediaStore.Images.Media._ID + "=" + id;
                 imagePath = getImagePath(MediaStore.Images.Media.EXTERNAL_CONTENT_URI, selection);
-
-            } else if ("com.android.providers.downloads.docments".equals(uri.getAuthority())) {
-                Uri contentUri = ContentUris.withAppendedId(Uri.parse("content://downloads/public_downloads"), Long.valueOf(docID));
+            } else if ("com.android.providers.downloads.documents".equals(uri.getAuthority())) {
+                Uri contentUri = ContentUris.withAppendedId(Uri.parse("content://downloads/public_downloads"), Long.valueOf(docId));
                 imagePath = getImagePath(contentUri, null);
-
             }
+        } else if ("content".equalsIgnoreCase(uri.getScheme())) {
+            // 如果是content类型的Uri，则使用普通方式处理
+            imagePath = getImagePath(uri, null);
+        } else if ("file".equalsIgnoreCase(uri.getScheme())) {
+            // 如果是file类型的Uri，直接获取图片路径即可
+            imagePath = uri.getPath();
         }
-            else if("content".equalsIgnoreCase(uri.getScheme())){
-                imagePath = getImagePath(uri,null);
-            }
-            else if ("file".equalsIgnoreCase(uri.getScheme())){
-                imagePath =  uri.getPath();
-            }
-            displayImage(imagePath);
-
+        displayImage(imagePath); // 根据图片路径显示图片
     }
 
-    private  void handleImageBeforeKitkat(Intent data){
+    private void handleImageBeforeKitKat(Intent data) {
         Uri uri = data.getData();
-        String imagePath = getImagePath(uri,null);
+        String imagePath = getImagePath(uri, null);
         displayImage(imagePath);
     }
 
-    private  String getImagePath(Uri uri ,String selection){
-        String path = null ;
-        Cursor cursor = getContentResolver().query(uri,null,selection,null,null);
-        if (cursor != null){
-            if (cursor.moveToFirst()){
-                path  = cursor.getString(cursor.getColumnIndex(MediaStore.Images.Media.DATA));
+    private String getImagePath(Uri uri, String selection) {
+        String path = null;
+        // 通过Uri和selection来获取真实的图片路径
+        Cursor cursor = getContentResolver().query(uri, null, selection, null, null);
+        if (cursor != null) {
+            if (cursor.moveToFirst()) {
+                path = cursor.getString(cursor.getColumnIndex(MediaStore.Images.Media.DATA));
             }
             cursor.close();
         }
         return path;
     }
 
-    private  void displayImage (String imagePath){
-        if (imagePath != null ){
+    private void displayImage(String imagePath) {
+        if (imagePath != null) {
             Bitmap bitmap = BitmapFactory.decodeFile(imagePath);
             picture.setImageBitmap(bitmap);
-        }
-        else {
-            Toast.makeText(this,"failed to get image",Toast.LENGTH_SHORT).show();
+        } else {
+            Toast.makeText(this, "failed to get image", Toast.LENGTH_SHORT).show();
         }
     }
-
 
 
     public boolean add_check() {
@@ -294,6 +264,8 @@ public class FitmentAddActivity extends BaseActivity implements View.OnClickList
     }
 
       public void fitmentAdd(String name,String type,String price,String description,byte[] picture){
+
+
           final ProgressDialog  progressDialog = new ProgressDialog(this);
           progressDialog.setTitle("Wait");
           progressDialog.setMessage("Loading.");
@@ -306,7 +278,6 @@ public class FitmentAddActivity extends BaseActivity implements View.OnClickList
           request.addRequestParam("price",price);
           request.addRequestParam("description",description);
           request.addRequestParam("picture", Base64.encodeToString(picture, 0));
-
 
           sendHttpPostRequest(URL_FITMENT_ADD,request,new ResponseHandler(){
               @Override

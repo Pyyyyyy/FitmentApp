@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -12,131 +13,320 @@
         >
 
         <ImageView
-            android:id="@+id/more_back_imageview"
+            android:id="@+id/lostandfound_back_imageview"
             android:layout_width="0dp"
-            android:layout_height="50dp"
+            android:layout_height="match_parent"
             android:layout_weight="1"
             android:paddingLeft="5dp"
             android:paddingTop="5dp"
             android:paddingRight="5dp"
             android:paddingBottom="5dp"
+            android:background="@color/darkgray"
             android:src="@drawable/ic_return"
             />
 
         <TextView
+            android:id="@+id/lostandfound_title_textview"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="5"
+            android:background="@color/darkgray"
             android:text="泥木工程"
-            android:textSize="28sp"
             android:maxLines="1"
             android:gravity="center"
-
             />
         <TextView
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
+            android:background="@color/darkgray"
             android:maxLines="1"
             android:gravity="center"
             />
-
-    </LinearLayout>
-
-    <ImageView
-        android:id="@+id/lv3_newspic"
-        android:layout_width="match_parent"
-        android:layout_height="7dp"
-        android:layout_weight="0.9"
-        android:scaleType="fitXY"
-        android:src="@drawable/nimu" />
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="100dp"
-        android:orientation="horizontal"
-        android:weightSum="1">
-        <Button
-            android:id="@+id/button1"
-            android:layout_width="100dp"
-            android:layout_height="60dp"
-            android:layout_marginLeft="50dp"
-            android:layout_marginTop="15dp"
-            android:background="#E0E0E0"
-            android:padding="5dp"
-            android:text="泥木工程基本流程"
-            android:textSize="20sp" />
-
-
-        <Button
-            android:id="@+id/button2"
-            android:layout_width="100dp"
-            android:layout_height="60dp"
-            android:layout_marginLeft="50dp"
-            android:layout_marginTop="15dp"
-            android:background="#E0E0E0"
-            android:padding="5dp"
-            android:text="泥木工程所需材料"
-            android:textSize="20sp" />
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="100dp"
+        android:layout_height="10dp"
+        android:layout_weight="0.05"
+        android:orientation="horizontal"
+        android:weightSum="1">
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="10dp"
+        android:layout_weight="0.07"
         android:orientation="horizontal"
         android:weightSum="1">
 
-        <Button
-            android:id="@+id/button3"
-            android:layout_width="100dp"
-            android:layout_height="60dp"
-            android:layout_marginLeft="50dp"
-            android:layout_marginTop="2dp"
-            android:background="#E0E0E0"
-            android:padding="5dp"
-            android:text="注意事项"
-            android:textSize="20sp" />
+        <LinearLayout
+            android:layout_width="94dp"
+            android:layout_height="31dp"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/imageView1"
+                android:layout_width="72dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                app:srcCompat="@drawable/iconsc1" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="301dp"
+            android:layout_height="30dp"
+            android:orientation="horizontal">
 
 
-        <Button
-            android:id="@+id/button4"
-            android:layout_width="100dp"
-            android:layout_height="60dp"
-            android:layout_marginLeft="50dp"
-            android:layout_marginTop="2dp"
-            android:background="#E0E0E0"
-            android:padding="5dp"
-            android:text="材料选购"
-            android:textSize="20sp" />
+            <Button
+                android:id="@+id/button1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@color/white"
+                android:gravity="left"
+                android:text="泥木工程改造基本流程"
+                android:textSize="20sp" />
 
+        </LinearLayout>
 
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="100dp"
+        android:layout_height="10dp"
+        android:layout_weight="0.02"
+        android:orientation="horizontal"
+        android:weightSum="1"></LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="10dp"
+        android:layout_weight="0.07"
         android:orientation="horizontal"
         android:weightSum="1">
-        <Button
-            android:id="@+id/button5"
-            android:layout_width="100dp"
-            android:layout_height="60dp"
-            android:layout_marginLeft="50dp"
-            android:layout_marginTop="1dp"
-            android:background="#E0E0E0"
-            android:padding="5dp"
-            android:text="工人招募"
-            android:textSize="20sp" />
-        <Button
-            android:id="@+id/button6"
-            android:layout_width="100dp"
-            android:layout_height="60dp"
-            android:layout_marginLeft="50dp"
-            android:layout_marginTop="1dp"
-            android:background="#E0E0E0"
-            android:padding="5dp"
-            android:text="其他"
-            android:textSize="20sp" />
 
+        <LinearLayout
+            android:layout_width="94dp"
+            android:layout_height="31dp"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/imageView2"
+                android:layout_width="72dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                app:srcCompat="@drawable/iconsc2" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="301dp"
+            android:layout_height="30dp"
+            android:orientation="horizontal">
+
+
+            <Button
+                android:id="@+id/button2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@color/white"
+                android:gravity="left"
+                android:text="泥木工程改造所需材料"
+                android:textSize="20sp" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="10dp"
+        android:layout_weight="0.02"
+        android:orientation="horizontal"
+        android:weightSum="1"></LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="10dp"
+        android:layout_weight="0.07"
+        android:orientation="horizontal"
+        android:weightSum="1">
+
+        <LinearLayout
+            android:layout_width="94dp"
+            android:layout_height="31dp"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/imageView3"
+                android:layout_width="72dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                app:srcCompat="@drawable/iconsc3" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="301dp"
+            android:layout_height="30dp"
+            android:orientation="horizontal">
+
+
+            <Button
+                android:id="@+id/button3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@color/white"
+                android:gravity="left"
+                android:text="注意事项"
+                android:textSize="20sp" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="10dp"
+        android:layout_weight="0.02"
+        android:orientation="horizontal"
+        android:weightSum="1"></LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="10dp"
+        android:layout_weight="0.07"
+        android:orientation="horizontal"
+        android:weightSum="1">
+
+        <LinearLayout
+            android:layout_width="94dp"
+            android:layout_height="31dp"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/imageView4"
+                android:layout_width="72dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                app:srcCompat="@drawable/iconsc4" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="301dp"
+            android:layout_height="30dp"
+            android:orientation="horizontal">
+
+
+            <Button
+                android:id="@+id/button4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@color/white"
+                android:gravity="left"
+                android:text="材料选择"
+                android:textSize="20sp" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="10dp"
+        android:layout_weight="0.02"
+        android:orientation="horizontal"
+        android:weightSum="1"></LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="10dp"
+        android:layout_weight="0.07"
+        android:orientation="horizontal"
+        android:weightSum="1">
+
+        <LinearLayout
+            android:layout_width="94dp"
+            android:layout_height="31dp"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/imageView5"
+                android:layout_width="72dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                app:srcCompat="@drawable/iconsc5" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="301dp"
+            android:layout_height="30dp"
+            android:orientation="horizontal">
+
+
+            <Button
+                android:id="@+id/button5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@color/white"
+                android:gravity="left"
+                android:text="工人招募"
+                android:textSize="20sp" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="10dp"
+        android:layout_weight="0.02"
+        android:orientation="horizontal"
+        android:weightSum="1"></LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="10dp"
+        android:layout_weight="0.07"
+        android:orientation="horizontal"
+        android:weightSum="1">
+
+        <LinearLayout
+            android:layout_width="94dp"
+            android:layout_height="31dp"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/imageView6"
+                android:layout_width="72dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                app:srcCompat="@drawable/iconsc6" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="301dp"
+            android:layout_height="30dp"
+            android:orientation="horizontal">
+
+
+            <Button
+                android:id="@+id/button6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@color/white"
+                android:gravity="left"
+                android:text="其他"
+                android:textSize="20sp" />
+
+        </LinearLayout>
 
     </LinearLayout>
 

@@ -39,11 +39,18 @@
         <activity android:name=".WoDe.LoginActivity" />
         <activity android:name=".WoDe.RegisterActivity" />
         <activity android:name=".FitmentMaterial.FitmentMaterialActivity" />
+
         <activity android:name=".FitmentMaterial.ShoppingCar" />
         <activity android:name=".FitmentMaterial.FitmentAddActivity" />
         <activity android:name=".Worker.WorkerActivity" />
         <activity android:name=".Worker.WorkerAddActivity" />
         <activity android:name=".wallet" />
+
+
+
+
+
+
 
         <provider
             android:name="android.support.v4.content.FileProvider"
