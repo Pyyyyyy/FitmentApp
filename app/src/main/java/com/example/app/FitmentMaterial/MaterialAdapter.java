@@ -32,8 +32,8 @@ public class MaterialAdapter extends RecyclerView.Adapter<MaterialAdapter.ViewHo
         public ViewHolder(View view) {
             super(view);
             cardView = (CardView) view;
-            MaterialImage = (ImageView) view.findViewById(R.id.material_image);
-            MaterialName = (TextView) view.findViewById(R.id.material_name);
+            MaterialImage = (ImageView) view.findViewById(R.id.image);
+            MaterialName = (TextView) view.findViewById(R.id.name);
         }
     }
 

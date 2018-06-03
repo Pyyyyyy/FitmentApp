@@ -122,8 +122,6 @@ public class FitmentMaterialActivity extends BaseActivity {
 
         });
 
-        fitmentMaterial();
-
 
 
         RecyclerView recyclerView = (RecyclerView) findViewById(R.id.recycler_view);

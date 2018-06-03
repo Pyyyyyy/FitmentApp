@@ -33,8 +33,8 @@ public class WorkerAdapter extends RecyclerView.Adapter<WorkerAdapter.ViewHolder
         public ViewHolder(View view) {
             super(view);
             cardView = (CardView) view;
-            WorkerImage = (ImageView) view.findViewById(R.id.worker_image);
-            WorkerName = (TextView) view.findViewById(R.id.worker_name);
+            WorkerImage = (ImageView) view.findViewById(R.id.image);
+            WorkerName = (TextView) view.findViewById(R.id.name);
         }
     }
 
@@ -47,7 +47,7 @@ public class WorkerAdapter extends RecyclerView.Adapter<WorkerAdapter.ViewHolder
         if (mContext == null) {
             mContext = parent.getContext();
         }
-        View view = LayoutInflater.from(mContext).inflate(R.layout.worker_item, parent, false);
+        View view = LayoutInflater.from(mContext).inflate(R.layout.material_item, parent, false);
 
 
         return new ViewHolder(view);
@@ -57,8 +57,8 @@ public class WorkerAdapter extends RecyclerView.Adapter<WorkerAdapter.ViewHolder
     public void onBindViewHolder(ViewHolder holder, int position) {
         Worker worker = mWorkerList.get(position);
         holder.WorkerName.setText(worker.getWorkerName());
-        //holder.MaterialImage.setImageBitmap(material.getPicture());
-        Glide.with(mContext).load(worker.getWorkerImage()).into(holder.WorkerImage);
+        holder.WorkerImage.setImageBitmap(worker.getWorkerImage());
+        //Glide.with(mContext).load(worker.getWorkerImage()).into(holder.WorkerImage);
     }
 
     @Override

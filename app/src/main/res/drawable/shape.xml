@@ -1,9 +1,9 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <shape xmlns:android="http://schemas.android.com/apk/res/android" >
     //设置圆角
     <corners android:radius="10dp" />
     //设置button的颜色
-    <solid android:color="@color/btn_pressed_color"/>
+    <solid android:color="@color/myred"/>
     //设置button的大小
     <size
         android:height="60dp"
@@ -13,7 +13,7 @@
         android:right="5dp"
         android:top="5dp"
         android:bottom="5dp"/>
-    <solid android:color="#00ffffff" />
+    <solid android:color="#1C86EE" />
 
     <stroke
         android:width="0.5dip"
