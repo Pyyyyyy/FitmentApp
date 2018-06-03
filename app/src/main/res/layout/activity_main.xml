@@ -33,20 +33,21 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="40dp"
+            android:layout_height="56dp"
             android:background="#FF00FF00">
+
             <LinearLayout
                 android:id="@+id/tab01"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:background="#63B8FF"
                 android:layout_weight="1"
-                android:orientation="vertical" >
+                android:background="#d1d1d1"
+                android:orientation="vertical">
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-
+                    android:drawableTop="@drawable/tab_home"
                     android:gravity="center"
                     android:text="首页"
                     android:textColor="@android:color/black" />
@@ -56,30 +57,32 @@
                 android:id="@+id/tab02"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:background="#63B8FF"
                 android:layout_weight="1"
-                android:orientation="vertical" >
+                android:background="#d1d1d1"
+                android:orientation="vertical">
 
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:drawableTop="@drawable/tab_talk"
                     android:gravity="center"
                     android:text="讨论区"
                     android:textColor="@android:color/black" />
             </LinearLayout>
+
             <LinearLayout
                 android:id="@+id/tab03"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:background="#63B8FF"
                 android:layout_weight="1"
-                android:orientation="vertical" >
+                android:background="#d1d1d1"
+                android:orientation="vertical">
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-
+                    android:drawableTop="@drawable/tab_car"
                     android:gravity="center"
                     android:text="购物车"
                     android:textColor="@android:color/black" />
@@ -89,14 +92,14 @@
                 android:id="@+id/tab04"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:background="#63B8FF"
                 android:layout_weight="1"
-                android:orientation="vertical" >
+                android:background="#d1d1d1"
+                android:orientation="vertical">
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-
+                    android:drawableTop="@drawable/tab_my"
                     android:gravity="center"
                     android:text="我的"
                     android:textColor="@android:color/black" />
