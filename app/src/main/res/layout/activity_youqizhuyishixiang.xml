@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:orientation="horizontal"
+        >
+
+        <ImageView
+            android:id="@+id/back"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:paddingLeft="5dp"
+            android:paddingTop="5dp"
+            android:paddingRight="5dp"
+            android:paddingBottom="5dp"
+            android:src="@drawable/ic_return"
+            />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="5"
+            android:text="油漆注意事项"
+            android:textSize="23sp"
+            android:maxLines="1"
+            android:gravity="center"
+
+            />
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:maxLines="1"
+            android:gravity="center"
+            />
+
+    </LinearLayout>
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="18dp"
+        android:text="      1.混油要用原子灰补缝，且要满刮，待干后必须打磨仔细，棱角分明。"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="18dp"
+        android:text="      2.清油面板施工前应先对其进行表面清洁，刷一遍底漆，避免将面板表面划伤，影响油漆后的整体效果。"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="18dp"
+        android:text="      3.清油用调色腻子填补钉眼，必须保证颜色接近，并且要填补充实，打磨后平整，喷漆后半米之外不见钉眼。"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="18dp"
+        android:text="      4.油漆施工时的环境温度适中；木制工程和湿作业工程基本完工。工地现场基本无其他工种施工；现场清理干净，空气中无浮尘，地上无物垃圾等；现场配备灭火器，无明火；空气中湿度适中，现场通风；避免太阳爆晒等。"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="18dp"
+        android:text="      5.喷漆时要对现场的成品以及半成品进行保护，且要湿地处理，并要配备排风扇。"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="18dp"
+        android:text="      6. 门的上下口一定要封漆处理，避免厨房卫生间潮气进入，发生变形，造成门关不严的现象。"
+        />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="18dp"
+        android:text="      7. 刮腻子之前要对原墙面进行检验，针对质量不合格的腻子或基层有空鼓脱落的。要将原有墙腻子铲除，后要用界面剂（108胶）封底。"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="18dp"
+        android:text="      8. 空心墙、轻体墙、等结构松散的，基层质量差的必须满贴玻璃纤维布或衬布，基层质量太差的贴布无效时要满粘石膏板。"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="18dp"
+        android:text="      9.最后要将施工过程中残留的油漆、乳胶漆进行清洁，要做到人去屋净。"/>
+
+
+</LinearLayout>
