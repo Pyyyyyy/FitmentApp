@@ -1,5 +1,7 @@
 <resources>
     <string name="app_name">App</string>
-    <string name="text_registerbutton">×¢²á</string>
+    <string name="text_registerbutton">×¢ï¿½ï¿½</string>
     <string name="action_settings">Settings</string>
+    <string name="title_activity_youqizhuyishixiang">youqizhuyishixiang</string>
+    <string name="title_activity_jiajuliucheng">jiajuliucheng</string>
 </resources>

@@ -36,14 +36,13 @@
     </style>
 
 
-
     <!-- 全圆角样式 -->
     <style name="single_layout" parent="base_layout">
         <item name="android:background">@drawable/settingpage_single_layout_selector</item>
     </style>
 
     <!-- 下圆角样式 -->
-    <style name="bottom_layout"  parent="base_layout">
+    <style name="bottom_layout" parent="base_layout">
         <item name="android:background">@drawable/settingpage_bottom_layout_selector</item>
     </style>
 
@@ -79,6 +78,14 @@
 
     </style>
 
+    <style name="AppTheme.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 
 
 </resources>
