@@ -52,17 +52,18 @@
         <activity android:name=".Worker.WorkerActivity" />
         <activity android:name=".Worker.WorkerAddActivity" />
         <activity android:name=".wallet" />
-
         <activity
-
             android:name="com.mob.tools.MobUIShell"
-            android:theme="@android:style/Theme.Translucent.NoTitleBar"
             android:configChanges="keyboardHidden|orientation|screenSize"
-            android:windowSoftInputMode="stateHidden|adjustResize"/>
-        <meta-data android:name="Mob-AppKey" android:value="26484f8d0b682"/>
-        <meta-data android:name="Mob-AppSecret" android:value="9aa428f0e351153390962acfaaa30963"/>
+            android:theme="@android:style/Theme.Translucent.NoTitleBar"
+            android:windowSoftInputMode="stateHidden|adjustResize" />
 
-
+        <meta-data
+            android:name="Mob-AppKey"
+            android:value="26484f8d0b682" />
+        <meta-data
+            android:name="Mob-AppSecret"
+            android:value="9aa428f0e351153390962acfaaa30963" />
 
         <provider
             android:name="android.support.v4.content.FileProvider"
@@ -91,7 +92,8 @@
         <activity android:name=".QingBao.dengju.dengjuzhuyishixiang" />
         <activity android:name=".QingBao.jiaju.jiajuliucheng" />
         <activity android:name=".QingBao.jiaju.jiajucailiao" />
-        <activity android:name=".QingBao.jiaju.jiajuzhuyishixiang"></activity>
+        <activity android:name=".QingBao.jiaju.jiajuzhuyishixiang" />
+        <activity android:name=".message"></activity>
     </application>
 
 </manifest>

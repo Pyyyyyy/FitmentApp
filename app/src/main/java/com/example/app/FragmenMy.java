@@ -26,6 +26,7 @@ public class FragmenMy extends Fragment
         super.onActivityCreated(savedInstanceState);
         TextView btn = (TextView) getActivity().findViewById(R.id.enter);
         TextView btn2 =(TextView) getActivity().findViewById(R.id.wallet);
+        TextView btn3 = (TextView) getActivity().findViewById(R.id.message);
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -39,6 +40,14 @@ public class FragmenMy extends Fragment
             public void onClick(View v) {
                 Intent intent = new Intent();
                 intent.setClass(getActivity(), wallet.class);
+                startActivity(intent);
+            }
+        });
+        btn3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent();
+                intent.setClass(getActivity(), message.class);
                 startActivity(intent);
             }
         });

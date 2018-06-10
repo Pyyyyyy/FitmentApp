@@ -20,14 +20,15 @@ android {
     }
 }
 
-repositories{
-    flatDir{
+repositories {
+    flatDir {
         dirs 'libs'
     }
 }
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation 'com.android.support.constraint:constraint-layout:1.1.1'
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
@@ -45,7 +46,8 @@ dependencies {
     compile files('libs/MobTools-2018.0523.1923.jar')
     compile files('libs/SDKWrapper-2018.0201.1609.jar')
     compile files('libs/SMSSDK-3.2.1.jar')
-
+    compile 'cn.bingoogolapple:bga-badgeview:1.1.3@aar'
+    compile 'cn.bingoogolapple:bga-adapter:1.1.5@aar'
 
 
 }
