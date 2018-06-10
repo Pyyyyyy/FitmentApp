@@ -48,7 +48,7 @@
         <activity android:name=".WoDe.LoginActivity" />
         <activity android:name=".WoDe.RegisterActivity" />
         <activity android:name=".FitmentMaterial.FitmentMaterialActivity" />
-<<<<<<< HEAD
+
         <activity android:name=".Tools.wallet"/>
         <activity android:name=".FitmentMaterial.ShoppingCar"/>
         <activity android:name=".FitmentMaterial.FitmentAddActivity"/>
@@ -56,40 +56,27 @@
 
 
 
-        <activity android:name=".Worker.WorkerAddActivity">
+        <activity android:name=".Worker.WorkerAddActivity"/>
 
-=======
-        <activity android:name=".FitmentMaterial.ShoppingCar" />
-        <activity android:name=".FitmentMaterial.FitmentAddActivity" />
-        <activity android:name=".Worker.WorkerActivity" />
-        <activity android:name=".Worker.WorkerAddActivity" />
-        <activity android:name=".wallet" />
+
         <activity
-<<<<<<< HEAD
-=======
->>>>>>> 9670e15bde4593bdcfa459debcb07a8ec6ef519f
 
->>>>>>> 125d308159f2713c413a4dfcd25b372d49b8b120
+
             android:name="com.mob.tools.MobUIShell"
             android:configChanges="keyboardHidden|orientation|screenSize"
             android:theme="@android:style/Theme.Translucent.NoTitleBar"
             android:windowSoftInputMode="stateHidden|adjustResize" />
 
-<<<<<<< HEAD
+
         <meta-data
             android:name="Mob-AppKey"
             android:value="26484f8d0b682" />
         <meta-data
             android:name="Mob-AppSecret"
             android:value="9aa428f0e351153390962acfaaa30963" />
-=======
-<<<<<<< HEAD
 
-        </activity>
 
-=======
->>>>>>> 9670e15bde4593bdcfa459debcb07a8ec6ef519f
->>>>>>> 125d308159f2713c413a4dfcd25b372d49b8b120
+
 
         <provider
             android:name="android.support.v4.content.FileProvider"

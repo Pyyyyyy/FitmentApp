@@ -17,13 +17,12 @@ import com.example.app.Fragment.FragmenMy;
 import com.example.app.Fragment.FragmenWorker;
 import com.example.app.Fragment.FragmenZxcl;
 import com.example.app.R;
-<<<<<<< HEAD
+
 import com.example.app.Fragment.FragmenHome;
-=======
-import com.example.app.FragmenHome;
+
+import com.example.app.Tools.wallet;
 import com.example.app.Worker.WorkerActivity;
-import com.example.app.wallet;
->>>>>>> 9670e15bde4593bdcfa459debcb07a8ec6ef519f
+
 
 
 public class MainActivity extends AppCompatActivity implements OnClickListener {

@@ -4,10 +4,10 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
-<<<<<<< HEAD
-=======
+
+
 import android.widget.Button;
->>>>>>> 9670e15bde4593bdcfa459debcb07a8ec6ef519f
+
 import android.widget.ImageView;
 
 import com.example.app.QingBao.dengju.dengjucailiao;
@@ -26,7 +26,7 @@ public class dengjuActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.dengju_layout);
-<<<<<<< HEAD
+
         ImageView imageView01 = (ImageView) findViewById(R.id.lostandfound_back_imageview);
         imageView01.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -35,7 +35,6 @@ public class dengjuActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-=======
 
 
         Button button1 = (Button) findViewById(R.id.button1) ;
@@ -71,6 +70,6 @@ public class dengjuActivity extends AppCompatActivity {
             }
         });
 
->>>>>>> 9670e15bde4593bdcfa459debcb07a8ec6ef519f
+
     }
 }

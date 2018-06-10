@@ -9,7 +9,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-<<<<<<< HEAD:app/src/main/java/com/example/app/FragmenZxcl.java
+
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.ListView;
@@ -22,9 +22,9 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.zip.Inflater;
-=======
+
 import com.example.app.R;
->>>>>>> 125d308159f2713c413a4dfcd25b372d49b8b120:app/src/main/java/com/example/app/Fragment/FragmenZxcl.java
+
 
 public class FragmenZxcl extends Fragment {
 

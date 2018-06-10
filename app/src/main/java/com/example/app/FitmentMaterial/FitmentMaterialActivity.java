@@ -10,7 +10,6 @@ import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Base64;
 
-import android.util.Log;
 import android.view.MenuItem;
 
 import android.view.View;
@@ -26,7 +25,7 @@ import com.example.app.http.CommonRequest;
 import com.example.app.http.CommonResponse;
 import com.example.app.http.ResponseHandler;
 import com.example.app.main.MainActivity;
-import com.example.app.wallet;
+import com.example.app.Tools.wallet;
 
 
 import java.util.ArrayList;

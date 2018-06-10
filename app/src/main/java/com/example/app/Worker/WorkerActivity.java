@@ -27,7 +27,7 @@ import android.widget.Toast;
 import com.example.app.FitmentMaterial.FitmentMaterialActivity;
 import com.example.app.R;
 
-import com.example.app.wallet;
+import com.example.app.Tools.wallet;
 
 import com.example.app.http.BaseActivity;
 import com.example.app.http.CommonRequest;

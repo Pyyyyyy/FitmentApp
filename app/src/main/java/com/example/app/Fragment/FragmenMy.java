@@ -11,6 +11,7 @@ import android.widget.TextView;
 import com.example.app.R;
 import com.example.app.WoDe.LoginActivity;
 import com.example.app.Tools.wallet;
+import com.example.app.message;
 
 public class FragmenMy extends Fragment
 {
