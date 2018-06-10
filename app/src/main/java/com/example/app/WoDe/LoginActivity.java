@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.example.app.R;
@@ -33,6 +34,14 @@ public class LoginActivity extends BaseActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.login_layout);
+        ImageView imageView01 =  (ImageView) findViewById(R.id.lostandfound_back_imageview);
+        imageView01.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(LoginActivity.this,UserActivity.class);
+                startActivity(intent);
+            }
+        });
 
         account = (EditText) findViewById(R.id.account);
         password = (EditText) findViewById(R.id.password);

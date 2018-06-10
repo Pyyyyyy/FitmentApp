@@ -5,16 +5,17 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.content.Intent;
+import android.widget.TextView;
 
 import com.example.app.R;
 
-public class UserActivity extends AppCompatActivity {
+public class UserActivity extends AppCompatActivity  {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.user_layout);
-        Button enter = (Button) findViewById(R.id.enter);
+        TextView enter = (TextView) findViewById(R.id.enter);
         enter.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){

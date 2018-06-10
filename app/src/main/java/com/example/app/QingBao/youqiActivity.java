@@ -4,7 +4,10 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+<<<<<<< HEAD
+=======
 import android.widget.Button;
+>>>>>>> 9670e15bde4593bdcfa459debcb07a8ec6ef519f
 import android.widget.ImageView;
 
 import com.example.app.QingBao.nimu.nimucailiao;
@@ -23,6 +26,16 @@ public class youqiActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.youqi_layout);
+<<<<<<< HEAD
+        ImageView imageView01 = (ImageView) findViewById(R.id.lostandfound_back_imageview);
+        imageView01.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(youqiActivity.this,zhuangxiuzhongActivity.class);
+                startActivity(intent);
+            }
+        });
+=======
 
         Button button1 = (Button) findViewById(R.id.button1) ;
         Button button2 = (Button) findViewById(R.id.button2) ;
@@ -59,5 +72,7 @@ public class youqiActivity extends AppCompatActivity {
 
 
 
+>>>>>>> 9670e15bde4593bdcfa459debcb07a8ec6ef519f
     }
+
 }
