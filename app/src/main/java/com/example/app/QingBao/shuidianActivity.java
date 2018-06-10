@@ -27,7 +27,8 @@ public class shuidianActivity extends AppCompatActivity {
         back.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
-                finish();
+                Intent intent = new Intent(shuidianActivity.this,zhuangxiuzhongActivity.class);
+                startActivity(intent);
             }
         });
         button1.setOnClickListener(new View.OnClickListener(){

@@ -31,6 +31,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
         <activity android:name=".zhuangXiuQian.zhuangxiuqianActivity" />
         <activity android:name=".QingBao.zhuangxiuzhongActivity" />
         <activity android:name=".QingBao.shuidianliuchengActivity" />
@@ -47,6 +48,17 @@
         <activity android:name=".WoDe.LoginActivity" />
         <activity android:name=".WoDe.RegisterActivity" />
         <activity android:name=".FitmentMaterial.FitmentMaterialActivity" />
+<<<<<<< HEAD
+        <activity android:name=".Tools.wallet"/>
+        <activity android:name=".FitmentMaterial.ShoppingCar"/>
+        <activity android:name=".FitmentMaterial.FitmentAddActivity"/>
+        <activity android:name=".Worker.WorkerActivity"/>
+
+
+
+        <activity android:name=".Worker.WorkerAddActivity">
+
+=======
         <activity android:name=".FitmentMaterial.ShoppingCar" />
         <activity android:name=".FitmentMaterial.FitmentAddActivity" />
         <activity android:name=".Worker.WorkerActivity" />
@@ -54,6 +66,7 @@
         <activity android:name=".wallet" />
 
         <activity
+>>>>>>> 9670e15bde4593bdcfa459debcb07a8ec6ef519f
 
             android:name="com.mob.tools.MobUIShell"
             android:theme="@android:style/Theme.Translucent.NoTitleBar"
@@ -63,6 +76,12 @@
         <meta-data android:name="Mob-AppSecret" android:value="9aa428f0e351153390962acfaaa30963"/>
 
 
+<<<<<<< HEAD
+
+        </activity>
+
+=======
+>>>>>>> 9670e15bde4593bdcfa459debcb07a8ec6ef519f
 
         <provider
             android:name="android.support.v4.content.FileProvider"
