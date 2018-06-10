@@ -2,12 +2,17 @@ package com.example.app.FitmentMaterial;
 
 import android.content.Intent;
 import android.graphics.BitmapFactory;
+import android.support.design.widget.NavigationView;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.ActionBar;
 import android.os.Bundle;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Base64;
+
+import android.util.Log;
+import android.view.MenuItem;
+
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -15,10 +20,13 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.app.R;
+import com.example.app.Worker.WorkerActivity;
 import com.example.app.http.BaseActivity;
 import com.example.app.http.CommonRequest;
 import com.example.app.http.CommonResponse;
 import com.example.app.http.ResponseHandler;
+import com.example.app.main.MainActivity;
+import com.example.app.wallet;
 
 
 import java.util.ArrayList;
@@ -45,6 +53,7 @@ public class FitmentMaterialActivity extends BaseActivity {
         Button button01 = (Button) findViewById(R.id.button_shoppingcar);
         TextView add = (TextView) findViewById(R.id.add);
         ImageView cancel = (ImageView) findViewById(R.id.cancel);
+        NavigationView navView  = (NavigationView) findViewById(R.id.nav_view);
 
         add.setOnClickListener(new View.OnClickListener(){
             @Override
@@ -69,6 +78,50 @@ public class FitmentMaterialActivity extends BaseActivity {
                 finish();
             }
         });
+
+
+        navView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(MenuItem menuItem) {
+                switch (menuItem.getItemId())
+                {
+                    case R.id.nav_wallet:
+                        Intent intent = new Intent(FitmentMaterialActivity.this,wallet.class);
+                        startActivity(intent);
+                        break;
+                    case R.id.nav_collection:
+                        Toast.makeText(FitmentMaterialActivity.this,"你点击了我的收藏",Toast.LENGTH_SHORT).show();
+                        break;
+
+                    case R.id.nav_follow:
+                        Toast.makeText(FitmentMaterialActivity.this,"你点击了我的关注 ",Toast.LENGTH_SHORT).show();
+                        break;
+
+                    case R.id.nav_setting:
+                        Toast.makeText(FitmentMaterialActivity.this,"你点击了设置",Toast.LENGTH_SHORT).show();
+                        break;
+
+                    case R.id.nav_appointment:
+                        Toast.makeText(FitmentMaterialActivity.this,"你点击了我的预约",Toast.LENGTH_SHORT).show();
+                        break;
+
+                    case R.id.nav_news:
+                        Toast.makeText(FitmentMaterialActivity.this,"你点击了我的消息",Toast.LENGTH_SHORT).show();
+                        break;
+
+                    case R.id.nav_order:
+                        Toast.makeText(FitmentMaterialActivity.this,"你点击了我的订单",Toast.LENGTH_SHORT).show();
+                        break;
+
+                }
+
+
+                return true;
+            }
+
+
+        });
+
 
 
         RecyclerView recyclerView = (RecyclerView) findViewById(R.id.recycler_view);

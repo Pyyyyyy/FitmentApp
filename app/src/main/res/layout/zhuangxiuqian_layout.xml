@@ -44,6 +44,7 @@
 
                 <Button
                     android:text="搜索"
+                    android:textColor="#000000"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:id="@+id/button4"
@@ -69,36 +70,31 @@
                 android:weightSum="1">
 
                 <Button
-                    android:text="装前须知"
-                    android:layout_width="wrap_content"
-                    android:layout_height="56dp"
                     android:id="@+id/button1"
-                    style="@android:style/Widget.DeviceDefault.Light.Button.Inset"
-                    android:layout_weight="0.32" />
+                    style="@android:style/Widget.DeviceDefault.Button.Inset"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.32"
+                    android:textColor="#000000"
+                    android:text="装前须知" />
 
                 <Button
-                    android:text="装前设计"
-                    android:layout_width="wrap_content"
-                    android:layout_height="56dp"
                     android:id="@+id/button2"
                     style="@android:style/Widget.DeviceDefault.Button.Inset"
-                    android:layout_alignBaseline="@+id/button"
-                    android:layout_alignBottom="@+id/button"
-                    android:layout_centerHorizontal="true"
-                    android:layout_weight="0.32" />
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.32"
+                    android:textColor="#000000"
+                    android:text="装前设计" />
 
                 <Button
-                    android:text="推荐团队"
-                    android:layout_width="wrap_content"
-                    android:layout_height="56dp"
-                    android:layout_alignTop="@+id/button2"
-                    android:layout_alignRight="@+id/slideshowView"
-                    android:layout_alignEnd="@+id/slideshowView"
-                    android:layout_marginRight="12dp"
-                    android:layout_marginEnd="12dp"
                     android:id="@+id/button3"
-                    style="@android:style/Widget.DeviceDefault.Light.Button.Inset"
-                    android:layout_weight="0.27" />
+                    style="@android:style/Widget.DeviceDefault.Button.Inset"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.27"
+                    android:textColor="#000000"
+                    android:text="推荐团队" />
 
             </LinearLayout>
 
@@ -110,43 +106,188 @@
                 android:weightSum="1">
 
                 <LinearLayout
-                    android:orientation="horizontal"
                     android:layout_width="match_parent"
                     android:layout_height="49dp"
                     android:layout_weight="0.36"
+                    android:orientation="horizontal"
                     android:weightSum="1">
 
                     <LinearLayout
-                        android:orientation="horizontal"
+                        android:layout_width="80dp"
                         android:layout_height="match_parent"
-                        android:layout_width="301dp">
+                        android:background="@drawable/home5"
+                        android:orientation="horizontal"
+                        >
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
 
                         <TextView
-                            android:text="公司logo  +  (公司或者团队的描述)"
-                            android:layout_height="match_parent"
                             android:id="@+id/textView2"
-                            android:layout_weight="0.76"
-                            android:layout_width="234dp" />
+                            android:layout_width="match_parent"
+                            android:layout_height="37dp"
+                            android:layout_weight="1"
+                            android:text="(团队描述)" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="28dp"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_weight="1"
+                                android:layout_height="match_parent" />
+                            <ImageView
+                                android:layout_width="0dp"
+                                android:layout_weight="2"
+                                android:layout_height="match_parent"
+                                android:layout_marginBottom="5dp"
+                                android:src="@drawable/ic_comment"
+                                />
+                            <TextView
+                                android:id="@+id/textview"
+                                android:layout_width="0dp"
+                                android:layout_weight="2"
+                                android:layout_height="match_parent"
+                                android:layout_marginBottom="5dp"
+                                android:text="100"
+                                android:maxLines="3"
+                                android:layout_gravity="center"
+                                android:gravity="center"
+                                />
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_weight="2"
+                                android:layout_height="match_parent" />
+                            <ImageView
+                                android:layout_width="0dp"
+                                android:layout_weight="2"
+                                android:layout_height="match_parent"
+                                android:layout_marginBottom="5dp"
+                                android:src="@drawable/ic_read"
+                                />
+                            <TextView
+                                android:id="@+id/textview2"
+                                android:layout_width="0dp"
+                                android:layout_weight="3"
+                                android:layout_height="match_parent"
+                                android:layout_marginBottom="5dp"
+                                android:text="6.5万"
+                                android:maxLines="2"
+                                android:layout_gravity="center"
+                                android:gravity="center"
+                                />
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_weight="4"
+                                android:layout_height="match_parent" />
+                            <ImageView
+                                android:id="@+id/imageview"
+                                android:layout_width="0dp"
+                                android:layout_weight="2"
+                                android:layout_height="match_parent"
+                                android:layout_marginBottom="5dp"
+                                android:layout_gravity="right"
+                                />
+
+                        </LinearLayout>
+
                     </LinearLayout>
+
                 </LinearLayout>
 
                 <LinearLayout
-                    android:orientation="horizontal"
                     android:layout_width="match_parent"
-                    android:layout_height="44dp"
-                    android:layout_weight="0.37">
+                    android:layout_height="49dp"
+                    android:layout_weight="0.37"
+                    android:orientation="horizontal">
 
                     <LinearLayout
-                        android:orientation="horizontal"
-                        android:layout_width="301dp"
-                        android:layout_height="match_parent">
+                        android:layout_width="80dp"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/home5"
+                        android:orientation="horizontal">
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
 
                         <TextView
-                            android:text="公司logo  +  (公司或者团队的描述)"
-                            android:layout_width="234dp"
-                            android:layout_height="match_parent"
-                            android:id="@+id/textView"
-                            android:layout_weight="1" />
+                            android:id="@+id/textView3"
+                            android:layout_width="match_parent"
+                            android:layout_height="37dp"
+                            android:layout_weight="1"
+                            android:text="(团队描述)" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="28dp"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_weight="1"
+                                android:layout_height="match_parent" />
+                            <ImageView
+                                android:layout_width="0dp"
+                                android:layout_weight="2"
+                                android:layout_height="match_parent"
+                                android:layout_marginBottom="5dp"
+                                android:src="@drawable/ic_comment"
+                                />
+                            <TextView
+                                android:id="@+id/textview4"
+                                android:layout_width="0dp"
+                                android:layout_weight="2"
+                                android:layout_height="match_parent"
+                                android:layout_marginBottom="5dp"
+                                android:text="100"
+                                android:maxLines="3"
+                                android:layout_gravity="center"
+                                android:gravity="center"
+                                />
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_weight="2"
+                                android:layout_height="match_parent" />
+                            <ImageView
+                                android:layout_width="0dp"
+                                android:layout_weight="2"
+                                android:layout_height="match_parent"
+                                android:layout_marginBottom="5dp"
+                                android:src="@drawable/ic_read"
+                                />
+                            <TextView
+                                android:id="@+id/textview5"
+                                android:layout_width="0dp"
+                                android:layout_weight="3"
+                                android:layout_height="match_parent"
+                                android:layout_marginBottom="5dp"
+                                android:text="6.5万"
+                                android:maxLines="2"
+                                android:layout_gravity="center"
+                                android:gravity="center"
+                                />
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_weight="4"
+                                android:layout_height="match_parent" />
+                            <ImageView
+                                android:id="@+id/imageView11"
+                                android:layout_width="0dp"
+                                android:layout_weight="2"
+                                android:layout_height="match_parent"
+                                android:layout_marginBottom="5dp"
+                                android:layout_gravity="right"
+                                />
+
+                        </LinearLayout>
 
                     </LinearLayout>
 

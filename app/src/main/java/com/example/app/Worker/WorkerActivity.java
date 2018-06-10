@@ -1,20 +1,34 @@
 package com.example.app.Worker;
 
 import android.content.Intent;
+
+import android.support.design.widget.NavigationView;
+
 import android.graphics.BitmapFactory;
+
 import android.support.v7.app.ActionBar;
 
 import android.os.Bundle;
+
+import android.view.MenuItem;
+import android.view.View;
+import android.widget.TextView;
+
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Base64;
 import android.view.View;
 import android.widget.TextView;
 import android.support.v4.widget.SwipeRefreshLayout;
+
 import android.widget.Toast;
 
 
+import com.example.app.FitmentMaterial.FitmentMaterialActivity;
 import com.example.app.R;
+
+import com.example.app.wallet;
+
 import com.example.app.http.BaseActivity;
 import com.example.app.http.CommonRequest;
 import com.example.app.http.CommonResponse;
@@ -25,9 +39,10 @@ import java.util.HashMap;
 import java.util.List;
 
 public class WorkerActivity extends BaseActivity {
-    private String URL_FITMENT = "http://w2062389t3.iask.in:39931/FitmentApp/FitmentMaterialServlet";
+    private String URL_FITMENT = "http://w2062389t3.iask.in:39931/FitmentApp/WorkerServlet";
 
     private SwipeRefreshLayout swipeRefresh;
+
 
     private List<Worker> workerList = new ArrayList<>();
 
@@ -41,7 +56,12 @@ public class WorkerActivity extends BaseActivity {
         if (actionBar!=null){
             actionBar.hide();
         }
+
         TextView add = (TextView) findViewById(R.id.add);
+
+
+        NavigationView navView  = (NavigationView) findViewById(R.id.nav_view);
+
         add.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
@@ -51,7 +71,52 @@ public class WorkerActivity extends BaseActivity {
         });
 
 
+        navView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(MenuItem menuItem) {
+                switch (menuItem.getItemId())
+                {
+                    case R.id.nav_wallet:
+                        Intent intent = new Intent(WorkerActivity.this,wallet.class);
+                        startActivity(intent);
+                        break;
+
+                    case R.id.nav_collection:
+                        Toast.makeText(WorkerActivity.this,"你点击了我的收藏",Toast.LENGTH_SHORT).show();
+                        break;
+
+                    case R.id.nav_follow:
+                        Toast.makeText(WorkerActivity.this,"你点击了我的关注 ",Toast.LENGTH_SHORT).show();
+                        break;
+
+                    case R.id.nav_setting:
+                        Toast.makeText(WorkerActivity.this,"你点击了设置",Toast.LENGTH_SHORT).show();
+                        break;
+
+                    case R.id.nav_appointment:
+                        Toast.makeText(WorkerActivity.this,"你点击了我的预约",Toast.LENGTH_SHORT).show();
+                        break;
+
+                    case R.id.nav_news:
+                        Toast.makeText(WorkerActivity.this,"你点击了我的消息",Toast.LENGTH_SHORT).show();
+                        break;
+
+                    case R.id.nav_order:
+                        Toast.makeText(WorkerActivity.this,"你点击了我的订单",Toast.LENGTH_SHORT).show();
+                        break;
+
+                }
+
+
+                return true;
+            }
+
+
+     });
+
+
         fitmentWorker();
+
 
 
         RecyclerView recyclerView = (RecyclerView) findViewById(R.id.recycler_view);
@@ -59,6 +124,8 @@ public class WorkerActivity extends BaseActivity {
         recyclerView.setLayoutManager(layoutManager);
         adapter = new WorkerAdapter(workerList);
         recyclerView.setAdapter(adapter);
+
+        fitmentWorker();
 
 
         swipeRefresh = (SwipeRefreshLayout) findViewById(R.id.swipe_refresh);
@@ -116,5 +183,6 @@ public class WorkerActivity extends BaseActivity {
                 });
             }
         }).start();
+
     }
 }

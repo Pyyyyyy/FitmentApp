@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:orientation="horizontal"
+        >
+
+        <ImageView
+            android:id="@+id/back"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:paddingLeft="5dp"
+            android:paddingTop="5dp"
+            android:paddingRight="5dp"
+            android:paddingBottom="5dp"
+            android:src="@drawable/ic_return"
+            />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="5"
+            android:text="土木工程注意事项"
+            android:textSize="23sp"
+            android:maxLines="1"
+            android:gravity="center"
+
+            />
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:maxLines="1"
+            android:gravity="center"
+            />
+
+    </LinearLayout>
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="18dp"
+        android:text="      1.装修中时常需要在墙地面做些装饰和储物兼备的木制品，要想保证整套房子的木制品装修都在同一水平线上，就需要开工前仔细测量并弹上墨线，以确定所有木工制作的水平基准线。
+
+定下水平线后，把竖直方向的误差控制在允许的范围内，必须保证木制品竖直方向也同样没有问题。"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="18dp"
+        android:text="      2.在木工制作中，有着详细尺寸和说明的图纸非常重要。但光有图纸还不行，规范的公司会在交底时由设计师给木工详细的讲解，以保证最后良好的效果。。"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="18dp"
+        android:text="      3.木工施工除了测量要精确以外，还要从选材阶段就开始严格把关。不论是衣柜还是鞋柜，表面的门都必须用同一张板做，以保证花纹，色泽的一致性。对于木制品本身加工完后，还应该在外面再刷上一层白胶，才能够有效的避免表面起拱或出现裂缝。。"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="18dp"
+        android:text="      4.石膏板要与墙有3MM的缝，以便实行防裂处置。"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="18dp"
+        android:text="      5.石膏板阳角处最佳做阳角条维护。"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="18dp"
+        android:text="      6.大的木板材买来后就要锯开风干。"
+        />
+
+
+</LinearLayout>

@@ -13,7 +13,7 @@
         >
 
         <ImageView
-            android:id="@+id/lostandfound_back_imageview"
+            android:id="@+id/back"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
@@ -87,7 +87,7 @@
                 android:layout_weight="1"
                 android:background="@color/white"
                 android:gravity="left"
-                android:text="家具改造基本流程"
+                android:text="家具安装基本流程"
                 android:textSize="20sp" />
 
         </LinearLayout>
@@ -134,7 +134,7 @@
                 android:layout_weight="1"
                 android:background="@color/white"
                 android:gravity="left"
-                android:text="家具改造所需材料"
+                android:text="家具安装所需材料"
                 android:textSize="20sp" />
 
         </LinearLayout>

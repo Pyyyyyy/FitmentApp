@@ -113,7 +113,6 @@ public class FitmentAddActivity extends BaseActivity implements View.OnClickList
                         }
 
                     }
-
                     break;
 
                 case R.id.choose_from_album:
@@ -269,7 +268,7 @@ public class FitmentAddActivity extends BaseActivity implements View.OnClickList
           final ProgressDialog  progressDialog = new ProgressDialog(this);
           progressDialog.setTitle("Wait");
           progressDialog.setMessage("Loading.");
-          progressDialog.setCancelable(false);
+          progressDialog.setCancelable(true);
           progressDialog.show();
 
           final CommonRequest request = new CommonRequest();

@@ -1,5 +1,7 @@
 package com.example.app.main;
 
+import android.content.Intent;
+import android.support.design.widget.NavigationView;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
@@ -9,12 +11,19 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.LinearLayout;
 import android.view.View.OnClickListener;
+import android.widget.Toast;
 
 import com.example.app.Fragment.FragmenMy;
 import com.example.app.Fragment.FragmenWorker;
 import com.example.app.Fragment.FragmenZxcl;
 import com.example.app.R;
+<<<<<<< HEAD
 import com.example.app.Fragment.FragmenHome;
+=======
+import com.example.app.FragmenHome;
+import com.example.app.Worker.WorkerActivity;
+import com.example.app.wallet;
+>>>>>>> 9670e15bde4593bdcfa459debcb07a8ec6ef519f
 
 
 public class MainActivity extends AppCompatActivity implements OnClickListener {
@@ -36,6 +45,7 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        NavigationView navView  = (NavigationView) findViewById(R.id.nav_view);
         /*
         Button image4 = (Button) findViewById(R.id.image4);
         image4.setOnClickListener(new View.OnClickListener(){
@@ -55,6 +65,50 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
 
             }
         });*/
+
+        navView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(MenuItem menuItem) {
+                switch (menuItem.getItemId())
+                {
+                    case R.id.nav_wallet:
+                        Intent intent = new Intent(MainActivity.this,wallet.class);
+                        startActivity(intent);
+                        break;
+                    case R.id.nav_collection:
+                        Toast.makeText(MainActivity.this,"你点击了我的收藏",Toast.LENGTH_SHORT).show();
+                        break;
+
+                    case R.id.nav_follow:
+                        Toast.makeText(MainActivity.this,"你点击了我的关注 ",Toast.LENGTH_SHORT).show();
+                        break;
+
+                    case R.id.nav_setting:
+                        Toast.makeText(MainActivity.this,"你点击了设置",Toast.LENGTH_SHORT).show();
+                        break;
+
+                    case R.id.nav_appointment:
+                        Toast.makeText(MainActivity.this,"你点击了我的预约",Toast.LENGTH_SHORT).show();
+                        break;
+
+                    case R.id.nav_news:
+                        Toast.makeText(MainActivity.this,"你点击了我的消息",Toast.LENGTH_SHORT).show();
+                        break;
+
+                    case R.id.nav_order:
+                        Toast.makeText(MainActivity.this,"你点击了我的订单",Toast.LENGTH_SHORT).show();
+                        break;
+
+
+
+                }
+
+
+                return true;
+            }
+
+
+        });
 
         initView();
         initEvent();

@@ -2,6 +2,7 @@ package com.example.app.Worker;
 
 import android.Manifest;
 import android.annotation.TargetApi;
+import android.app.ProgressDialog;
 import android.content.ContentUris;
 import android.content.Intent;
 import android.content.pm.PackageManager;
@@ -52,13 +53,14 @@ public class WorkerAddActivity extends BaseActivity {
 
     private EditText workerPhoneNumber;
 
-    private String URL_FITMENT_ADD = "http://w2062389t3.iask.in:39931/FitmentApp/FitmentAddServlet";
+    private String URL_FITMENT_ADD = "http://w2062389t3.iask.in:39931/FitmentApp/WorkerAddServlet";
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_worker_add);
+
         ActionBar actionBar = getSupportActionBar();
         if (actionBar!=null){
             actionBar.hide();
@@ -231,6 +233,7 @@ public class WorkerAddActivity extends BaseActivity {
             Toast.makeText(this, "failed to get image", Toast.LENGTH_SHORT).show();
         }
     }
+
     public boolean add_check() {
         if (workerName.getText().toString().trim().equals("")) {
             Toast.makeText(this, "名称不能为空",
@@ -249,22 +252,30 @@ public class WorkerAddActivity extends BaseActivity {
         }
         return true;
     }
-    public void workerAdd(String wrokerName,String workerType,String workerDescription,byte[] workerImage){
-        final CommonRequest request = new CommonRequest();
-        request.addRequestParam("workername",wrokerName);
-        request.addRequestParam("type",workerType);
-        request.addRequestParam("price",workerDescription);
 
+    public void workerAdd(String wrokerName,String workerType,String workerPhoneNumber,byte[] workerImage){
+        final ProgressDialog progressDialog = new ProgressDialog(this);
+        progressDialog.setTitle("Wait");
+        progressDialog.setMessage("Loading.");
+        progressDialog.setCancelable(true);
+        progressDialog.show();
+
+        final CommonRequest request = new CommonRequest();
+        request.addRequestParam("name",wrokerName);
+        request.addRequestParam("type",workerType);
+        request.addRequestParam("phoneNumber",workerPhoneNumber);
         request.addRequestParam("picture", Base64.encodeToString(workerImage, 0));
         sendHttpPostRequest(URL_FITMENT_ADD,request,new ResponseHandler(){
             @Override
             public void success(CommonResponse response) {
+                progressDialog.dismiss();
                 Toast.makeText(WorkerAddActivity.this,response.getResMsg(),Toast.LENGTH_SHORT).show();
                 finish();
             }
 
             @Override
             public void fail(String failCode, String failMsg) {
+                progressDialog.dismiss();
                 Toast.makeText(WorkerAddActivity.this,failMsg,Toast.LENGTH_SHORT).show();
 
             }

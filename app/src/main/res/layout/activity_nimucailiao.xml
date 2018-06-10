@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/scrollView1"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content" >
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+
+        >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:orientation="horizontal"
+            >
+
+            <ImageView
+                android:id="@+id/back"
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:layout_weight="1"
+                android:paddingLeft="5dp"
+                android:paddingTop="5dp"
+                android:paddingRight="5dp"
+                android:paddingBottom="5dp"
+                android:src="@drawable/ic_return"
+                />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="5"
+                android:text="泥木所需材料"
+                android:textSize="23sp"
+                android:maxLines="1"
+                android:gravity="center"
+
+                />
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:maxLines="1"
+                android:gravity="center"
+                />
+
+        </LinearLayout>
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="18dp"
+            android:text="      1.水泥：水泥是家装辅材的基础，主要适用于对墙面、地面的抹平和贴瓷砖。家装中最常用的是32.5号硅酸盐水泥。泥巴公社的小编提醒，在水泥配比的时候，要注意比例，很多人认为水泥占有砂浆的比例越大越好，其实并不是这样的。水泥浆凝固的时候，水泥会大量地吸收水分，这个时候瓷砖的水分就会被吸走，很容易出现瓷砖拉裂的现象，缩短使用寿命。水泥、砂浆的搅拌比例为1:2。"
+            />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="18dp"
+            android:text="      2.砂子：砂子主要是用来配制水泥的，墙体的建筑，瓷砖的粘贴都要使用到砂子，砂子又分为细砂、中砂、粗砂三种，直径分别为细砂粒径0.25---0.35mm，中砂粒径0.35---0.5mm，粗砂粒径小于0.5mm，最好是使用粗砂和中砂。"
+            />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="18dp"
+            android:text="      3.砖头：砖头也属于家装泥瓦装修辅料，砌墙用的砖头一般是240×115×53mm规格为主。分别需要堆砌烟囱砖、下水道砖、砌墙砖、楼板砖、拱壳砖、地面砖等。根据堆砌砖头的建筑性质的不同，又可以分为花板砖、饰面砖、承重砖、非承重砖、工程砖、保温砖、吸声砖等。"
+            />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="18dp"
+            android:text="      4.防水材料：在选择防水材料的时候要注意了，防水材料主要分为柔性防水灰浆、刚性防水灰浆、防水剂这三种，柔性防水灰浆具有很好的透气不透水性、耐热、耐候性好、耐强、基面粘结性、富有弹性，并且柔性防水灰浆无毒环保、高效防水、有良好的防震动、防移位效果。"
+            />
+    </LinearLayout>
+</ScrollView>
+
