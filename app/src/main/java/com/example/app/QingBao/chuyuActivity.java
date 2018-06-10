@@ -1,7 +1,10 @@
 package com.example.app.QingBao;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
+import android.widget.ImageView;
 
 import com.example.app.R;
 
@@ -13,5 +16,13 @@ public class chuyuActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.chuyu_layout);
+        ImageView imageView01 = (ImageView) findViewById(R.id.lostandfound_back_imageview);
+        imageView01.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(chuyuActivity.this,zhuangxiuzhongActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 }

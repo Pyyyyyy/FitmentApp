@@ -23,6 +23,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
         <activity android:name=".zhuangXiuQian.zhuangxiuqianActivity" />
         <activity android:name=".QingBao.zhuangxiuzhongActivity" />
         <activity android:name=".QingBao.shuidianliuchengActivity" />
@@ -39,11 +40,15 @@
         <activity android:name=".WoDe.LoginActivity" />
         <activity android:name=".WoDe.RegisterActivity" />
         <activity android:name=".FitmentMaterial.FitmentMaterialActivity" />
-
+        <activity android:name=".Tools.wallet"/>
         <activity android:name=".FitmentMaterial.ShoppingCar"/>
         <activity android:name=".FitmentMaterial.FitmentAddActivity"/>
         <activity android:name=".Worker.WorkerActivity"/>
+
+
+
         <activity android:name=".Worker.WorkerAddActivity">
+
 
 
 

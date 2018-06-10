@@ -10,11 +10,11 @@ import android.view.View;
 import android.widget.LinearLayout;
 import android.view.View.OnClickListener;
 
-import com.example.app.FragmenMy;
-import com.example.app.FragmenWorker;
-import com.example.app.FragmenZxcl;
+import com.example.app.Fragment.FragmenMy;
+import com.example.app.Fragment.FragmenWorker;
+import com.example.app.Fragment.FragmenZxcl;
 import com.example.app.R;
-import com.example.app.FragmenHome;
+import com.example.app.Fragment.FragmenHome;
 
 
 public class MainActivity extends AppCompatActivity implements OnClickListener {
