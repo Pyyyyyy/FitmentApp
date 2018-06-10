@@ -1,4 +1,4 @@
-package com.example.app;
+package com.example.app.Fragment;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -6,11 +6,11 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.TextView;
 
 import com.example.app.R;
 import com.example.app.WoDe.LoginActivity;
+import com.example.app.Tools.wallet;
 
 public class FragmenMy extends Fragment
 {
@@ -26,6 +26,7 @@ public class FragmenMy extends Fragment
         super.onActivityCreated(savedInstanceState);
         TextView btn = (TextView) getActivity().findViewById(R.id.enter);
         TextView btn2 =(TextView) getActivity().findViewById(R.id.wallet);
+        TextView btn3 = (TextView) getActivity().findViewById(R.id.message);
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -39,6 +40,14 @@ public class FragmenMy extends Fragment
             public void onClick(View v) {
                 Intent intent = new Intent();
                 intent.setClass(getActivity(), wallet.class);
+                startActivity(intent);
+            }
+        });
+        btn3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent();
+                intent.setClass(getActivity(), message.class);
                 startActivity(intent);
             }
         });

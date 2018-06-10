@@ -6,8 +6,11 @@ import android.view.View;
 
 import android.content.Intent;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 
+import com.example.app.Fragment.FragmenHome;
 import com.example.app.R;
+import com.example.app.main.MainActivity;
 
 public class zhuangxiuzhongActivity extends AppCompatActivity {
 
@@ -75,6 +78,14 @@ public class zhuangxiuzhongActivity extends AppCompatActivity {
             @Override
             public void onClick(View v){
                 Intent intent = new Intent(zhuangxiuzhongActivity.this,jiajuActivity.class);
+                startActivity(intent);
+            }
+        });
+        ImageView imageView01 = (ImageView) findViewById(R.id.lostandfound_back_imageview);
+        imageView01.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent =  new Intent(zhuangxiuzhongActivity.this, MainActivity.class);
                 startActivity(intent);
             }
         });

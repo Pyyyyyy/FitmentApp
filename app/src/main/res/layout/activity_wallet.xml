@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 
     <LinearLayout
-    tools:context="com.example.app.wallet"
+    tools:context="com.example.app.Tools.wallet"
     android:layout_height="match_parent"
     android:layout_width="match_parent"
     android:orientation="vertical"
