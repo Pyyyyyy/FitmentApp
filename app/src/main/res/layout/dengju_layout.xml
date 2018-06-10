@@ -13,7 +13,7 @@
         >
 
         <ImageView
-            android:id="@+id/lostandfound_back_imageview"
+            android:id="@+id/back"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"

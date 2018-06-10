@@ -6,9 +6,17 @@
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.RECEIVE_SMS" />
+    <uses-permission android:name="android.permission.READ_SMS" />
+    <uses-permission android:name="android.permission.GET_TASKS" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
 
     <application
-        android:name="org.litepal.LitePalApplication"
+        android:name="com.mob.MobApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -39,16 +47,20 @@
         <activity android:name=".WoDe.LoginActivity" />
         <activity android:name=".WoDe.RegisterActivity" />
         <activity android:name=".FitmentMaterial.FitmentMaterialActivity" />
-
         <activity android:name=".FitmentMaterial.ShoppingCar" />
         <activity android:name=".FitmentMaterial.FitmentAddActivity" />
         <activity android:name=".Worker.WorkerActivity" />
         <activity android:name=".Worker.WorkerAddActivity" />
         <activity android:name=".wallet" />
 
+        <activity
 
-
-
+            android:name="com.mob.tools.MobUIShell"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:windowSoftInputMode="stateHidden|adjustResize"/>
+        <meta-data android:name="Mob-AppKey" android:value="26484f8d0b682"/>
+        <meta-data android:name="Mob-AppSecret" android:value="9aa428f0e351153390962acfaaa30963"/>
 
 
 
@@ -62,6 +74,24 @@
                 android:resource="@xml/file_paths" />
         </provider>
 
+        <activity android:name=".QingBao.nimu.nimuliucheng" />
+        <activity android:name=".QingBao.nimu.nimucailiao" />
+        <activity android:name=".QingBao.nimu.nimuzhuyishixiang" />
+        <activity android:name=".QingBao.tumu.tumuliucheng" />
+        <activity android:name=".QingBao.tumu.tumucailiao" />
+        <activity android:name=".QingBao.tumu.tumuzhuyishixiang" />
+        <activity android:name=".QingBao.youqi.youqiliucheng" />
+        <activity android:name=".QingBao.youqi.youqicailiao" />
+        <activity android:name=".QingBao.youqi.youqizhuyishixiang" />
+        <activity android:name=".QingBao.chuyu.chuyuliucheng" />
+        <activity android:name=".QingBao.chuyu.chuyucailiao" />
+        <activity android:name=".QingBao.chuyu.chuyuzhuyishixiang" />
+        <activity android:name=".QingBao.dengju.dengjuliucheng" />
+        <activity android:name=".QingBao.dengju.dengjucailiao" />
+        <activity android:name=".QingBao.dengju.dengjuzhuyishixiang" />
+        <activity android:name=".QingBao.jiaju.jiajuliucheng" />
+        <activity android:name=".QingBao.jiaju.jiajucailiao" />
+        <activity android:name=".QingBao.jiaju.jiajuzhuyishixiang"></activity>
     </application>
 
 </manifest>

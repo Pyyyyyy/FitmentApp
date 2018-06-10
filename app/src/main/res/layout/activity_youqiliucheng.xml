@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:orientation="horizontal"
+        >
+
+        <ImageView
+            android:id="@+id/back"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:paddingLeft="5dp"
+            android:paddingTop="5dp"
+            android:paddingRight="5dp"
+            android:paddingBottom="5dp"
+            android:src="@drawable/ic_return"
+            />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="5"
+            android:text="油漆工程基本流程"
+            android:textSize="23sp"
+            android:maxLines="1"
+            android:gravity="center"
+
+            />
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:maxLines="1"
+            android:gravity="center"
+            />
+
+    </LinearLayout>
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="18dp"
+        android:text="      1.材料进场与检验，并核对油漆阶段的材料品牌规格，因为就油漆工程而言，劣质的油漆材料会直接影响日常使用甚至可能威胁到人身和财产的安全。"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="18dp"
+        android:text="      2.墙面修补，毛坯的墙体或者已经做好1道腻子层的房子还不能直接上漆,因为刷墙面漆要求基层必须平整坚固,不得有粉化、起砂、空鼓、脱落等现象。基层不平和坑洼面应该使用配套腻子刮平。阴阳角必须通过弹墨线来找垂直度及平整度。
+"
+        android:id="@+id/textView3" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="18dp"
+        android:text="      3.刮腻子，腻子的作用是让墙面更平整一点,买上成品袋装的腻子粉,加水搅拌就可以用了。另外,这里还有个省钱小贴士,腻子批刮得好的话可以有效减少底漆和面漆的用量。"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="18dp"
+        android:text="      4.墙面打磨，刮腻子后,总有些高低不平,或者基层不是很平整的面。这个时候,就要用到砂纸了。在打磨修复的过程中,可以用太阳灯照明,查看墙面的平整度,不断完善。砂纸根据砂粒大小分为不同标号,标号越高颗粒越细,标号越低颗粒就越粗糙,在施工中根据不同的工艺选择不同型号的砂纸。通常有:60#120# 240# 360# 600# 800# 1200# 1500# 2000# 等。"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="18dp"
+        android:text="      5.刷漆底漆是油漆系统的第一层,具有封闭墙体,增强面漆附着力,增加面漆的丰满度、提供抗碱性、防腐等作用,同时可以保证面漆的均匀吸收,使油漆系统发挥最佳效果。此外,面漆一般比底漆更贵,刷底漆可以有效节省面漆的使用量,从而降低墙面装修整体费用。面漆一般刷两次,在开始前,先将踢脚线,门,衣柜,角线等交接部分,最好用分色纸贴上,以免染色,完毕后才撕开。乳胶漆和其他墙面辅料最好都是同一个品牌,同一个型号,以免引起色差和质量问题。兑水也该按说明操作,加水最多不超过20%,不要过稀或者过浓。"/>
+
+</LinearLayout>

@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:orientation="horizontal"
+        >
+
+        <ImageView
+            android:id="@+id/back"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:paddingLeft="5dp"
+            android:paddingTop="5dp"
+            android:paddingRight="5dp"
+            android:paddingBottom="5dp"
+            android:src="@drawable/ic_return"
+            />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="5"
+            android:text="厨浴注意事项"
+            android:textSize="23sp"
+            android:maxLines="1"
+            android:gravity="center"
+
+            />
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:maxLines="1"
+            android:gravity="center"
+            />
+
+    </LinearLayout>
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="18dp"
+        android:text="      1.吊柜的安装应根据不同的墙体采用不同的固定方法。"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="18dp"
+        android:text="      2.底柜安装应先调整水平旋钮，保证各柜体台面、前脸在一个水平面上，两柜连接使用木螺丝钉，后背板通管线。表、阀门等应在背板划线打孔，以便躲让有关设备，孔侧不得出现锯齿形状。"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="18dp"
+        android:text="      3.安装洗物柜底板下水孔处要加塑料圆垫，下水管连接处应保证不漏水、不渗水，不得使用各类胶粘剂连接接口部分。"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="18dp"
+        android:text="      4.安装不锈钢水槽时，要按水槽的型号、尺寸在台面上划线开槽，水槽与台面板的连接要用配好的吊挂螺丝夹紧调平，加密封胶封边，保证水槽与台面连接缝隙均匀、不渗水。"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="18dp"
+        android:text="      5.安装水龙头时，可直接在不锈钢板或其他台面上打孔。要求安装牢固，上水连接不能出现渗水现象。"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="18dp"
+        android:text="      6.抽油烟机的安装要根据所用抽油烟机生产厂家的说明，注意吊柜与抽油烟机罩的尺寸配合，应达到协调统一。"
+        />
+
+
+</LinearLayout>
