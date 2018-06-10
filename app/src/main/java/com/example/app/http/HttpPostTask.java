@@ -41,6 +41,7 @@ public class HttpPostTask extends AsyncTask<String,String,String> {
             URL url = new URL(params[0]);
             HttpURLConnection connection =(HttpURLConnection) url.openConnection();
             connection.setRequestProperty("Content-Type", "application/json;charset=utf-8");
+            connection.setRequestProperty("Accept-Language", "zh-CN");
             connection.setRequestMethod("POST");
             connection.setConnectTimeout(8000);
             connection.setReadTimeout(8000);

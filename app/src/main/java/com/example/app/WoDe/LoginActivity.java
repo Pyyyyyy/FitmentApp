@@ -20,7 +20,7 @@ import com.example.app.http.ResponseHandler;
 public class LoginActivity extends BaseActivity {
     private String URL_LOGIN = "http://w2062389t3.iask.in:39931/FitmentApp/LoginServlet";
 
-    private EditText account;                        //用户名编辑
+    private EditText phoneNumber;                        //用户名编辑
     private EditText password;                            //密码编辑
     private Button login;                   //登录按钮
     private Button register;                      //注册按钮
@@ -34,7 +34,7 @@ public class LoginActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.login_layout);
 
-        account = (EditText) findViewById(R.id.account);
+        phoneNumber = (EditText) findViewById(R.id.phoneNumber);
         password = (EditText) findViewById(R.id.password);
         Login_Remember = (CheckBox) findViewById(R.id.Login_Remember);
         /*
@@ -60,7 +60,7 @@ public class LoginActivity extends BaseActivity {
             @Override
             public void onClick(View v) {
                 if (login_check()) {
-                    login(account.getText().toString().trim(),password.getText().toString().trim());
+                    login(phoneNumber.getText().toString().trim(),password.getText().toString().trim());
                 }
             }
         });
@@ -75,7 +75,7 @@ public class LoginActivity extends BaseActivity {
     }
 
     public boolean login_check() {
-        if (account.getText().toString().trim().equals("")) {
+        if (phoneNumber.getText().toString().trim().equals("")) {
             Toast.makeText(this, "账号不能为空",
                     Toast.LENGTH_SHORT).show();
             return false;
@@ -87,7 +87,7 @@ public class LoginActivity extends BaseActivity {
         return true;
     }
 
-    public void login(String account,String password) {                                              //登录按钮监听事件
+    public void login(String phoneNumber,String password) {                                              //登录按钮监听事件
 
 
         //SharedPreferences.Editor editor = login_sp.edit();
@@ -104,7 +104,7 @@ public class LoginActivity extends BaseActivity {
         //editor.commit();
 
         final CommonRequest request = new CommonRequest();
-        request.addRequestParam("account", account);
+        request.addRequestParam("phoneNumber",phoneNumber);
         request.addRequestParam("password", password);
         sendHttpPostRequest(URL_LOGIN, request, new ResponseHandler() {
             @Override

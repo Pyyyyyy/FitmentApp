@@ -9,22 +9,15 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
-
 import com.example.app.R;
 import com.example.app.http.BaseActivity;
 import com.example.app.http.CommonRequest;
 import com.example.app.http.CommonResponse;
 import com.example.app.http.ResponseHandler;
-
 import android.os.Handler;
 import android.os.Message;
-
-
 import android.text.TextUtils;
 import android.widget.TextView;
-
-import org.json.JSONObject;
-
 import cn.smssdk.EventHandler;
 import cn.smssdk.SMSSDK;
 
@@ -117,6 +110,8 @@ public class RegisterActivity extends BaseActivity implements View.OnClickListen
                             handler.sendEmptyMessage(-2);
                         }
                     }).start();
+                }else{
+                    Toast.makeText(RegisterActivity.this,"手机号码不正确",Toast.LENGTH_SHORT).show();
                 }
                 break;
             case R.id.register:
@@ -171,7 +166,7 @@ public class RegisterActivity extends BaseActivity implements View.OnClickListen
     Handler handler = new Handler() {
         public void handleMessage(Message msg) {
             if (msg.what == -1) {
-                //修改控件文本进行倒计时  i 以60秒倒计时为例
+                //修改控件文本进行倒计时
                 sendMsg.setText( i+" s");
             } else if (msg.what == -2) {
                 //修改控件文本，进行重新发送验证码
@@ -184,30 +179,21 @@ public class RegisterActivity extends BaseActivity implements View.OnClickListen
                 Object data = msg.obj;
 
                 // 短信注册成功后
-                if (event == SMSSDK.EVENT_SUBMIT_VERIFICATION_CODE) {
-                    if(register_check()){
-                        register(phoneNumber.getText().toString().trim(), name.getText().toString().trim(), idCardNumber.getText().toString().trim(), password.getText().toString().trim());
-                    }
-                } else if (event == SMSSDK.EVENT_GET_VERIFICATION_CODE) {
-                    Toast.makeText(getApplicationContext(), "验证码已经发送",
-                            Toast.LENGTH_SHORT).show();
-                } else if (result == SMSSDK.RESULT_ERROR) {
-                    try {
-                        Throwable throwable = (Throwable) data;
-                        throwable.printStackTrace();
-                        JSONObject object = new JSONObject(throwable.getMessage());
-                        String des = object.optString("detail");//错误描述
-                        int status = object.optInt("status");//错误代码
-                        if (status > 0 && !TextUtils.isEmpty(des)) {
-                            Toast.makeText(RegisterActivity.this, des, Toast.LENGTH_SHORT).show();
-                            return;
+                if (result == SMSSDK.RESULT_COMPLETE) {
+                    if (event == SMSSDK.EVENT_SUBMIT_VERIFICATION_CODE) {
+                        if (register_check()) {
+                            register(phoneNumber.getText().toString().trim(), name.getText().toString().trim(), idCardNumber.getText().toString().trim(), password.getText().toString().trim());
                         }
-                    } catch (Exception e) {
-                        //do something
+                    } else if (event == SMSSDK.EVENT_GET_VERIFICATION_CODE) {
+                        Toast.makeText(getApplicationContext(), "验证码已经发送",
+                                Toast.LENGTH_SHORT).show();
                     }
-                }else {
-                    ((Throwable) data).printStackTrace();
-                }
+                }else if (result == SMSSDK.RESULT_ERROR) {
+                    Toast.makeText(RegisterActivity.this,"验证码错误",Toast.LENGTH_SHORT).show();
+                    } else {
+                        ((Throwable) data).printStackTrace();
+                    }
+
             }
 
         }
