@@ -34,29 +34,48 @@
 
         <activity android:name=".zhuangXiuQian.zhuangxiuqianActivity" />
         <activity android:name=".QingBao.zhuangxiuzhongActivity" />
-        <activity android:name=".QingBao.shuidianliuchengActivity" />
-        <activity android:name=".QingBao.shuidiancailiao" />
-        <activity android:name=".QingBao.shuidianzhuyishixian" />
-        <activity android:name=".QingBao.shuidianActivity" />
-        <activity android:name=".QingBao.nimuActivity" />
-        <activity android:name=".QingBao.tumuActivity" />
-        <activity android:name=".QingBao.youqiActivity" />
-        <activity android:name=".QingBao.chuyuActivity" />
-        <activity android:name=".QingBao.dengjuActivity" />
-        <activity android:name=".QingBao.jiajuActivity" />
+        <activity android:name=".QingBao.shuidian.shuidianliuchengActivity" />
+        <activity android:name=".QingBao.shuidian.shuidiancailiao" />
+        <activity android:name=".QingBao.shuidian.shuidianzhuyishixian" />
+        <activity android:name=".QingBao.shuidian.shuidianActivity" />
+        <activity android:name=".QingBao.nimu.nimuActivity" />
+        <activity android:name=".QingBao.tumu.tumuActivity" />
+        <activity android:name=".QingBao.youqi.youqiActivity" />
+        <activity android:name=".QingBao.chuyu.chuyuActivity" />
+        <activity android:name=".QingBao.dengju.dengjuActivity" />
+        <activity android:name=".QingBao.jiaju.jiajuActivity" />
         <activity android:name=".WoDe.UserActivity" />
-        <activity android:name=".WoDe.LoginActivity" />
+        <activity android:name=".WoDe.LoginActivity"
+            android:launchMode="singleTask"/>
         <activity android:name=".WoDe.RegisterActivity" />
+        <activity android:name=".WoDe.Register2Activity"/>
         <activity android:name=".FitmentMaterial.FitmentMaterialActivity" />
 
         <activity android:name=".Tools.wallet"/>
         <activity android:name=".FitmentMaterial.ShoppingCar"/>
         <activity android:name=".FitmentMaterial.FitmentAddActivity"/>
         <activity android:name=".Worker.WorkerActivity"/>
-
-
-
         <activity android:name=".Worker.WorkerAddActivity"/>
+
+        <activity android:name=".QingBao.nimu.nimuliucheng" />
+        <activity android:name=".QingBao.nimu.nimucailiao" />
+        <activity android:name=".QingBao.nimu.nimuzhuyishixiang" />
+        <activity android:name=".QingBao.tumu.tumuliucheng" />
+        <activity android:name=".QingBao.tumu.tumucailiao" />
+        <activity android:name=".QingBao.tumu.tumuzhuyishixiang" />
+        <activity android:name=".QingBao.youqi.youqiliucheng" />
+        <activity android:name=".QingBao.youqi.youqicailiao" />
+        <activity android:name=".QingBao.youqi.youqizhuyishixiang" />
+        <activity android:name=".QingBao.chuyu.chuyuliucheng" />
+        <activity android:name=".QingBao.chuyu.chuyucailiao" />
+        <activity android:name=".QingBao.chuyu.chuyuzhuyishixiang" />
+        <activity android:name=".QingBao.dengju.dengjuliucheng" />
+        <activity android:name=".QingBao.dengju.dengjucailiao" />
+        <activity android:name=".QingBao.dengju.dengjuzhuyishixiang" />
+        <activity android:name=".QingBao.jiaju.jiajuliucheng" />
+        <activity android:name=".QingBao.jiaju.jiajucailiao" />
+        <activity android:name=".QingBao.jiaju.jiajuzhuyishixiang" />
+        <activity android:name=".message"></activity>
 
 
         <activity
@@ -88,25 +107,7 @@
                 android:resource="@xml/file_paths" />
         </provider>
 
-        <activity android:name=".QingBao.nimu.nimuliucheng" />
-        <activity android:name=".QingBao.nimu.nimucailiao" />
-        <activity android:name=".QingBao.nimu.nimuzhuyishixiang" />
-        <activity android:name=".QingBao.tumu.tumuliucheng" />
-        <activity android:name=".QingBao.tumu.tumucailiao" />
-        <activity android:name=".QingBao.tumu.tumuzhuyishixiang" />
-        <activity android:name=".QingBao.youqi.youqiliucheng" />
-        <activity android:name=".QingBao.youqi.youqicailiao" />
-        <activity android:name=".QingBao.youqi.youqizhuyishixiang" />
-        <activity android:name=".QingBao.chuyu.chuyuliucheng" />
-        <activity android:name=".QingBao.chuyu.chuyucailiao" />
-        <activity android:name=".QingBao.chuyu.chuyuzhuyishixiang" />
-        <activity android:name=".QingBao.dengju.dengjuliucheng" />
-        <activity android:name=".QingBao.dengju.dengjucailiao" />
-        <activity android:name=".QingBao.dengju.dengjuzhuyishixiang" />
-        <activity android:name=".QingBao.jiaju.jiajuliucheng" />
-        <activity android:name=".QingBao.jiaju.jiajucailiao" />
-        <activity android:name=".QingBao.jiaju.jiajuzhuyishixiang" />
-        <activity android:name=".message"></activity>
+
     </application>
 
 </manifest>

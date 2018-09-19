@@ -1,36 +1,27 @@
-package com.example.app.QingBao;
+package com.example.app.QingBao.shuidian;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
-
 import android.widget.Button;
-
 import android.widget.ImageView;
 
-import com.example.app.QingBao.chuyu.chuyucailiao;
-import com.example.app.QingBao.chuyu.chuyuliucheng;
-import com.example.app.QingBao.chuyu.chuyuzhuyishixiang;
-import com.example.app.QingBao.nimu.nimucailiao;
-import com.example.app.QingBao.nimu.nimuliucheng;
-import com.example.app.QingBao.nimu.nimuzhuyishixiang;
 import com.example.app.R;
 
 /**
  * Created by 1 on 2018/1/6.
  */
 
-public class chuyuActivity extends AppCompatActivity {
+public class shuidianActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.chuyu_layout);
-
-        ImageView imageView01 = (ImageView) findViewById(R.id.lostandfound_back_imageview);
-        imageView01.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(chuyuActivity.this,zhuangxiuzhongActivity.class);
+        setContentView(R.layout.shuidian_layout);
+        ActionBar actionBar = getSupportActionBar();
+        if (actionBar!=null){
+            actionBar.hide();
+        }
 
         Button button1 = (Button) findViewById(R.id.button1) ;
         Button button2 = (Button) findViewById(R.id.button2) ;
@@ -45,7 +36,7 @@ public class chuyuActivity extends AppCompatActivity {
         button1.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
-                Intent intent = new Intent(chuyuActivity.this,chuyuliucheng.class);
+                Intent intent = new Intent(shuidianActivity.this,shuidianliuchengActivity.class);
                 startActivity(intent);
             }
         });
@@ -53,17 +44,17 @@ public class chuyuActivity extends AppCompatActivity {
         button2.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
-                Intent intent = new Intent(chuyuActivity.this,chuyucailiao.class);
+                Intent intent = new Intent(shuidianActivity.this,shuidiancailiao.class);
                 startActivity(intent);
             }
         });
         button3.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
-                Intent intent = new Intent(chuyuActivity.this,chuyuzhuyishixiang.class);
-
+                Intent intent = new Intent(shuidianActivity.this,shuidianzhuyishixian.class);
                 startActivity(intent);
             }
         });
+
     }
-});}}
+}

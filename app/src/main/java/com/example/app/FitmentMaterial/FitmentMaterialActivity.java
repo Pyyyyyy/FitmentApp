@@ -34,7 +34,7 @@ import java.util.List;
 
 
 public class FitmentMaterialActivity extends BaseActivity {
-    private String URL_FITMENT = "http://w2062389t3.iask.in:39931/FitmentApp/FitmentMaterialServlet";
+    private String URL_FITMENT = "http://w2062389t3.iask.in:42216/FitmentApp/FitmentMaterialServlet";
     private SwipeRefreshLayout swipeRefresh;
 
     private List<Material>materialList = new ArrayList<>();

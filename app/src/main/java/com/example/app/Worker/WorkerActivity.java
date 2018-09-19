@@ -39,7 +39,7 @@ import java.util.HashMap;
 import java.util.List;
 
 public class WorkerActivity extends BaseActivity {
-    private String URL_FITMENT = "http://w2062389t3.iask.in:39931/FitmentApp/WorkerServlet";
+    private String URL_FITMENT = "http://w2062389t3.iask.in:42216/FitmentApp/WorkerServlet";
 
     private SwipeRefreshLayout swipeRefresh;
 

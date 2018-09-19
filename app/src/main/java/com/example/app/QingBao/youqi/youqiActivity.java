@@ -1,7 +1,8 @@
-package com.example.app.QingBao;
+package com.example.app.QingBao.youqi;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
@@ -10,23 +11,20 @@ import android.widget.Button;
 
 import android.widget.ImageView;
 
-import com.example.app.QingBao.nimu.nimucailiao;
-import com.example.app.QingBao.nimu.nimuliucheng;
-import com.example.app.QingBao.nimu.nimuzhuyishixiang;
 import com.example.app.R;
 
+/**
+ * Created by 1 on 2018/1/6.
+ */
 
-
-public class nimuActivity extends AppCompatActivity {
+public class youqiActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.nimu_layout);
-
-        final ImageView imageView01 = (ImageView) findViewById(R.id.lostandfound_back_imageview);
-        imageView01.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(nimuActivity.this,zhuangxiuzhongActivity.class);
+        setContentView(R.layout.youqi_layout);
+        ActionBar actionBar = getSupportActionBar();
+        if (actionBar!=null){
+            actionBar.hide();
+        }
 
 
         Button button1 = (Button) findViewById(R.id.button1) ;
@@ -42,25 +40,22 @@ public class nimuActivity extends AppCompatActivity {
         button1.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
-                Intent intent = new Intent(nimuActivity.this,nimuliucheng.class);
-
+                Intent intent = new Intent(youqiActivity.this,youqiliucheng.class);
                 startActivity(intent);
             }
         });
 
-
-
         button2.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
-                Intent intent = new Intent(nimuActivity.this,nimucailiao.class);
+                Intent intent = new Intent(youqiActivity.this,youqicailiao.class);
                 startActivity(intent);
             }
         });
         button3.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
-                Intent intent = new Intent(nimuActivity.this,nimuzhuyishixiang.class);
+                Intent intent = new Intent(youqiActivity.this,youqizhuyishixiang.class);
                 startActivity(intent);
             }
         });
@@ -69,4 +64,5 @@ public class nimuActivity extends AppCompatActivity {
 
 
     }
-});}}
+
+}

@@ -1,7 +1,9 @@
 package com.example.app.WoDe;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.ActionBar;
+import android.support.v7.app.AppCompatActivity;
 import android.text.method.HideReturnsTransformationMethod;
 import android.text.method.PasswordTransformationMethod;
 import android.widget.Button;
@@ -23,22 +25,27 @@ import cn.smssdk.SMSSDK;
 
 
 
-public class RegisterActivity extends BaseActivity implements View.OnClickListener{
-    private String URL_REGISTER = "http://w2062389t3.iask.in:39931/FitmentApp/RegisterServlet";
+public class RegisterActivity extends AppCompatActivity implements View.OnClickListener{
+    //private String URL_REGISTER = "http://w2062389t3.iask.in:42216/FitmentApp/RegisterServlet";
+  /*
 
-    private EditText phoneNumber;
-    private EditText code;
-    private Button sendMsg;
     private EditText name;
     private EditText idCardNumber;
     private EditText password;
     private ImageView iv_showPassword;
     private EditText repassword;
     private ImageView iv_showRepassword;
-    private TextView register;
-    private ImageView cancel;
     private Boolean showPassword = true;
     private Boolean showRepassword = true;
+ */
+   private EditText phoneNumber;
+    private EditText code;
+    private Button sendMsg;
+
+
+    private TextView next;
+    private ImageView back;
+
     private int i;
 
 
@@ -51,10 +58,8 @@ public class RegisterActivity extends BaseActivity implements View.OnClickListen
         if (actionBar!=null){
             actionBar.hide();
         }
+/*
 
-        phoneNumber = (EditText)findViewById(R.id.phoneNumber);
-        code = (EditText)findViewById(R.id.code);
-        sendMsg = (Button)findViewById((R.id.sendMsg));
         name = (EditText)findViewById(R.id.name);
         idCardNumber = (EditText)findViewById(R.id.idCardNumber);
         password = (EditText)findViewById(R.id.password);
@@ -62,18 +67,24 @@ public class RegisterActivity extends BaseActivity implements View.OnClickListen
         iv_showPassword.setImageDrawable(getResources().getDrawable(R.drawable.passwordn));
         iv_showRepassword = (ImageView) findViewById(R.id.iv_showRepassword);
         iv_showRepassword.setImageDrawable(getResources().getDrawable(R.drawable.passwordn));
-
+        iv_showPassword.setOnClickListener(this);
+        iv_showRepassword.setOnClickListener(this);
         repassword = (EditText)findViewById(R.id.repassword);
-        register = (TextView)findViewById((R.id.register));
-        cancel = (ImageView)findViewById(R.id.cancel);
+        */
+
+        phoneNumber = (EditText)findViewById(R.id.phoneNumber);
+        code = (EditText)findViewById(R.id.code);
+        sendMsg = (Button)findViewById((R.id.sendMsg));
+
+        next = (TextView)findViewById((R.id.next));
+        back = (ImageView)findViewById(R.id.back);
 
         SMSSDK.registerEventHandler(eventHandler);
         sendMsg.setOnClickListener(this);
-        register.setOnClickListener(this);
-        register.setClickable(false);
-        cancel.setOnClickListener(this);
-        iv_showPassword.setOnClickListener(this);
-        iv_showRepassword.setOnClickListener(this);
+        next.setOnClickListener(this);
+        next.setClickable(false);
+        back.setOnClickListener(this);
+
     }
 
     @Override
@@ -90,7 +101,7 @@ public class RegisterActivity extends BaseActivity implements View.OnClickListen
                 if(phoneNum.matches(num)) {
                     SMSSDK.getVerificationCode("86", phoneNum);
                     sendMsg.setClickable(false);
-                    register.setClickable(true);
+                    next.setClickable(true);
                     //开始倒计时
                     new Thread(new Runnable() {
                         @Override
@@ -114,7 +125,7 @@ public class RegisterActivity extends BaseActivity implements View.OnClickListen
                     Toast.makeText(RegisterActivity.this,"手机号码不正确",Toast.LENGTH_SHORT).show();
                 }
                 break;
-            case R.id.register:
+            case R.id.next:
                 String mCode = code.getText().toString().trim();
                 if (TextUtils.isEmpty(phoneNum)) {
                     Toast.makeText(getApplicationContext(), "手机号码不能为空",
@@ -128,9 +139,10 @@ public class RegisterActivity extends BaseActivity implements View.OnClickListen
                 }
                 SMSSDK.submitVerificationCode("86", phoneNum, mCode);
                 break;
-            case R.id.cancel:
+            case R.id.back:
                 finish();
                 break;
+                /*
             case R.id.iv_showPassword:
                 if (showPassword) {// 显示密码
                     iv_showPassword.setImageDrawable(getResources().getDrawable(R.drawable.passwordy));
@@ -157,6 +169,7 @@ public class RegisterActivity extends BaseActivity implements View.OnClickListen
                     showRepassword = !showRepassword;
                 }
                 break;
+                */
             default:
                 break;
         }
@@ -181,9 +194,15 @@ public class RegisterActivity extends BaseActivity implements View.OnClickListen
                 // 短信注册成功后
                 if (result == SMSSDK.RESULT_COMPLETE) {
                     if (event == SMSSDK.EVENT_SUBMIT_VERIFICATION_CODE) {
+                        Intent intent = new Intent(RegisterActivity.this,Register2Activity.class);
+                        intent.putExtra("phoneNumber",phoneNumber.getText().toString().trim());
+                        startActivity(intent);
+                        /*
                         if (register_check()) {
                             register(phoneNumber.getText().toString().trim(), name.getText().toString().trim(), idCardNumber.getText().toString().trim(), password.getText().toString().trim());
-                        }
+                            }
+                            */
+
                     } else if (event == SMSSDK.EVENT_GET_VERIFICATION_CODE) {
                         Toast.makeText(getApplicationContext(), "验证码已经发送",
                                 Toast.LENGTH_SHORT).show();
@@ -210,7 +229,7 @@ public class RegisterActivity extends BaseActivity implements View.OnClickListen
             handler.sendMessage(msg);
         }
     };
-
+/*
     public boolean register_check(){
        if (name.getText().toString().trim().equals("")) {
             Toast.makeText(this, "姓名不能为空",
@@ -264,6 +283,7 @@ public class RegisterActivity extends BaseActivity implements View.OnClickListen
 
         });
     }
+    */
 
     //在完成短信验证之后，需要销毁回调监听接口。
     @Override

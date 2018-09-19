@@ -1,5 +1,6 @@
 package com.example.app.QingBao;
 
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -8,9 +9,14 @@ import android.content.Intent;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 
-import com.example.app.Fragment.FragmenHome;
+import com.example.app.QingBao.chuyu.chuyuActivity;
+import com.example.app.QingBao.dengju.dengjuActivity;
+import com.example.app.QingBao.jiaju.jiajuActivity;
+import com.example.app.QingBao.nimu.nimuActivity;
+import com.example.app.QingBao.shuidian.shuidianActivity;
+import com.example.app.QingBao.tumu.tumuActivity;
+import com.example.app.QingBao.youqi.youqiActivity;
 import com.example.app.R;
-import com.example.app.main.MainActivity;
 
 public class zhuangxiuzhongActivity extends AppCompatActivity {
 
@@ -18,6 +24,10 @@ public class zhuangxiuzhongActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.zhuangxiuzhong_layout);
+        ActionBar actionBar = getSupportActionBar();
+        if (actionBar!=null){
+            actionBar.hide();
+        }
 
         ImageButton button1 = (ImageButton) findViewById(R.id.button1);
         button1.setOnClickListener(new View.OnClickListener(){
@@ -85,8 +95,7 @@ public class zhuangxiuzhongActivity extends AppCompatActivity {
         imageView01.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent =  new Intent(zhuangxiuzhongActivity.this, MainActivity.class);
-                startActivity(intent);
+                finish();
             }
         });
 

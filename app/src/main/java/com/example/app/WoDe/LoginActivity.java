@@ -3,6 +3,7 @@ package com.example.app.WoDe;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.support.v7.app.ActionBar;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
@@ -19,7 +20,7 @@ import com.example.app.http.ResponseHandler;
 
 
 public class LoginActivity extends BaseActivity {
-    private String URL_LOGIN = "http://w2062389t3.iask.in:39931/FitmentApp/LoginServlet";
+    private String URL_LOGIN = "http://w2062389t3.iask.in:42216/FitmentApp/LoginServlet";
 
     private EditText phoneNumber;                        //用户名编辑
     private EditText password;                            //密码编辑
@@ -34,12 +35,15 @@ public class LoginActivity extends BaseActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.login_layout);
-        ImageView imageView01 =  (ImageView) findViewById(R.id.lostandfound_back_imageview);
-        imageView01.setOnClickListener(new View.OnClickListener() {
+        ActionBar actionBar = getSupportActionBar();
+        if (actionBar!=null){
+            actionBar.hide();
+        }
+        ImageView back =  (ImageView) findViewById(R.id.back);
+        back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(LoginActivity.this,UserActivity.class);
-                startActivity(intent);
+                finish();
             }
         });
 

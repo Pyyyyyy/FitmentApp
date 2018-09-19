@@ -1,24 +1,39 @@
-package com.example.app.QingBao;
+package com.example.app.QingBao.jiaju;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+
+
 import android.widget.Button;
+
 import android.widget.ImageView;
 
 import com.example.app.R;
-
-import static com.example.app.R.id.button2;
 
 /**
  * Created by 1 on 2018/1/6.
  */
 
-public class shuidianActivity extends AppCompatActivity {
+public class jiajuActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.shuidian_layout);
+        setContentView(R.layout.jiaju_layout);
+        ActionBar actionBar = getSupportActionBar();
+        if (actionBar!=null){
+            actionBar.hide();
+        }
+
+        ImageView imageView01 = (ImageView) findViewById(R.id.back);
+        imageView01.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
+            }
+        });
+
 
         Button button1 = (Button) findViewById(R.id.button1) ;
         Button button2 = (Button) findViewById(R.id.button2) ;
@@ -27,14 +42,14 @@ public class shuidianActivity extends AppCompatActivity {
         back.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
-                Intent intent = new Intent(shuidianActivity.this,zhuangxiuzhongActivity.class);
-                startActivity(intent);
+                finish();
             }
         });
+
         button1.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
-                Intent intent = new Intent(shuidianActivity.this,shuidianliuchengActivity.class);
+                Intent intent = new Intent(jiajuActivity.this,jiajuliucheng.class);
                 startActivity(intent);
             }
         });
@@ -42,17 +57,18 @@ public class shuidianActivity extends AppCompatActivity {
         button2.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
-                Intent intent = new Intent(shuidianActivity.this,shuidiancailiao.class);
+                Intent intent = new Intent(jiajuActivity.this,jiajucailiao.class);
                 startActivity(intent);
             }
         });
         button3.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
-                Intent intent = new Intent(shuidianActivity.this,shuidianzhuyishixian.class);
+                Intent intent = new Intent(jiajuActivity.this,jiajuzhuyishixiang.class);
                 startActivity(intent);
             }
         });
+
 
     }
 }

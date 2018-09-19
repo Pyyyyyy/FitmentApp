@@ -6,26 +6,26 @@
     android:orientation="vertical" >
 
 
-    <LinearLayout style="@style/single_layout"
-        android:layout_height="200dp"
-        android:background="@drawable/view"
+    <LinearLayout style="@style/wrap_layout"
+        android:layout_height="80dp"
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
         android:gravity="center"
         android:orientation="vertical">
-        <ImageView
-            android:layout_width="70dp"
-            android:layout_height="70dp"
-            android:background="@drawable/launcher"
-            android:layout_gravity="center"
-            android:layout_marginBottom="20dp" />
-        <TextView
+
+        <Button
             android:id="@+id/enter"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="登录/注册"
-            android:textColor="@color/white"
-            android:textSize="15dp"/>
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:drawableLeft="@drawable/launcher"
+            android:layout_gravity="center"
+
+            android:text="登录"
+            android:background="#FFFFFF"
+
+
+            android:textSize="20sp" />
+
         <!--android:background="@drawable/avater_layout_selector"/>-->
     </LinearLayout>
 

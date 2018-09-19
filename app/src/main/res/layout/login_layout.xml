@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/background"
+
     tools:context="com.example.app.WoDe.LoginActivity">
     <RelativeLayout
         android:id="@+id/login_view"
@@ -18,8 +18,7 @@
             android:layout_height="wrap_content"
             android:text="注册"
             android:id="@+id/register"
-            android:textColor="#ffffff"
-            android:background="@drawable/shape2"
+            android:background="#FFFFFF"
             android:textSize="20dp"
             android:layout_below="@+id/login"
             android:layout_alignParentLeft="true"
@@ -31,9 +30,8 @@
             android:layout_height="wrap_content"
             android:text="登录"
             android:id="@+id/login"
-            android:background="@drawable/shape"
+            android:background="#FFFFFF"
             android:textSize="20dp"
-            android:textColor="#ffffff"
             android:layout_below="@+id/password"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
@@ -46,7 +44,7 @@
             >
 
             <ImageView
-                android:id="@+id/lostandfound_back_imageview"
+                android:id="@+id/back"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
@@ -54,7 +52,7 @@
                 android:paddingTop="5dp"
                 android:paddingRight="5dp"
                 android:paddingBottom="5dp"
-                android:background="@color/darkgray"
+                android:background="#FFFFFF"
                 android:src="@drawable/ic_return"
                 />
 
@@ -63,7 +61,7 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="5"
-                android:background="@color/darkgray"
+                android:background="#FFFFFF"
                 android:maxLines="1"
                 android:gravity="center"
                 />
@@ -71,7 +69,7 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:background="@color/darkgray"
+                android:background="#FFFFFF"
                 android:maxLines="1"
                 android:gravity="center"
                 />
