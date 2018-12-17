@@ -196,10 +196,10 @@ public class WorkerActivity extends BaseActivity {
 
     private void initWorkers() {
         workerList.clear();
-        for (int i = 0; i < 50; i++) {
-            Random random = new Random();
-            int index = random.nextInt(workers.length);
-            workerList.add(workers[index]);
+        for (int i = 0; i < 5; i++) {
+            //Random random = new Random();
+            //int index = random.nextInt(workers.length);
+            workerList.add(workers[i]);
         }
     }
 }

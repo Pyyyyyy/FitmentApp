@@ -201,10 +201,11 @@ public class FitmentMaterialActivity extends BaseActivity {
 
     private void initMaterials() {
         materialList.clear();
-        for (int i = 0; i < 50; i++) {
-            Random random = new Random();
-            int index = random.nextInt(materials.length);
-            materialList.add(materials[index]);
+        for (int i = 0; i < 12; i++) {
+
+            //Random random = new Random();
+            //int index = random.nextInt(materials.length);
+            materialList.add(materials[i]);
         }
     }
 }
