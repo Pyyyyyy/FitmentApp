@@ -31,11 +31,20 @@ import com.example.app.Tools.wallet;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Random;
 
 
 public class FitmentMaterialActivity extends BaseActivity {
-    private String URL_FITMENT = "http://w2062389t3.iask.in:42216/FitmentApp/FitmentMaterialServlet";
+
+   // private String URL_FITMENT = "http://w2062389t3.iask.in:42216/FitmentApp/FitmentMaterialServlet";
     private SwipeRefreshLayout swipeRefresh;
+
+    private Material[] materials = {new Material("木板 ￥10", R.drawable.tumu1), new Material("木板 ￥20", R.drawable.tumu2),
+            new Material("木板 ￥30", R.drawable.tumu3), new Material("油漆 ￥10", R.drawable.youqi1),
+            new Material ("油漆 ￥20", R.drawable.youqi2), new Material("油漆 ￥30", R.drawable.youqi3),
+            new Material("水泥 ￥10", R.drawable.nimu1), new Material("水泥 ￥20", R.drawable.nimu2),
+            new Material("水泥 ￥30", R.drawable.nimu3), new Material("水泥 ￥40", R.drawable.nimu4),
+            new Material("厨房 ￥10", R.drawable.chuyu1),new Material("浴室 ￥30", R.drawable.chuyu2)};
 
     private List<Material>materialList = new ArrayList<>();
     private MaterialAdapter adapter;
@@ -49,10 +58,10 @@ public class FitmentMaterialActivity extends BaseActivity {
             actionBar.hide();
         }
 
-        Button button01 = (Button) findViewById(R.id.button_shoppingcar);
+       //Button button01 = (Button) findViewById(R.id.button_shoppingcar);
         TextView add = (TextView) findViewById(R.id.add);
         ImageView cancel = (ImageView) findViewById(R.id.cancel);
-        NavigationView navView  = (NavigationView) findViewById(R.id.nav_view);
+        //NavigationView navView  = (NavigationView) findViewById(R.id.nav_view);
 
         add.setOnClickListener(new View.OnClickListener(){
             @Override
@@ -61,7 +70,7 @@ public class FitmentMaterialActivity extends BaseActivity {
                 startActivity(intent);
             }
         });
-
+/*
         button01.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -69,7 +78,7 @@ public class FitmentMaterialActivity extends BaseActivity {
                 startActivity(intent);
             }
         });
-
+*/
 
         cancel.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -78,7 +87,7 @@ public class FitmentMaterialActivity extends BaseActivity {
             }
         });
 
-
+/*
         navView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(MenuItem menuItem) {
@@ -121,17 +130,18 @@ public class FitmentMaterialActivity extends BaseActivity {
 
         });
 
-
-
+*/
+        initMaterials();
         RecyclerView recyclerView = (RecyclerView) findViewById(R.id.recycler_view);
         GridLayoutManager layoutManager = new GridLayoutManager(this,2);
         recyclerView.setLayoutManager(layoutManager);
         adapter = new MaterialAdapter(materialList);
         recyclerView.setAdapter(adapter);
 
-        fitmentMaterial();
+        //fitmentMaterial();
 
         swipeRefresh = (SwipeRefreshLayout) findViewById(R.id.swipe_refresh);
+        swipeRefresh.setColorSchemeResources(R.color.colorPrimary);
         swipeRefresh.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
             @Override
             public void onRefresh() {
@@ -142,7 +152,7 @@ public class FitmentMaterialActivity extends BaseActivity {
 
 
     }
-
+/*
     public void fitmentMaterial(){
         final CommonRequest request = new CommonRequest();
         sendHttpPostRequest(URL_FITMENT,request,new ResponseHandler(){
@@ -166,7 +176,7 @@ public class FitmentMaterialActivity extends BaseActivity {
         });
 
     }
-
+*/
     private void refreshMaterial(){
         new Thread(new Runnable() {
             @Override
@@ -179,11 +189,22 @@ public class FitmentMaterialActivity extends BaseActivity {
                 runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
-                        fitmentMaterial();
+                        //fitmentMaterial();
+                        initMaterials();
+                        adapter.notifyDataSetChanged();
                         swipeRefresh.setRefreshing(false);
                     }
                 });
             }
         }).start();
+    }
+
+    private void initMaterials() {
+        materialList.clear();
+        for (int i = 0; i < 50; i++) {
+            Random random = new Random();
+            int index = random.nextInt(materials.length);
+            materialList.add(materials[index]);
+        }
     }
 }

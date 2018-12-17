@@ -130,13 +130,13 @@
             android:layout_width="100dp"
             android:layout_height="100dp"
             android:layout_weight="4"
-            android:src="@drawable/shuiguan" />
+             />
         <ImageView
             android:id="@+id/image_puton02"
             android:layout_width="100dp"
             android:layout_height="100dp"
             android:layout_weight="4"
-            android:src="@drawable/nimu"
+
             />
     </LinearLayout>
 

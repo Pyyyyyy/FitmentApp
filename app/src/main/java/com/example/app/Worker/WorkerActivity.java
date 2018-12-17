@@ -25,6 +25,7 @@ import android.widget.Toast;
 
 
 import com.example.app.FitmentMaterial.FitmentMaterialActivity;
+import com.example.app.FitmentMaterial.Material;
 import com.example.app.R;
 
 import com.example.app.Tools.wallet;
@@ -37,11 +38,17 @@ import com.example.app.http.ResponseHandler;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Random;
 
 public class WorkerActivity extends BaseActivity {
-    private String URL_FITMENT = "http://w2062389t3.iask.in:42216/FitmentApp/WorkerServlet";
+   // private String URL_FITMENT = "http://w2062389t3.iask.in:42216/FitmentApp/WorkerServlet";
 
     private SwipeRefreshLayout swipeRefresh;
+
+    private Worker[] workers = {new Worker("工人 ￥200/天", R.drawable.gongren1), new Worker("工人 ￥300/天", R.drawable.gongren2),
+            new Worker("工人 ￥250/天", R.drawable.gongren3), new Worker("工人 ￥400/天", R.drawable.gongren4),
+            new Worker("工人 ￥300/天", R.drawable.gongren5)
+           };
 
 
     private List<Worker> workerList = new ArrayList<>();
@@ -60,7 +67,7 @@ public class WorkerActivity extends BaseActivity {
         TextView add = (TextView) findViewById(R.id.add);
 
 
-        NavigationView navView  = (NavigationView) findViewById(R.id.nav_view);
+        //NavigationView navView  = (NavigationView) findViewById(R.id.nav_view);
 
         add.setOnClickListener(new View.OnClickListener(){
             @Override
@@ -70,7 +77,7 @@ public class WorkerActivity extends BaseActivity {
             }
         });
 
-
+/*
         navView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(MenuItem menuItem) {
@@ -113,22 +120,23 @@ public class WorkerActivity extends BaseActivity {
 
 
      });
+*/
+
+       // fitmentWorker();
 
 
-        fitmentWorker();
-
-
-
+        initWorkers();
         RecyclerView recyclerView = (RecyclerView) findViewById(R.id.recycler_view);
         GridLayoutManager layoutManager = new GridLayoutManager(this,2);
         recyclerView.setLayoutManager(layoutManager);
         adapter = new WorkerAdapter(workerList);
         recyclerView.setAdapter(adapter);
 
-        fitmentWorker();
+        //fitmentWorker();
 
 
         swipeRefresh = (SwipeRefreshLayout) findViewById(R.id.swipe_refresh);
+        swipeRefresh.setColorSchemeResources(R.color.colorPrimary);
         swipeRefresh.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
             @Override
             public void onRefresh() {
@@ -136,7 +144,7 @@ public class WorkerActivity extends BaseActivity {
             }
         });
     }
-
+/*
     public void fitmentWorker(){
         final CommonRequest request = new CommonRequest();
         sendHttpPostRequest(URL_FITMENT,request,new ResponseHandler(){
@@ -162,7 +170,7 @@ public class WorkerActivity extends BaseActivity {
     }
 
 
-
+*/
 
     private void refreshWorker(){
         new Thread(new Runnable() {
@@ -177,12 +185,21 @@ public class WorkerActivity extends BaseActivity {
                     @Override
                     public void run() {
 
-                        fitmentWorker();
+                        //fitmentWorker();
                         swipeRefresh.setRefreshing(false);
                     }
                 });
             }
         }).start();
 
+    }
+
+    private void initWorkers() {
+        workerList.clear();
+        for (int i = 0; i < 50; i++) {
+            Random random = new Random();
+            int index = random.nextInt(workers.length);
+            workerList.add(workers[index]);
+        }
     }
 }

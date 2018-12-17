@@ -75,6 +75,8 @@
         <activity android:name=".QingBao.jiaju.jiajuliucheng" />
         <activity android:name=".QingBao.jiaju.jiajucailiao" />
         <activity android:name=".QingBao.jiaju.jiajuzhuyishixiang" />
+        <activity android:name=".FitmentMaterial.MaterialActivity" />
+        <activity android:name=".Worker.GongRenActivity" />
         <activity android:name=".message"></activity>
 
 

@@ -8,21 +8,21 @@ import android.graphics.Bitmap;
 
 public class Worker {
 
-    private  int workerId;
+    //private  int workerId;
 
-    private  Bitmap workerImage;
+    private  int workerImage;
 
     private  String workerName;
 
-    private  String workerType;
+    //private  String workerType;
 
-    private  String workerPhoneNumber;
+   // private  String workerPhoneNumber;
 
-    public  Worker(String workerName, Bitmap workerImage){
+    public  Worker(String workerName, int workerImage){
         this.workerName = workerName;
          this.workerImage= workerImage;
     }
-
+/*
     public int getWorkerId() {
         return workerId;
     }
@@ -30,7 +30,7 @@ public class Worker {
     public void setWorkerId(int workerId) {
         this.workerId = workerId;
     }
-
+*/
     public String getWorkerName() {
         return workerName;
     }
@@ -38,7 +38,7 @@ public class Worker {
     public void setWorkerName(String workerName) {
         this.workerName = workerName;
     }
-
+/*
     public String getWorkerType() {
         return workerType;
     }
@@ -54,12 +54,12 @@ public class Worker {
     public void setWorkerPhoneNumber(String workerPhoneNumber) {
         this.workerPhoneNumber = workerPhoneNumber;
     }
-
-    public Bitmap getWorkerImage() {
+*/
+    public int getWorkerImage() {
         return workerImage;
     }
 
-    public void setWorkerImage(Bitmap workerImage) {
+    public void setWorkerImage(int workerImage) {
         this.workerImage = workerImage;
     }
 }

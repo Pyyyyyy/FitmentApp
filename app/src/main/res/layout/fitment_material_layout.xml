@@ -127,11 +127,7 @@
                 android:textSize="22sp"
                 />
         </RadioGroup>
-        <Button
-            android:id="@+id/button_shoppingcar"
-            android:layout_width="60dp"
-            android:layout_height="60dp"
-            android:background="@drawable/shoppingcar"/>
+
 
 
         <android.support.v4.widget.SwipeRefreshLayout
