@@ -1,0 +1,188 @@
+{
+  "code": 0,
+  "data": [
+    {
+      "type": "category",
+      "dataList": [
+        {
+          "id": "",
+          "desc": "",
+          "type": "category",
+          "title": "木板 ￥10",
+          "imgURL": "tumu1",
+          "linkType": "storeTags",
+          "linkParam": "",
+          "online_time": "",
+          "offline_time": ""
+        },
+        {
+          "id": "",
+          "desc": "",
+          "type": "category",
+          "title": "木板 ￥20",
+          "imgURL": "tumu2",
+          "linkType": "storeTags",
+          "linkParam": "",
+          "online_time": "",
+          "offline_time": ""
+        },
+        {
+          "id": "",
+          "desc": "",
+          "type": "category",
+          "title": "木板 ￥30",
+          "imgURL": "tumu3",
+          "linkType": "storeTags",
+          "linkParam": "",
+          "online_time": "",
+          "offline_time": ""
+        }
+      ],
+      "moreIcon": "https://wicdn.xiaohongchun.com/xhc-plat/1499690581646_JYRiS8rkdp.png",
+      "moreText": "",
+      "moduleStyle": "nothing",
+      "moduleTitle": "土木",
+      "moreLinkType": "storeTags",
+      "interfaceLink": "",
+      "moreLinkParam": "",
+      "moreTextDisplay": "true"
+    },
+    {
+      "type": "category",
+      "dataList": [
+        {
+          "id": "",
+          "desc": "",
+          "type": "category",
+          "title": "油漆 ￥10",
+          "imgURL": "youqi1",
+          "linkType": "storeTags",
+          "linkParam": "",
+          "online_time": "",
+          "offline_time": ""
+        },
+        {
+          "id": "",
+          "desc": "",
+          "type": "category",
+          "title": "油漆 ￥20",
+          "imgURL": "youqi2",
+          "linkType": "storeTags",
+          "linkParam": "",
+          "online_time": "",
+          "offline_time": ""
+        },
+        {
+          "id": "",
+          "desc": "",
+          "type": "category",
+          "title": "油漆 ￥30",
+          "imgURL": "youqi3",
+          "linkType": "storeTags",
+          "linkParam": "",
+          "online_time": "",
+          "offline_time": ""}
+      ],
+      "moreIcon": "https://wicdn.xiaohongchun.com/xhc-plat/1499690569496_jKyaBHe2Ze.png",
+      "moreText": "",
+      "moduleStyle": "nothing",
+      "moduleTitle": "油漆",
+      "moreLinkType": "topic",
+      "interfaceLink": "",
+      "moreLinkParam": "",
+      "moreTextDisplay": "true"
+    },
+    {
+      "type": "category",
+      "dataList": [
+        {
+          "id": "",
+          "desc": "",
+          "type": "category",
+          "title": "水泥 ￥10",
+          "imgURL": "nimu1",
+          "linkType": "storeTags",
+          "linkParam": "",
+          "online_time": "",
+          "offline_time": ""
+        },
+        {
+          "id": "",
+          "desc": "",
+          "type": "category",
+          "title": "水泥 ￥20",
+          "imgURL": "nimu2",
+          "linkType": "storeTags",
+          "linkParam": "",
+          "online_time": "",
+          "offline_time": ""
+        },
+        {
+          "id": "",
+          "desc": "",
+          "type": "category",
+          "title": "水泥 ￥30",
+          "imgURL": "nimu3",
+          "linkType": "storeTags",
+          "linkParam": "",
+          "online_time": "",
+          "offline_time": ""
+        },
+        {
+          "id": "",
+          "desc": "",
+          "type": "category",
+          "title": "水泥 ￥40",
+          "imgURL": "nimu4",
+          "linkType": "storeTags",
+          "linkParam": "",
+          "online_time": "",
+          "offline_time": ""
+        }
+      ],
+      "moreIcon": "https://wicdn.xiaohongchun.com/xhc-plat/1499690549966_xbr3ACA38e.png",
+      "moreText": "",
+      "moduleStyle": "nothing",
+      "moduleTitle": "泥木",
+      "moreLinkType": "html",
+      "interfaceLink": "",
+      "moreLinkParam": "",
+      "moreTextDisplay": "true"
+    },
+    {
+      "type": "category",
+      "dataList": [
+        {
+          "id": "",
+          "desc": "",
+          "type": "category",
+          "title": "厨房 ￥10",
+          "imgURL": "chuyu1",
+          "linkType": "storeTags",
+          "linkParam": "",
+          "online_time": "",
+          "offline_time": ""
+        },
+        {
+          "id": "",
+          "desc": "",
+          "type": "category",
+          "title": "浴室 ￥30",
+          "imgURL": "chuyu2",
+          "linkType": "storeTags",
+          "linkParam": "",
+          "online_time": "",
+          "offline_time": ""
+        }
+      ],
+      "moreIcon": "https://wicdn.xiaohongchun.com/xhc-plat/1499690592572_6PcAjFFXEA.png",
+      "moreText": "",
+      "moduleStyle": "nothing",
+      "moduleTitle": "厨浴",
+      "moreLinkType": "userId",
+      "interfaceLink": "",
+      "moreLinkParam": "",
+      "moreTextDisplay": "true"
+    }
+  ]
+}
