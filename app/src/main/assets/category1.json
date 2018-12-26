@@ -1,0 +1,112 @@
+{
+  "code": 0,
+  "data": [
+    {
+      "type": "category",
+      "dataList": [
+        {
+          "id": "",
+          "desc": "",
+          "type": "category",
+          "title": "工人 ￥200/天",
+          "imgURL": "gongren1",
+          "linkType": "storeTags",
+          "linkParam": "",
+          "online_time": "",
+          "offline_time": ""
+        },
+        {
+          "id": "",
+          "desc": "",
+          "type": "category",
+          "title": "工人 ￥300/天",
+          "imgURL": "gongren2",
+          "linkType": "storeTags",
+          "linkParam": "",
+          "online_time": "",
+          "offline_time": ""
+        }
+      ],
+      "moreIcon": "https://wicdn.xiaohongchun.com/xhc-plat/1499690581646_JYRiS8rkdp.png",
+      "moreText": "",
+      "moduleStyle": "nothing",
+      "moduleTitle": "土木",
+      "moreLinkType": "storeTags",
+      "interfaceLink": "",
+      "moreLinkParam": "",
+      "moreTextDisplay": "true"
+    },
+    {
+      "type": "category",
+      "dataList": [
+        {
+          "id": "",
+          "desc": "",
+          "type": "category",
+          "title": "工人 ￥250/天",
+          "imgURL": "gongren3",
+          "linkType": "storeTags",
+          "linkParam": "",
+          "online_time": "",
+          "offline_time": ""
+        }
+      ],
+      "moreIcon": "https://wicdn.xiaohongchun.com/xhc-plat/1499690569496_jKyaBHe2Ze.png",
+      "moreText": "",
+      "moduleStyle": "nothing",
+      "moduleTitle": "油漆",
+      "moreLinkType": "topic",
+      "interfaceLink": "",
+      "moreLinkParam": "",
+      "moreTextDisplay": "true"
+    },
+    {
+      "type": "category",
+      "dataList": [
+        {
+          "id": "",
+          "desc": "",
+          "type": "category",
+          "title": "工人 ￥400/天",
+          "imgURL": "gongren4",
+          "linkType": "storeTags",
+          "linkParam": "",
+          "online_time": "",
+          "offline_time": ""
+        }
+      ],
+      "moreIcon": "https://wicdn.xiaohongchun.com/xhc-plat/1499690549966_xbr3ACA38e.png",
+      "moreText": "",
+      "moduleStyle": "nothing",
+      "moduleTitle": "泥木",
+      "moreLinkType": "html",
+      "interfaceLink": "",
+      "moreLinkParam": "",
+      "moreTextDisplay": "true"
+    },
+    {
+      "type": "category",
+      "dataList": [
+        {
+          "id": "",
+          "desc": "",
+          "type": "category",
+          "title": "工人 ￥300/天",
+          "imgURL": "gongren5",
+          "linkType": "storeTags",
+          "linkParam": "",
+          "online_time": "",
+          "offline_time": ""
+        }
+      ],
+      "moreIcon": "https://wicdn.xiaohongchun.com/xhc-plat/1499690592572_6PcAjFFXEA.png",
+      "moreText": "",
+      "moduleStyle": "nothing",
+      "moduleTitle": "厨浴",
+      "moreLinkType": "userId",
+      "interfaceLink": "",
+      "moreLinkParam": "",
+      "moreTextDisplay": "true"
+    }
+  ]
+}

@@ -239,12 +239,7 @@ import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * author：wangzihang
- * date： 2017/8/8 19:15
- * desctiption：category demo
- * e-mail：wangzihang@xiaohongchun.com
- */
+
 public class FitmentMaterialActivity extends AppCompatActivity {
 
     private List<String> menuList = new ArrayList<>();

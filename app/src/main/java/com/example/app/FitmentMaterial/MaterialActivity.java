@@ -44,12 +44,13 @@ public class MaterialActivity extends AppCompatActivity {
 
     private String generateFruitContent(String fruitName) {
         StringBuilder fruitContent = new StringBuilder();
-        fruitContent.append("This is description");
-        /*
-        for (int i = 0; i < 500; i++) {
-            fruitContent.append(fruitName);
+        //fruitContent.append("This is description.");
+
+        for (int i = 0; i < 100; i++) {
+            //fruitContent.append(fruitName);
+            fruitContent.append("This is the description. \n");
         }
-        */
+
         return fruitContent.toString();
     }
 
