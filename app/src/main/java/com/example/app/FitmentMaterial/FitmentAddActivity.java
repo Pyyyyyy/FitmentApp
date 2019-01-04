@@ -38,7 +38,7 @@ import java.io.IOException;
 
 
 public class FitmentAddActivity extends BaseActivity implements View.OnClickListener{
-    private String URL_FITMENT_ADD = "http://w2062389t3.iask.in:42216/FitmentApp/FitmentAddServlet";
+    private String URL_FITMENT_ADD = "http://w2062389t3.iask.in:23762/FitmentApp/FitmentAddServlet";
 
     public static final int TAKE_PHOTO =1;
     public static final int CHOOSE_PHOTO = 2;

@@ -18,7 +18,7 @@ import com.example.app.http.CommonResponse;
 import com.example.app.http.ResponseHandler;
 
 public class Register2Activity extends BaseActivity implements View.OnClickListener{
-    private String URL_REGISTER = "http://w2062389t3.iask.in:42216/FitmentApp/RegisterServlet";
+    private String URL_REGISTER = "http://w2062389t3.iask.in:23762/FitmentApp/RegisterServlet";
 
     private EditText name;
     private EditText idCardNumber;

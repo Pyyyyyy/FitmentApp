@@ -11,16 +11,18 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import com.example.app.Fragment.FragmenMy;
 import com.example.app.R;
 import com.example.app.http.BaseActivity;
 import com.example.app.http.CommonRequest;
 import com.example.app.http.CommonResponse;
 import com.example.app.http.ResponseHandler;
 
+import java.util.HashMap;
 
 
 public class LoginActivity extends BaseActivity {
-    private String URL_LOGIN = "http://w2062389t3.iask.in:42216/FitmentApp/LoginServlet";
+    private String URL_LOGIN = "http://w2062389t3.iask.in:23762/FitmentApp/LoginServlet";
 
     private EditText phoneNumber;                        //用户名编辑
     private EditText password;                            //密码编辑
@@ -39,6 +41,7 @@ public class LoginActivity extends BaseActivity {
         if (actionBar!=null){
             actionBar.hide();
         }
+
         ImageView back =  (ImageView) findViewById(R.id.back);
         back.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -50,6 +53,7 @@ public class LoginActivity extends BaseActivity {
         phoneNumber = (EditText) findViewById(R.id.phoneNumber);
         password = (EditText) findViewById(R.id.password);
         Login_Remember = (CheckBox) findViewById(R.id.Login_Remember);
+
         /*
         login_sp = getSharedPreferences("userInfo", 0);
         String name = login_sp.getString("USER_NAME", "");
@@ -123,6 +127,14 @@ public class LoginActivity extends BaseActivity {
             @Override
             public void success(CommonResponse response) {
                 Toast.makeText(LoginActivity.this,response.getResMsg(),Toast.LENGTH_SHORT).show();
+                HashMap<String, String> user = response.getPropertyMap();
+                SharedPreferences.Editor editor = getSharedPreferences("user",MODE_PRIVATE).edit();
+                editor.putString("phoneNumber",user.get("phoneNumber"));
+                editor.putString("name",user.get("name"));
+                editor.putString("idCardNumber",user.get("idCardNumber"));
+                editor.putString("password",user.get("password"));
+                editor.apply();
+                FragmenMy.user = true;
                 finish();
             }
 
